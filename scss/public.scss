@@ -1,0 +1,39 @@
+@import "Ginkgo";
+@import "bootstrap/bootstrap";
+
+html {
+  font-size: 16px;
+  height: 100%;
+}
+
+body {
+  position: relative;
+
+  display: inline-block;
+  width: 100%;
+
+  margin: 0;
+  padding: 0;
+  color: rgba(90, 90, 90, 1.00);
+
+  font-weight: 500;
+  font-family:'Roboto', 'Noto Sans TC', "Helvetica Neue", HelveticaNeue, Helvetica, Arial, sans-serif;
+}
+
+.mob-open {
+  display: none;
+  @include range-width(0, 450px) {
+    display: inline-block;
+  }
+}
+
+.mob-menu-icon {
+  font-size: 1.8rem;
+}
+
+.img-Hlogo {
+  display: inline-block;
+  width: 100%;
+  max-width: 200px;
+}
+
