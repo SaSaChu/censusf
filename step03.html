@@ -77,7 +77,7 @@
       <div class="container-fluid bg-title py-3 d-xl-none d-xl-inline-block">
         <div class="row">
           <div class="col-10 pe-0">
-            <p class="title-type">基本資料</p>
+            <p class="title-type2" title="三、">110年生產之產品或經營、服務之項目</p>
           </div>
           <div class="col-2 p-0 d-flex align-items-center justify-content-end">
             <button type="button" class="btn btn-q" data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -98,9 +98,11 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <p class='popup-list' title='1.'>本表資料範圍除問項指明查填國(境)外相關資料外，餘均不包含貴企業設置在國(境)外 的分支單位，以及從事農林漁牧業等分支單位資料。</p>
-
-            <p class='popup-list' title='2.'>單位級別為3者，除填報本場所單位資料外，另應以企業為單位(單位級別為8)，加填一份調查表，填報企業整體彙總資料，以及一份總管理單位及所屬分支單位概況表。</p>
+            <p class='popup-list s3-use-no'>製造業其它主要經營方式:複選</p>
+            <p class='popup-list s3-use-list' title='(1)'>製造 <span class="text-primary">(含印刷)</span></p>
+            <p class='popup-list s3-use-list' title='(2)'>修配 <span class="text-primary">(指產業用機械設備維修及安裝)</span></p>
+            <p class='popup-list s3-use-list' title='(3)'>代客加工 <span class="text-primary">(以收取加工費為主)</span></p>
+            <p class='popup-list s3-use-list' title='(4)'>委外生產 <span class="text-primary">(指產品委託其他企業製造， 且貴單位擁有最終所有權)</span></p>
 
           </div>
         </div>
@@ -115,9 +117,9 @@
       </div>
       <div class="offcanvas-body p-0">
         <div class="w-menu on-step stepone">基本資料</div>
-        <div class="w-menu" title='一、'>組織別</div>
-        <div class="w-menu" title='二、'>實際開業年月</div>
-        <div class="w-menu" title='三、'>110年生產之產品或經、服務之項目</div>
+        <div class="w-menu on-step" title='一、'>組織別</div>
+        <div class="w-menu on-step" title='二、'>實際開業年月</div>
+        <div class="w-menu on-step" title='三、'>110年生產之產品或經、服務之項目</div>
         <div class="w-menu" title='四、'>110年從業員工及薪資</div>
         <div class="w-menu pass-step" title='五、'>110年人力派遣情形</div>
         <div class="w-menu pass-step" title='六、'>110年營運數位化狀況</div>
@@ -143,7 +145,7 @@
           <div class="container-fluid bg-title py-3 d-xl-inline-block d-none">
             <div class="row">
               <div class="col-10 pe-0">
-                <p class="title-type">基本資料</p>
+                <p class="title-type2" title="三、">110年生產之產品或經營、服務之項目</p>
               </div>
               <div class="col-2 p-0 d-flex align-items-center justify-content-end">
                 <button type="button" class="btn btn-q" data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -156,47 +158,26 @@
 
           <!-- 表單內容區 -->
           <div class="container-fluid bg-light px-0">
-            <!-- 標單欄位01 -->
-            <div class="container-fluid px-4 px-xl-5">
-              <div class="row py-5">
-                <div class="col-12 col-xl-6"><p class="fs-6 mb-xl-0">普查編號：0201 001 0020</p></div>
-                <div class="col-12 col-xl-6"><p class="fs-6 mb-0">判定編號：A000020</p></div>
-              </div>
-            </div>
-
-            <!-- 分隔線 -->
-            <div class="container-fluid border-bottom border-3"></div>
-
-            <!-- 表單欄位02 -->
+            <!-- 表單欄位01 -->
             <div class="container-fluid px-4 px-xl-5">
               <div class="row py-5">
                 <div class="col-12 pb-3">
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">
-                      本表委由記帳業者或會計師填報
-                    </label>
-                  </div>
-                </div>
-
-                <div class="col-12 py-4">
-                  <label for="exampleFormControlInput1" class="form-label">單位名稱(請填全名)<i class="text-danger markUse">*</i><button class="btn-hard">難</button></label>
-                  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="請輸入">
-                </div>
-
-                <div class="col-xl-6 py-3 col-12 pb-4">
-                  <label for="exampleFormControlInput1" class="form-label">負責人姓名<i class="text-danger markUse">*</i><button class="btn-hard">難</button></label>
-                  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="請輸入">
-                </div>
-
-                <div class="col-xl-6 py-3 col-5">
-                  <label for="exampleFormControlInput1" class="form-label">負責人性別</label>
+                  <label for="exampleFormControlInput1" class="form-label">(一)主要經營項目是否屬於下列行業</label>
                   <select class="form-select" aria-label="Default select example">
-                    <option selected>請選擇</option>
-                    <option value="1">男性</option>
-                    <option value="2">女性</option>
+                    <!-- <option selected>請選擇</option> -->
+                    <option value="1">1. 製造業</option>
+                    <option value="2">2. 營建工程業</option>
+                    <option value="3">3. 有行商品買賣、仲介或貿易代理</option>
+                    <option value="4">4. 運輸業</option>
+                    <option value="5">5. 租賃業</option>
+                    <option value="65">6. 其他行業</option>
                   </select>
                 </div>
+                <!-- ★★★ 選 1. 製造業：會出現下方文字 ★★★ -->
+                <div class="col-12">含印刷業、儲存媒體複製、產業機械修配</div>
+
+                <!-- ★★★ 選 2. 營建工程業：會出現下方文字 ★★★ -->
+                <!-- <div class="col-12">含水電、管線、管道施工</div> -->
               </div>
 
               <!-- 分隔線 虛線 -->

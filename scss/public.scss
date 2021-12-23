@@ -19,6 +19,10 @@ body {
   font-family:'Roboto', 'Noto Sans TC', "Helvetica Neue", HelveticaNeue, Helvetica, Arial, sans-serif;
 }
 
+.w-3 {
+  width: 3% !important
+}
+
 .border-bs {
   border-bottom: 2px dotted rgba(217, 222, 226, .8);
 }
@@ -68,6 +72,18 @@ body {
   &:hover {
     color: rgba(255, 238, 12, .9);
   }
+}
+
+.btn-hard {
+  display: inline-block;
+  color: white;
+  font-size: .9rem;
+  @include border-radius(3px);
+  background-color: rgba(0, 43, 95, 1.00);
+  border: 0;
+  outline: 0;
+  padding: 5px;
+  line-height: 15px;
 }
 
 .mob-menu-icon {
@@ -161,7 +177,58 @@ body {
   line-height: 40px;
 }
 
-.popup {
+.title-type2 {
+  font-size: 1.25rem;
+  color: white;
+  margin-bottom: 0;
+  line-height: 30px;
+  padding-left: 40px;
+  position: relative;
+
+  &:before {
+    display: inline-block;
+    content: attr(title);
+    position: absolute;
+    left: 0;
+  }
+}
+
+
+.popup-r {
+  background-color: rgba(248, 176, 176, 1.00);
+  border: 5px solid rgba(165, 33, 33, 1.00);
+
+  .modal-header {
+    color: rgba(164, 32, 33, 1.00);
+    padding-left: 1.2rem;
+    padding-right: 1.5rem;
+  }
+
+  .modal-body {
+    background-color: white;
+  }
+
+  .popup-list-r {
+    display: inline-block;
+    width: 100%;
+    position: relative;
+    font-size: 1.1rem;
+    color: rgba(26, 26, 26, 1.00);
+    padding-left: 30px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    margin-bottom: 0;
+
+    &:before {
+      display: inline-block;
+      content: attr(title);
+      position: absolute;
+      left: 10px;
+    }
+  }
+}
+
+.popup-y {
   background-color: rgba(255, 239, 191, 1.00);
   border: 5px solid rgba(175, 123, 2, 1.00);
 
@@ -179,7 +246,7 @@ body {
     font-size: 1.1rem;
     color: rgba(26, 26, 26, 1.00);
     padding-left: 30px;
-
+    padding-top: 10px;
 
     &:before {
       display: inline-block;
@@ -187,7 +254,20 @@ body {
       position: absolute;
       left: 10px;
     }
+
+    &.s3-use-no {
+      padding-left: 10px;
+    }
+
+    &.s3-use-list {
+      padding-left: 40px;
+    }
   }
+}
+
+.markUse {
+  font-style: normal;
+  margin: 0 5px;
 }
 
 // effect

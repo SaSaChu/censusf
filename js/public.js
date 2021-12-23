@@ -28,7 +28,6 @@ $(function() {
     }
     run_clock('clockdiv',deadline);
 
-
     var myModal = document.getElementById('myModal')
     var myInput = document.getElementById('myInput')
 
