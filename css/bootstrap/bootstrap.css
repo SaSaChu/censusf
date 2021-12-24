@@ -621,10 +621,10 @@ textarea.form-control-lg { min-height: calc(1.5em + (1rem + 2px)); }
 
 .form-select-lg { padding-top: 0.5rem; padding-bottom: 0.5rem; padding-left: 1rem; font-size: 1.25rem; }
 
-.form-check { display: block; min-height: 1.5rem; padding-left: 1.5em; margin-bottom: 0.125rem; }
-.form-check .form-check-input { float: left; margin-left: -1.5em; }
+.form-check { display: block; min-height: 1.5rem; padding-left: 2em; margin-bottom: 0.125rem; }
+.form-check .form-check-input { float: left; margin-left: -2em; }
 
-.form-check-input { width: 1em; height: 1em; margin-top: 0.25em; vertical-align: top; background-color: #fff; background-repeat: no-repeat; background-position: center; background-size: contain; border: 1px solid rgba(0, 0, 0, 0.25); appearance: none; color-adjust: exact; }
+.form-check-input { width: 1.5em; height: 1.5em; margin-top: 0em; vertical-align: top; background-color: #fff; background-repeat: no-repeat; background-position: center; background-size: contain; border: 1px solid rgba(0, 0, 0, 0.25); appearance: none; color-adjust: exact; }
 .form-check-input[type="checkbox"] { border-radius: 0.25em; }
 .form-check-input[type="radio"] { border-radius: 50%; }
 .form-check-input:active { filter: brightness(90%); }

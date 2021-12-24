@@ -158,25 +158,33 @@
 
           <!-- 表單內容區 -->
           <div class="container-fluid bg-light px-0">
-            <!-- 表單欄位01 -->
+            <!-- ● 表單欄位01 -->
             <div class="container-fluid px-4 px-xl-5">
               <div class="row py-5">
                 <div class="col-12 pb-3">
+                  <!-- ★★★ 此處下拉選單，選擇不同項目會連動下方資料顯示 ★★★ -->
                   <label for="exampleFormControlInput1" class="form-label">(一)主要經營項目是否屬於下列行業</label>
                   <select class="form-select" aria-label="Default select example">
                     <!-- <option selected>請選擇</option> -->
+                    <!-- ★★★ 選1.製造業會顯示 第279行 的內容 ★★★ -->
                     <option value="1">1. 製造業</option>
+                    <!-- ★★★ 選1.製造業會顯示 第341行 的內容 ★★★ -->
                     <option value="2">2. 營建工程業</option>
+                    <!-- ★★★ 選1.製造業會顯示 第360行 的內容 ★★★ -->
                     <option value="3">3. 有行商品買賣、仲介或貿易代理</option>
+                    <!-- ★★★ 選1.製造業會顯示 第415行 的內容 ★★★ -->
                     <option value="4">4. 運輸業</option>
+                    <!-- ★★★ 選1.製造業會顯示 第437行 的內容 ★★★ -->
                     <option value="5">5. 租賃業</option>
+                    <!-- ★★★ 選1.製造業會顯示 第469行 的內容 ★★★ -->
                     <option value="65">6. 其他行業</option>
                   </select>
                 </div>
-                <!-- ★★★ 選 1. 製造業：會出現下方文字 ★★★ -->
+
+                <!-- ★★★ 選1. 製造業（169行）：會出現下方文字 ★★★ -->
                 <div class="col-12">含印刷業、儲存媒體複製、產業機械修配</div>
 
-                <!-- ★★★ 選 2. 營建工程業：會出現下方文字 ★★★ -->
+                <!-- ★★★ 選2. 營建工程業（170行）：會出現下方文字 ★★★ -->
                 <!-- <div class="col-12">含水電、管線、管道施工</div> -->
               </div>
 
@@ -184,197 +192,329 @@
               <div class="container-fluid border-bs px-4"></div>
             </div>
 
-            <!-- 表單欄位03 -->
+
+
+            <!-- ● 表單欄位02：注意，表單2區塊內容，會依照表單欄位01選擇的下拉選單內容，而有所不同，詳細對應請見下方備註 -->
+            
             <div class="container-fluid px-4 px-xl-5">
-              <div class="row py-5">
-                <div class="col-12 pb-3">
-                  <label for="exampleFormControlInput1" class="form-label">聯絡人姓名<i class="text-danger markUse">*</i><button class="btn-hard">難</button></label>
-                  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="請輸入">
-                </div>
-
-                <div class="col-xl-6 py-3 col-12 pb-4">
-                  <label for="exampleFormControlInput1" class="form-label">聯絡人電話<i class="text-danger markUse">*</i></label>
-                  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="請輸入">
-                </div>
-
-                <div class="col-xl-6 py-3 col-12">
-                  <label for="exampleFormControlInput1" class="form-label">聯絡人傳真</label>
-                  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="請輸入">
-                </div>
-              </div>
-
-              <!-- 分隔線 虛線 -->
-              <div class="container-fluid border-bs px-4"></div>
-            </div>
-
-            <!-- 表單欄位04 -->
-            <div class="container-fluid px-4 px-xl-5">
-              <div class="row py-5">
-
-                <div class="col-12 pb-3">
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">
-                      同聮絡人姓名/電話
-                    </label>
+              <!-- ★★★ 選1.製造業（169行）：表單欄位02會出現的內容 ★★★ -->
+              <div class="py-5">
+                <div class="row">
+                  <div class="col-xl-6 col-12 order-xl-5">
+                    <!-- (二)範例說明 - popoup 按鈕 -->
+                    <button type="button" class="btn btn-orange btn-s btn_set float-end" data-bs-toggle="modal" data-bs-target="#exbtn01">範例說明</button>
                   </div>
+                  <div class="col-xl-6 col-12">(二) 1. 製造業最主要經營方式<i class="markUse text-danger">(複選)</i></div>
                 </div>
-
-                <div class="col-xl-6 py-3 col-12 pb-4">
-                  <label for="exampleFormControlInput1" class="form-label">填表人姓名<i class="text-danger markUse">*</i><button class="btn-hard">難</button></label>
-                  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="請輸入">
-                </div>
-
-                <div class="col-xl-6 py-3 col-12">
-                  <label for="exampleFormControlInput1" class="form-label">填表人電話<i class="text-danger markUse">*</i></label>
-                  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="請輸入">
-                </div>
-              </div>
-
-              <!-- 分隔線 虛線 -->
-              <div class="container-fluid border-bs px-4"></div>
-            </div>
-
-            <!-- 表單欄位05 -->
-            <div class="container-fluid px-4 px-xl-5">
-              <div class="row py-5">
-                <div class="col-12 pb-3">
-                  <label for="exampleFormControlInput1" class="form-label py-3">實際營業地址<i class="text-danger markUse">*</i></label>
-                  <button type="button" class="btn btn-primary btn-s btn_set float-end" data-bs-toggle="modal" data-bs-target="#staticBackdrop">修改</button>
-                  <input type="" class="form-control" id="exampleFormControlInput1" placeholder="台北市文山區OO153巷OO號OO樓之OO室111111111" readonly>
-                </div>
-
-                <div class="col-12 pb-3">
-                  <label for="exampleFormControlInput1" class="form-label pt-3">實際營業地址<i class="text-danger markUse">*</i></label>
-
-                  <div class="form-check d-inline-block float-end py-3">
-                    <input class="form-check-input" type="checkbox" id="autoSizingCheck">
-                    <label class="form-check-label" for="autoSizingCheck">
-                      同實際營業地址
-                    </label>
-                  </div>
-
-                  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
-                </div>
-
-                <div class="col-xl-6 py-3 col-12 pb-4">
-                  <label for="exampleFormControlInput1" class="form-label">營利事業暨扣繳單位統一編號</label>
-                  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="請輸入">
-                </div>
-                <div class="col-xl-6 py-3 col-12">
-                  <div class="form-check pt-xl-5 pt-0 mt-xl-4 mt-0">
-                    <input class="form-check-input" type="checkbox" id="autoSizingCheck">
-                    <label class="form-check-label" for="autoSizingCheck">
-                      確實無統一編號
-                    </label>
-                  </div>
-                </div>
-              </div>
-
-              <!-- 修改地址pop up -->
-              <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title">選擇地址</h5>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <div class="row gy-3 pt-3">
+                  <div class="col-12">
+                    <div class="form-check pt-3">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                      <label class="form-check-label check_list" for="flexCheckDefault" title="(1)">製造<i class="markUse text-primary">(含印刷)</i></label>
                     </div>
-                    <div class="modal-body">
-                      <div class="container-fluid">
-                        <div class="row">
-                          <div class="col-6 px-2 py-3">
-                            <select class="form-select" aria-label="Default select example">
-                              <option selected>縣市</option>
-                              <option value="-">-</option>
-                              <option value="-">-</option>
-                            </select>
-                          </div>
-                          <div class="col-6 px-2 py-3">
-                            <select class="form-select" aria-label="Default select example">
-                              <option selected>鄉鎮市區</option>
-                              <option value="-">-</option>
-                              <option value="-">-</option>
-                            </select>
-                          </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="form-check pt-3">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                      <label class="form-check-label check_list" for="flexCheckDefault" title="(2)">修配<i class="markUse text-primary">(指產業用機械設備維修及安裝)</i></label>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="form-check pt-3">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                      <label class="form-check-label check_list" for="flexCheckDefault" title="(3)">代客加工<i class="markUse text-primary">(以收取加工費為主)</i></label>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="form-check pt-3">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                      <label class="form-check-label check_list" for="flexCheckDefault" title="(4)">委外生產<i class="markUse text-primary">(指產品委託其他企業製造，且貴單位擁有最終所有權)</i></label>
+                    </div>
+                  </div>
 
-                          <div class="col-12 px-2 py-3">
-                            <select class="form-select" aria-label="Default select example">
-                              <option selected>村里</option>
-                              <option value="-">-</option>
-                              <option value="-">-</option>
-                            </select>
-                          </div>
+                  <!-- ★★★ 選下方2.修配，會連動247行不可填寫 ★★★ -->
+                  <div class="col-xl-3 col-6 pt-4 ps-xl-5 ms-xl-5">
+                    <label for="exampleFormControlInput1" class="form-label">以上最主要經營方式為</label>
+                    <select class="form-select" aria-label="Default select example">
+                      <option selected>請選擇</option>
+                      <option value="1">(1)製造</option>
+                      <option value="2">(2)修配</option>
+                      <option value="3">(3)代客加工</option>
+                      <option value="4">(4)委外生產</option>
+                    </select>
+                  </div>
+                  <div class="col-12 pt-4">
+                    <label for="exampleFormControlInput1" class="form-label">2.主要生產(修配)產品</label>
+                    <input type="text" class="form-control" id="" placeholder="請輸入">
+                  </div>
 
-                          <div class="col-12 px-2 py-3">
-                            <select class="form-select" aria-label="Default select example">
-                              <option selected>路街段</option>
-                              <option value="-">-</option>
-                              <option value="-">-</option>
-                            </select>
-                          </div>
+                  <!-- ★★★ 選下方2.修配，會連動247行不可填寫（input加上disabled，並把placeholder文字清除) ★★★ -->
+                  <div class="col-12 pt-4">
+                    <label for="exampleFormControlInput1" class="form-label">3.主要產品耗用原料</label>
+                    <input type="text" class="form-control" id="" placeholder="請輸入">
+                    <!-- <input type="text" class="form-control" id="" placeholder="" disabled=""> -->
+                  </div>
 
-                          <div class="col-12 px-2 py-3">
-                            <select class="form-select" aria-label="Default select example">
-                              <option selected>巷弄</option>
-                              <option value="-">-</option>
-                              <option value="-">-</option>
-                            </select>
-                          </div>
-
-                          <div class="row g-3 align-items-center">
-                            <div class="col-2">
-                              <input type="text" class="form-control p-2" id="" placeholder="">
-                            </div>
-                            <div class="col-2 text-center">之</div>
-                            <div class="col-2">
-                              <input type="text" class="form-control p-2" id="" placeholder="">
-                            </div>
-                            <div class="col-2 text-center">之</div>
-                            <div class="col-2">
-                              <input type="text" class="form-control p-2" id="" placeholder="">
-                            </div>
-                            <div class="col-2 text-center">號之</div>
-                          </div>
-
-                          <div class="row g-3 align-items-center">
-                            <div class="col-2">
-                              <input type="text" class="form-control p-2" id="" placeholder="">
-                            </div>
-                            <div class="col-2 text-center">之</div>
-                            <div class="col-2">
-                              <input type="text" class="form-control p-2" id="" placeholder="">
-                            </div>
-                            <div class="col-2">
-                              <input type="text" class="form-control p-2" id="" placeholder="">
-                            </div>
-                            <div class="col-2">
-                              <span>樓之</span>
-                            </div>
-                          </div>
-
-                          <div class="row g-3 pb-5 align-items-center">
-                            <div class="col-2">
-                              <input type="text" class="form-control p-2" id="" placeholder="">
-                            </div>
-                            <div class="col-2">
-                              <input type="text" class="form-control p-2" id="" placeholder="">
-                            </div>
-                            <div class="col-2">
-                              <span>室</span>
-                            </div>
-                          </div>
-                            
-                          <div class="col-12 px-2 py-3">
-                            <input type="" class="form-control" id="exampleFormControlInput1" placeholder="其他">
-                          </div>
+                  <!-- 範例說明 pop up (按鈕在198行) -->
+                  <div class="modal fade" id="exbtn01" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                      <div class="modal-content pop-none">
+                        <div class="modal-header">
+                          <h5 class="modal-title text-primary ">說明範例</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                          <p class="popup-list3 mb-0" title="1.">
+                            <strong>製造：</strong></br>自購原材物料進行生產，或受其他企業委託，採用「OEM」、「ODM」方式生產，但50%以上原材物料係由貴企業購進者，均屬之。
+                          </p>
+                          <p class="popup-list3 mb-0" title="2.">
+                          <strong>修配：</strong></br>
+                          從事產業用機械、電機、大型運輸工具之維修安裝。</p>
+                          <p class="popup-list3 mb-0" title="3.">
+                            <strong>代客加工：</strong></br>
+                          自購原材物料未達50%，以收取加工費為主要營業收入者。</p>
+                          <p class="popup-list3" title="4.">
+                            <strong>委外生產：</strong></br>
+                            指將產品生產過程委託其他企業，惟貴企業對產品製程或原材物料使用仍具有主導權，或擁有產品之研發設計、智慧財產權，如委外製造且擁有最終產品所有權之IC設計廠商。
+                          </p>
                         </div>
                       </div>
                     </div>
-                    <div class="modal-footer">
-                      <button type="button" class="flex-fill btn btn-primary">確定</button>
-                      <button type="button" class="flex-fill btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- ★★★ 選2.營建工程業（170行）：表單欄位02會出現的內容 ★★★ -->
+              <div class="py-5">
+                <div class="row pt-5">
+                  <div class="col-xl-6 col-12 ">(二)請就主要工程項目或建築設備安裝(維修)項目擇一填寫：</div>
+                </div>
+                <div class="row pt-5">
+                  <div class="col-xl-6 col-12 order-xl-5">
+                    <!-- (二)範例說明 - popoup 按鈕 -->
+                    <button type="button" class="btn btn-orange btn-s btn_set float-end" data-bs-toggle="modal" data-bs-target="#exbtn21">範例說明</button>
+                  </div>
+                  <div class="col-xl-6 col-12">1.主要工程項目：</i></div>
+                </div>
+                <div class="col-12 pt-4">
+                  <input type="text" class="form-control" id="" placeholder="請輸入">
+                </div>
+
+                <div class="row pt-5">
+                  <div class="col-xl-6 col-12 order-xl-5">
+                    <!-- (二)範例說明 - popoup 按鈕 -->
+                    <button type="button" class="btn btn-orange btn-s btn_set float-end" data-bs-toggle="modal" data-bs-target="#exbtn22">範例說明</button>
+                  </div>
+                  <div class="col-xl-6 col-12">2.主要安裝或維修項目：</i></div>
+                </div>
+                <div class="col-12 pt-4">
+                  <input type="text" class="form-control" id="" placeholder="請輸入">
+                </div>
+
+                <!-- 範例說明 pop up (按鈕在289行) -->
+                <div class="modal fade" id="exbtn21" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                    <div class="modal-content pop-none">
+                      <div class="modal-header">
+                        <h5 class="modal-title text-primary ">範例說明</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        <p class="popup-list3" title="1.">
+                          <strong>營造業主要工程範例：</strong></br>例如：各種建築物、道路等土木工程之興建；整地、結構、庭園景觀、建物完工裝修等工程；機電、管道、電信(力)線路等工程；建築物室內(外)防水、隔音等工程；鷹架、模板、起重、房屋遷移等工程。
+                        </p>
+                      </div>
                     </div>
                   </div>
+                </div>
+
+                <!-- 範例說明 pop up (按鈕在300行) -->
+                <div class="modal fade" id="exbtn22" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                    <div class="modal-content pop-none">
+                      <div class="modal-header">
+                        <h5 class="modal-title text-primary ">範例說明</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        <p class="popup-list3" title="1.">
+                          <strong>營造業主要工程範例：</strong></br>例如：各種建築物、道路等土木工程之興建；整地、結構、庭園景觀、建物完工裝修等工程；機電、管道、電信(力)線路等工程；建築物室內(外)防水、隔音等工程；鷹架、模板、起重、房屋遷移等工程。
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+              <!-- ★★★ 選3.營建工程業（171行）：表單欄位02會出現的內容 ★★★ -->
+              <div class="py-5">
+                <div class="row gy-5 pt-5">
+                  <div class="col-xl-6 col-12 ">
+                    <label for="exampleFormControlInput1" class="form-label">(二)  1.銷售給一般家庭民眾的比率：</label>
+                    <select class="w-50 form-select" aria-label="Default select example">
+                      <!-- <option selected>請選擇</option> -->
+                      <!-- ★★★ 選(1)<50% ，會顯示第358行 ★★★ -->
+                      <option value="1">(1)<50%</option>
+                      <!-- ★★★ 選(1)>=50% ，會顯示第370行 ★★★ -->
+                      <option value="2">(2)>=50%</option>
+                    </select>
+                  </div>
+
+                  <!-- ★★★ 選(1)<50% ，會顯示這個區塊 ★★★ -->
+                  <div class="col-12">
+                    <label for="exampleFormControlInput1" class="form-label">2.批發業主要營業模式：</label>
+                    <select class="form-select" aria-label="Default select example">
+                      <option selected>請選擇</option>
+                      <option value="1">(1)按次計費或依合約計酬之仲介、代理拍賣</option>
+                      <option value="2">(2)綜合商品批發(批發跨系列之商品)</option>
+                      <option value="3">(3)其他商品批發</option>
+                    </select>
+                  </div>
+
+                  <!-- ★★★ (2)>=50% ，會顯示這個區塊 ★★★ -->
+                  <!-- <div class="col-12">
+                    <label for="exampleFormControlInput1" class="form-label">2.批發業主要營業模式：</label>
+                    <select class="form-select" aria-label="Default select example">
+                      <option selected>請選擇</option>
+                      <option value="1">(1)實體店面銷售</option>
+                      <option value="2">(2)網路購物、電視購物、郵購</option>
+                      <option value="3">(3)直銷</option>
+                      <option value="4">(4)自動販賣機</option>
+                      <option value="5">(5)便利商店</option>
+                      <option value="6">(6)百貨公司</option>
+                      <option value="7">(7)超級市場、量販店、雜貨店、消費合作社</option>
+                      <option value="8">(8)其他零售管道</option>
+                    </select>
+                  </div> -->
+
+                  <div class="col-12">
+                    <label for="exampleFormControlInput1" class="form-label">3.主要商品名稱</label>
+                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="請輸入">
+                  </div>
+                </div>
+              </div>
+
+
+              <!-- ★★★ 選4.營建工程業（172行）：表單欄位02會出現的內容 ★★★ -->
+              <div class="py-5">
+                <div class="row gy-5 pt-5">
+                  <div class="col-xl-6 col-12 ">
+                    <label for="exampleFormControlInput1" class="form-label">(二)  1.運輸業主要營運方式：</label>
+                    <select class="w-50 form-select" aria-label="Default select example">
+                      <!-- <option selected>請選擇</option> -->
+                      <!-- ★★★ 選(1)客運 / (2)貨運，會顯示第415行 -->
+                      <option value="1">(1)客運</option>
+                      <option value="2">(2)貨運</option>
+                      <!-- ★★★ 選(3)其他，會顯示第410行 -->
+                      <option value="3">(3)其他</option>
+                    </select>
+                  </div>
+
+                  <!-- ★★★ (3)其他 ，會顯示這個區塊 ★★★ -->
+                  <!-- <div class="col-12">
+                    <label for="exampleFormControlInput1" class="form-label">營運方式：其他</label>
+                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="請輸入">
+                  </div> -->
+
+                  <!-- ★★★ 選(1)客運 / (2)貨運 ，會顯示這個區塊 ★★★ -->
+                  <div class="col-12">
+                    <label for="exampleFormControlInput1" class="form-label">2.運輸業主要運輸工具：</label>
+                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="請輸入">
+                  </div>
+                </div>
+              </div>
+
+
+              <!-- ★★★ 選5.營建工程業（173行）：表單欄位02會出現的內容 ★★★ -->
+              <div class="py-5">
+                <div class="row gy-5 pt-5">
+                  <div class="col-xl-6 col-12 ">
+                    <label for="exampleFormControlInput1" class="form-label">(二) 1.主要租賃項目：</label>
+                    <select class="w-50 form-select" aria-label="Default select example">
+                      <option selected>請選擇</option>
+                      <!-- ★★★ 選(1)不動產租賃 / (4)產業(辦公)用機械設備出租 / (5)其他用品出租，會"隱藏"第446行 ★★★ -->
+                      <option value="1">(1)不動產租賃</option>
+                      <option value="2">(2)營造用機械設備出租</option>
+                      <option value="3">(3)運輸工具出租</option>
+                      <option value="4">(4)產業(辦公)用機械設備出租</option>
+                      <option value="5">(5)其他用品出租</option>
+                    </select>
+                  </div>
+
+                  <!-- ★★★ (3)其他 ，會顯示這個區塊 ★★★ -->
+                  <div class="col-12">
+                    <label for="exampleFormControlInput1" class="form-label">2.租賃物品名稱：</label>
+                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="請輸入">
+                  </div>
+
+                  <!-- ★★★ 選(1)客運 / (2)貨運 ，會顯示這個區塊 ★★★ -->
+                  <div class="col-12">
+                    <label for="exampleFormControlInput1" class="w-50 form-label">3.是否附駕駛：</label>
+                      <select class="form-select w-2550" aria-label="Default select example">
+                      <option selected>請選擇</option>
+                      <option value="1">是</option>
+                      <option value="2">否</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+
+              <!-- ★★★ 選6.營建工程業（174行）：表單欄位02會出現的內容 ★★★ -->
+              <div class="py-5">
+                <div class="row gy-5 pt-5">
+                  <div class="col-12 ">
+                    <label for="exampleFormControlInput1" class="form-label">(二) 主要生產產品或經營服務之項目：</label>
+                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="請輸入">
+                  </div>
+                </div>
+              </div>
+
+
+              <!-- 分隔線 虛線 -->
+              <div class="container-fluid border-bs px-4"></div>
+            </div>
+
+            
+
+            <!-- ● 表單欄位03 -->
+            <div class="container-fluid px-4 px-xl-5">
+              <div class="row">
+                <div class="col-12 py-5">
+                  <label for="exampleFormControlInput1" class="form-label">(三)  是否有從事與主要經營項目不同之業務</label>
+                  <select class="form-select w-2550" aria-label="Default select example">
+                    <!-- <option selected>請選擇</option> -->
+                    <!-- ★★★ 選"是"，會出496行 -->
+                    <option value="1">是</option>
+                    <option value="2">否</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- ★★★ 表單欄位31 ★★★-->
+              <div class="pb-5">
+                <div class="row">
+                  <div class="col-12 pb-3">
+                    <!-- ★★★ 此處下拉選單，選擇不同項目會連動下方資料顯示 ★★★ -->
+                    <!-- ★★★ 顯示內容都同“第二大項”的連動方式及欄位 ★★★ -->
+                    <label for="exampleFormControlInput1" class="form-label">次要經營項目是否屬於下列行業</label>
+                    <select class="form-select" aria-label="Default select example">
+                      <!-- <option selected>請選擇</option> -->
+                      <option value="1">1. 製造業</option>
+                      <option value="2">2. 營建工程業</option>
+                      <option value="3">3. 有行商品買賣、仲介或貿易代理</option>
+                      <option value="4">4. 運輸業</option>
+                      <option value="5">5. 租賃業</option>
+                      <option value="65">6. 其他行業</option>
+                    </select>
+                  </div>
+
+                  <!-- ★★★ 選1. 製造業（169行）：會出現下方文字 ★★★ -->
+                  <div class="col-12">含印刷業、儲存媒體複製、產業機械修配</div>
+
+                  <!-- ★★★ 選2. 營建工程業（170行）：會出現下方文字 ★★★ -->
+                  <!-- <div class="col-12">含水電、管線、管道施工</div> -->
                 </div>
               </div>
 
@@ -382,47 +522,169 @@
               <div class="container-fluid border-bs px-4"></div>
             </div>
 
-            <!-- 表單欄位06 -->
-            <div class="container-fluid px-4 px-xl-5 py-5">
-              <p>單位級別<i class="text-danger markUse">*</i></p>
-              <div class="row gy-3">
-                <div class="col-xl-6 col-12">
-                  <div class="form-check pt-3">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                    <label class="form-check-label" for="flexRadioDefault1">
-                      「 1 」獨立經營單位
-                    </label>
-                  </div>
+
+
+            <!-- ● 表單欄位04 -->
+            <div class="container-fluid px-4 px-xl-5 mb-5">
+              <div class="row pt-5">
+                <div class="col-xl-6 col-12 order-xl-5 pb-xl-0 pb-4">
+                  <!-- 範例說明 - popoup 按鈕 (內容在297行) -->
+                  <button type="button" class="btn btn-orange btn-s btn_set float-end" data-bs-toggle="modal" data-bs-target="#exbtn04">範例說明1</button>
+
+                  <!-- 範例說明 - popoup 按鈕 (內容在300行) -->
+                  <button type="button" class="btn btn-orange btn-s btn_set float-end me-3" data-bs-toggle="modal" data-bs-target="#exbtn03">範例說明1</button>
+
+                  <!-- 範例說明 - popoup 按鈕 (內容在303行) -->
+                  <button type="button" class="btn btn-orange btn-s btn_set float-end me-3" data-bs-toggle="modal" data-bs-target="#exbtn02">範例說明</button>
                 </div>
-                <div class="col-xl-6 col-12">
-                  <div class="input-group">
-                    <div class="form-check pt-3 pe-3">
-                      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                      <label class="form-check-label" for="flexRadioDefault1">
-                        「 2 」企業之分支單位
-                      </label>
+                <div class="col-xl-6 col-12 pb-xl-0 pb-4">(四)是否從事文化創意產業相關經濟活動</div>
+              </div>
+
+              <div class="col-xl-3 col-6">
+                <select class="form-select" aria-label="Default select example">
+                  <option selected>請選擇</option>
+                  <option value="1">是</option>
+                  <option value="2">否</option>
+                </select>
+              </div>
+
+              <!-- 範例說明 pop up (按鈕在297行) -->
+              <div class="modal fade" id="exbtn04" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                  <div class="modal-content pop-none">
+                    <div class="modal-header">
+                      <h5 class="modal-title text-primary ">文化創意產業範例</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="請填總管理單位之統一編號">
+                    <div class="modal-body">
+                      <p class="popup-list3 mb-0" title="1.">
+                        <strong>視覺藝術產業：</strong></br>指從事繪畫、雕塑及其他藝術品創作、藝術品拍賣零售、畫廊、藝術品展覽、經紀代理、藝術品公證鑑價、藝術作品修復等之行業。
+                      </p>
+                      <p class="popup-list3 mb-0" title="2.">
+                        <strong>表演藝術產業（不含流行音樂）：</strong></br>指從事音樂、戲劇、舞蹈之創作、訓練、表演等相關業務、表演藝術軟硬體設計服務、經紀、藝術節經營等行業。
+                      </p>
+                      <p class="popup-list3 mb-0" title="3.">
+                        <strong>文化展演設施產業</strong></br>指從事文化資產利（應）用、展演設施（如劇院、音樂廳、露天廣場、美術館、博物館、藝術館（村）、演藝廳等）經營管理之行業。
+                      </p>
+                      <p class="popup-list3 mb-0" title="4.">
+                        <strong>工藝產業：</strong></br>
+                        指從事工藝創作、工藝設計、模具製作、材料製作、工藝品生產、工藝品展售流通、工藝品鑑定、工藝品買賣等行業。
+                      </p>
+                      <p class="popup-list3 mb-0" title="5.">
+                        <strong>影視與流行音樂產業：</strong></br>
+                        指從事電影產業、廣播電視產業及流行音樂產業者。
+                      </p>
+                      <p class="popup-list3 mb-0" title="6.">
+                        <strong>出版產業：</strong></br>
+                        從事新聞、雜誌（期刊）、圖書等紙本或以數位方式創作、企劃編輯、發行流通等之行業。
+                      </p>
+                      <p class="popup-list3 mb-0" title="7.">
+                        <strong>設計品牌時尚產業：</strong></br>指從事以設計師為品牌或由其協助成立品牌之設計、顧問、製造、流通等行業。
+                      </p>
+                      <p class="popup-list3 mb-0" title="8.">
+                        <strong>數位內容產業：</strong></br>
+                        指從事提供將圖像、文字、影像或語音等資料，運用資訊科技加以數位化，並整合運用之技術、產品或服務之行業。如：電子玩具製造、電動玩具製造、遊戲軟體出版、線上遊戲網站經營、遊戲程式設計、電動玩具店、虛擬實境(VR)體驗館、擴增實境(AR)體驗館、上網專門店等。
+                      </p>
+                      <p class="popup-list3 mb-0" title="9.">
+                        <strong>其他文創產業：</strong></br>包括廣告產業、產品設計產業、建築設計產業、企業識別系統設計（CIS）、品牌形象設計、平面視覺設計、網頁多媒體設計、商業包裝設計等。
+                      </p>
+                    </div>
                   </div>
                 </div>
-                <div class="col-xl-6 col-12">
-                  <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                    <label class="form-check-label" for="flexRadioDefault1">
-                      「 3 」有分支單位企業之總管理單位
-                    </label>
+              </div>
+
+              <!-- 範例說明 pop up (按鈕在300行) -->
+              <div class="modal fade" id="exbtn03" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                  <div class="modal-content pop-none">
+                    <div class="modal-header">
+                      <h5 class="modal-title text-primary ">文化創意產業範例</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <p class="popup-list3 mb-0" title="1.">
+                        <strong>視覺藝術產業：</strong></br>指從事繪畫、雕塑及其他藝術品創作、藝術品拍賣零售、畫廊、藝術品展覽、經紀代理、藝術品公證鑑價、藝術作品修復等之行業。
+                      </p>
+                      <p class="popup-list3 mb-0" title="2.">
+                        <strong>表演藝術產業（不含流行音樂）：</strong></br>指從事音樂、戲劇、舞蹈之創作、訓練、表演等相關業務、表演藝術軟硬體設計服務、經紀、藝術節經營等行業。
+                      </p>
+                      <p class="popup-list3 mb-0" title="3.">
+                        <strong>文化展演設施產業</strong></br>指從事文化資產利（應）用、展演設施（如劇院、音樂廳、露天廣場、美術館、博物館、藝術館（村）、演藝廳等）經營管理之行業。
+                      </p>
+                      <p class="popup-list3 mb-0" title="4.">
+                        <strong>工藝產業：</strong></br>
+                        指從事工藝創作、工藝設計、模具製作、材料製作、工藝品生產、工藝品展售流通、工藝品鑑定、工藝品買賣等行業。
+                      </p>
+                      <p class="popup-list3 mb-0" title="5.">
+                        <strong>影視與流行音樂產業：</strong></br>
+                        指從事電影產業、廣播電視產業及流行音樂產業者。
+                      </p>
+                      <p class="popup-list3 mb-0" title="6.">
+                        <strong>出版產業：</strong></br>
+                        從事新聞、雜誌（期刊）、圖書等紙本或以數位方式創作、企劃編輯、發行流通等之行業。
+                      </p>
+                      <p class="popup-list3 mb-0" title="7.">
+                        <strong>設計品牌時尚產業：</strong></br>指從事以設計師為品牌或由其協助成立品牌之設計、顧問、製造、流通等行業。
+                      </p>
+                      <p class="popup-list3 mb-0" title="8.">
+                        <strong>數位內容產業：</strong></br>
+                        指從事提供將圖像、文字、影像或語音等資料，運用資訊科技加以數位化，並整合運用之技術、產品或服務之行業。如：電子玩具製造、電動玩具製造、遊戲軟體出版、線上遊戲網站經營、遊戲程式設計、電動玩具店、虛擬實境(VR)體驗館、擴增實境(AR)體驗館、上網專門店等。
+                      </p>
+                      <p class="popup-list3 mb-0" title="9.">
+                        <strong>其他文創產業：</strong></br>包括廣告產業、產品設計產業、建築設計產業、企業識別系統設計（CIS）、品牌形象設計、平面視覺設計、網頁多媒體設計、商業包裝設計等。
+                      </p>
+                    </div>
                   </div>
                 </div>
-                <div class="col-xl-6 col-12">
-                  <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                    <label class="form-check-label" for="flexRadioDefault1">
-                      「 8 」有分支單位之企業單位
-                    </label>
+              </div>
+
+              <!-- 範例說明 pop up (按鈕在303行) -->
+              <div class="modal fade" id="exbtn02" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                  <div class="modal-content pop-none">
+                    <div class="modal-header">
+                      <h5 class="modal-title text-primary ">文化創意產業範例</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <p class="popup-list3 mb-0" title="1.">
+                        <strong>視覺藝術產業：</strong></br>指從事繪畫、雕塑及其他藝術品創作、藝術品拍賣零售、畫廊、藝術品展覽、經紀代理、藝術品公證鑑價、藝術作品修復等之行業。
+                      </p>
+                      <p class="popup-list3 mb-0" title="2.">
+                        <strong>表演藝術產業（不含流行音樂）：</strong></br>指從事音樂、戲劇、舞蹈之創作、訓練、表演等相關業務、表演藝術軟硬體設計服務、經紀、藝術節經營等行業。
+                      </p>
+                      <p class="popup-list3 mb-0" title="3.">
+                        <strong>文化展演設施產業</strong></br>指從事文化資產利（應）用、展演設施（如劇院、音樂廳、露天廣場、美術館、博物館、藝術館（村）、演藝廳等）經營管理之行業。
+                      </p>
+                      <p class="popup-list3 mb-0" title="4.">
+                        <strong>工藝產業：</strong></br>
+                        指從事工藝創作、工藝設計、模具製作、材料製作、工藝品生產、工藝品展售流通、工藝品鑑定、工藝品買賣等行業。
+                      </p>
+                      <p class="popup-list3 mb-0" title="5.">
+                        <strong>影視與流行音樂產業：</strong></br>
+                        指從事電影產業、廣播電視產業及流行音樂產業者。
+                      </p>
+                      <p class="popup-list3 mb-0" title="6.">
+                        <strong>出版產業：</strong></br>
+                        從事新聞、雜誌（期刊）、圖書等紙本或以數位方式創作、企劃編輯、發行流通等之行業。
+                      </p>
+                      <p class="popup-list3 mb-0" title="7.">
+                        <strong>設計品牌時尚產業：</strong></br>指從事以設計師為品牌或由其協助成立品牌之設計、顧問、製造、流通等行業。
+                      </p>
+                      <p class="popup-list3 mb-0" title="8.">
+                        <strong>數位內容產業：</strong></br>
+                        指從事提供將圖像、文字、影像或語音等資料，運用資訊科技加以數位化，並整合運用之技術、產品或服務之行業。如：電子玩具製造、電動玩具製造、遊戲軟體出版、線上遊戲網站經營、遊戲程式設計、電動玩具店、虛擬實境(VR)體驗館、擴增實境(AR)體驗館、上網專門店等。
+                      </p>
+                      <p class="popup-list3 mb-0" title="9.">
+                        <strong>其他文創產業：</strong></br>包括廣告產業、產品設計產業、建築設計產業、企業識別系統設計（CIS）、品牌形象設計、平面視覺設計、網頁多媒體設計、商業包裝設計等。
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
+
+
 
             <div class="row d-flex justify-content-center px-4 py-5">
               <div class="col-md-4 col-6">

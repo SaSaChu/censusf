@@ -19,6 +19,14 @@ body {
   font-family:'Roboto', 'Noto Sans TC', "Helvetica Neue", HelveticaNeue, Helvetica, Arial, sans-serif;
 }
 
+.w-2550 {
+  width: 25%;
+
+  @include range-width(0, 450px) {
+    width: 50%;
+  }
+}
+
 .w-3 {
   width: 3% !important
 }
@@ -28,6 +36,7 @@ body {
 }
 
 .bg-test01 {
+  height: 30px;
   border: 1px solid rgba(255, 0, 0, .3);
 }
 
@@ -111,6 +120,11 @@ body {
 .btn-orange {
   color: white;
   background-color: $orange-500;
+
+  &:hover {
+    color: white;
+    background-color: $orange-400;
+  }
 }
 
 .w-menu {
@@ -212,7 +226,7 @@ body {
     display: inline-block;
     width: 100%;
     position: relative;
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     color: rgba(26, 26, 26, 1.00);
     padding-left: 30px;
     padding-top: 10px;
@@ -243,7 +257,7 @@ body {
     display: inline-block;
     width: 100%;
     position: relative;
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     color: rgba(26, 26, 26, 1.00);
     padding-left: 30px;
     padding-top: 10px;
@@ -265,9 +279,58 @@ body {
   }
 }
 
+.pop-none {
+
+  .modal-header {
+    padding-left: 1.2rem;
+    padding-right: 1.5rem;
+  }
+
+  .popup-list3 {
+    display: inline-block;
+    width: 100%;
+    position: relative;
+    font-size: 1.05rem;
+    color: rgba(26, 26, 26, 1.00);
+    padding-left: 30px;
+    padding-top: 10px;
+    font-weight: 300;
+
+    &:before {
+      display: inline-block;
+      content: attr(title);
+      position: absolute;
+      left: 10px;
+    }
+
+    &.s3-use-no {
+      padding-left: 10px;
+    }
+
+    &.s3-use-list {
+      padding-left: 40px;
+    }
+  }
+}
+
+
 .markUse {
   font-style: normal;
   margin: 0 5px;
+}
+
+.check_list {
+  display: inline-block;
+  position: relative;
+  padding-left: 30px;
+
+  &:before {
+    display: inline-block;
+    content: attr(title);
+    margin-right: 5px;
+    position: absolute;
+    left: 10px;
+  }
 }
 
 // effect
