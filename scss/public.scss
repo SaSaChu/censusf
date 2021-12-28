@@ -157,11 +157,19 @@ body {
 
   &.on-step {
     color: $blue;
+    > a {
+      color: transparent;
+    }
   }
 
   &.pass-step {
     color: $gray-600;
     background-color: $gray-200;
+  }
+
+  > a {
+    text-decoration: none;
+    color: rgba(43, 43, 43, 1.00); 
   }
 }
 

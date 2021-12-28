@@ -4,7 +4,6 @@ $(function() {
 	var time_in_minutes = 15;
 	var timeinterval;
     function time_remaining(deadline){
-		
 		var t = Date.parse(deadline) - Date.parse(new Date());
 		var seconds = Math.floor( (t / 1000) % 60 );
 		var minutes = Math.floor( (t / 1000 / 60) % 60 );
@@ -40,12 +39,6 @@ $(function() {
 		clearInterval(timeinterval);
 		run_clock('clockdiv');
 	})
-    // var myModal = document.getElementById('staticBackdrop')
-    // var myInput = document.getElementById('myInput')
-
-    // myModal.addEventListener('hidden.bs.modal', function () {
-    //   myInput.focus()
-    // });
 
     // 同聯絡人姓名
     $("input[id='B067']").change(function() {
@@ -67,8 +60,23 @@ $(function() {
 
 	// 修改地址
 	$("#btnConfirm").click(function(){
-		// let B07Z = $("#B07Z").val();		
-
+		let B071 = $("#B071").val();
+		let B072 = $("#B072").val();
+		let B073 = $("#B073").val();
+		let B0745 = $("#B0745").val();
+		let B0768 = $("#B0768").val();
+		let B079 = $("#B079").val();
+		let B07A = $("#B07A").val();
+		let B07B = $("#B07B").val();
+		let B07C = $("#B07C").val();
+		let B07D = $("#B07D").val();
+		let B07E = $("#B07E").val();
+		let B07F = $("#B07F").val();
+		let B07G = $("#B07G").val();
+		let B07H = $("#B07H").val();
+		let address = B071 + B072 + B073 + B0745 + B0768 + B079 + B07A + B07B + B07C + B07D + B07E + B07F + B07G + B07H 
+		$("#B07Z").val(address);
+		$("#staticBackdrop").modal('hide');
 	})
 
 	// 同實際營業地址
@@ -93,23 +101,91 @@ $(function() {
 	//單位級別
 	$("input[id='_340000']").change(function(){
 		let _340000 = "" + $(this).val();
-		$('.w-menu').removeClass('pass-step')
+		let question = [6, 7, 8, 9, 10, 11, 12, 13];
 		if (_340000 == "1" || _340000 == "8") {
-			$("#_360000").prop("readOnly", true);
+			$("#_360000").val('').prop("readOnly", true);
+			localStorage.clear();
 		} else if (_340000 == "2") {
 			$("#_360000").prop("readOnly", false);
-			$(".w-menu[data-question^='6'],.w-menu[data-question^='7'],.w-menu[data-question^='8'],.w-menu[data-question^='9'],.w-menu[data-question^='10'],.w-menu[data-question^='11'],.w-menu[data-question^='12'],.w-menu[data-question^='13']").addClass('pass-step')
-			// $(".w-menu[data-question=").addClass('pass-step')
+			localStorage.setItem('question', JSON.stringify(question));
 		} else {
-			$("#_360000").prop("readOnly", true);
-			$(".w-menu[data-question^='6'],.w-menu[data-question^='7'],.w-menu[data-question^='8'],.w-menu[data-question^='9'],.w-menu[data-question^='10'],.w-menu[data-question^='11'],.w-menu[data-question^='12'],.w-menu[data-question^='13']").addClass('pass-step')
+			$("#_360000").val('').prop("readOnly", true);
+			localStorage.setItem('question', JSON.stringify(question));
 		}
+
+		displayQuestion()
 	});
-	// $("#_340000").change(function() {
-	// 	let value = ['1', '2', '3', '8' ]
-	// 	console.log($(this).checked);
-	// 	if(this.checked) {
-	// 		console.log($(this).val());
-	// 	}		
-	// })
+
+	// 確認基本資料有無填寫
+	$('#next-btn').click(function() {
+		let notFill = checkFillInput();
+		if(notFill.length) {
+			$('#next').modal('show');
+			var nextModal = document.getElementById('next')	
+			nextModal.addEventListener('shown.bs.modal', function () {
+				let input = {
+					"UNIT" : "單位名稱",
+					"B06" : "負責人姓名",
+					"B061" : "聯絡人姓名",
+					"B062" : "聯絡人電話",
+					"B063" : "填表人姓名",
+					"B064" : "填表人電話",
+					"B07Z" : "實際營業地址",
+					"B07Z_BR" : "實際營業地址",
+					"_340000" : "單位級別",
+				}
+				
+				let element = ''
+				notFill.forEach((e,i) => {	
+					if((i) % 2 == 0 ) {
+						element += `<p class="popup-list-r" title="${i+=1}">${input[e]}必須填寫</p>`  ;	
+					} else {
+						element += `<p class="popup-list-r text-danger" title="${i+=1}">${input[e]}必須填寫</p>`  ;
+					}
+					
+				})
+				
+				$('#next').find('.modal-body').empty().html(element);
+			});
+		} else {
+			// $('#next').modal('hide');
+			window.location.href = "/step01.html";
+		}
+	})
+
+	displayQuestion()
+
+	// 確認必填欄位
+	function checkFillInput() {
+		let notFill = [];
+
+		$('form').find('input[required]').each(function(){
+			if($(this).is(":radio")) {
+				if(!$("input[type='radio']:checked").val()){
+					notFill.push($(this).attr('id'))
+				}
+			} else {
+				if(!$(this).val()) {
+					notFill.push($(this).attr('id'))
+				}
+			}
+
+		});
+
+		return notFill;
+	}
+
+	// 顯示或隱藏題目
+	function displayQuestion() {
+		let question = JSON.parse(localStorage.getItem("question"))	
+		if(question) {
+			question.forEach(e => {
+				$(".w-menu[data-question^='"+e+"']").addClass('pass-step')	;
+			});
+		} else {
+			if($("input[id='_340000']").val() == "1" || $("input[id='_340000']").val() == "8") {
+				$('.w-menu').removeClass('pass-step')
+			}
+		}		
+	}
 });

@@ -3058,7 +3058,9 @@ body { position: relative; display: inline-block; width: 100%; margin: 0; paddin
 .w-menu.no-border { border: 0; }
 .w-menu.stepone { padding-left: 20px; }
 .w-menu.on-step { color: #0d6efd; }
+.w-menu.on-step > a { color: transparent; }
 .w-menu.pass-step { color: #6c757d; background-color: #e9ecef; }
+.w-menu > a { text-decoration: none; color: #2b2b2b; }
 
 .link-header { display: inline-block; font-size: 1.1rem; color: white; line-height: 68px; text-decoration: none; margin-left: 30px; }
 .link-header:before { display: inline-block; content: '●'; margin-right: 10px; }
