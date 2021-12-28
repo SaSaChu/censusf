@@ -3043,6 +3043,7 @@ body { position: relative; display: inline-block; width: 100%; margin: 0; paddin
 .mob-menu-icon { font-size: 1.8rem; }
 
 .img-Hlogo { display: inline-block; width: 100%; max-width: 200px; }
+.img-Hlogo.inUse { max-width: 269px; line-height: 68px; }
 
 .bg-green { background-color: #7cc23e; }
 

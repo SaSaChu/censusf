@@ -103,6 +103,11 @@ body {
   display: inline-block;
   width: 100%;
   max-width: 200px;
+
+  &.inUse {
+    max-width: 269px;
+    line-height: 68px;
+  }
 }
 
 .bg-green {
