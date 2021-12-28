@@ -19,6 +19,52 @@ body {
   font-family:'Roboto', 'Noto Sans TC', "Helvetica Neue", HelveticaNeue, Helvetica, Arial, sans-serif;
 }
 
+.pwUse {
+  border: 0;
+  padding: 0.75rem 0;
+}
+
+.infoBoxs {
+  background-color: rgba(255, 214, 214, 1.00);
+  color: rgba(120, 120, 120, 1.00);
+}
+
+.infoIcon {
+  background-color: rgba(239, 156, 156, 1.00);
+  text-align: center;
+}
+
+.infotype {
+  font-size: 3rem;
+  color: white;
+  line-height: 88px;
+}
+
+.color-main {
+  color: rgba(0, 39, 84, 1.00);
+}
+
+.h-c {
+  height: calc(100vh - 270px);
+
+  @include range-width(0, 450px) {
+    height: auto;
+  }
+}
+
+.allBoxs {
+  width: 100%;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.inbg {
+  background: rgba(36, 62, 144, 1.00);
+  background: -moz-linear-gradient(top, rgba(36, 62, 144, 1.00) 14%, rgba(111, 191, 237, 1.00) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(36, 62, 144, 1.00) 14%, rgba(111, 191, 237, 1.00) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to top, rgba(36, 62, 144, 1.00) 14%, rgba(111, 191, 237, 1.00) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
 .w-2550 {
   width: 25%;
 
@@ -106,7 +152,7 @@ body {
 
   &.inUse {
     max-width: 269px;
-    line-height: 68px;
+    padding-top: 9px;
   }
 }
 
@@ -186,6 +232,25 @@ body {
 
   &:hover {
     color: rgba(255, 255, 255, .8);
+  }
+}
+
+.link-header2 {
+  display: inline-block;
+  font-size: 1.1rem;
+  color: rgba(0, 44, 95, 1.00);
+  line-height: 68px;
+  text-decoration: none;
+  margin-left: 30px;
+
+  &:before {
+    display: inline-block;
+    content: '●';
+    margin-right: 10px;
+  }
+
+  &:hover {
+    color: rgba(0, 44, 95, .8);
   }
 }
 
@@ -335,6 +400,19 @@ body {
     margin-right: 5px;
     position: absolute;
     left: 10px;
+  }
+}
+
+footer {
+  display: inline-block;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: white;
+  padding: 20px 0;
+
+  @include range-width(0, 450px) {
+    position: inherit;
   }
 }
 
