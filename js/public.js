@@ -98,7 +98,7 @@ $(function() {
 		}
 	})
 
-	//單位級別
+	//基本資料：單位級別
 	$("input[id='_340000']").change(function(){
 		let _340000 = "" + $(this).val();
 		let question = [6, 7, 8, 9, 10, 11, 12, 13];
@@ -115,6 +115,46 @@ $(function() {
 
 		displayQuestion()
 	});
+
+	//step3: 110年生產之產品或經營、服務之項目
+	$("select[id='_030101']").change(function() {
+		$('._030101').each(function(){
+			$(this).addClass('d-none');
+		})
+		if($(this).val() == 1) {
+			$('._030101-2').each(function(){
+				$('._030101-1').removeClass('d-none');
+			});
+			$("#_030210").prop("required", true);
+		} else if ($(this).val() == 2) {
+			$('._030101-2').each(function(){
+				$(this).removeClass('d-none');
+			});
+		} else if ($(this).val() == 3) {
+			$('._030101-3').each(function(){
+				$(this).removeClass('d-none');
+			});
+		} else if ($(this).val() == 4) {
+			$('._030101-4').each(function(){
+				$(this).removeClass('d-none');
+			});
+		} else if ($(this).val() == 5) {
+			$('._030101-5').each(function(){
+				$(this).removeClass('d-none');
+			});
+		} else if ($(this).val() == 6) {
+			$('._030101-6').each(function(){
+				$(this).removeClass('d-none');
+			});
+		}
+		
+	})
+	// step3: 最主要經營方式
+	$("select[id='_030210']").change(function() {
+		if($(this).val() == 2) {
+			$('#_030216').prop('readonly', true);
+		}
+	})
 
 	// 確認基本資料有無填寫
 	$('#next-btn').click(function() {
@@ -153,7 +193,7 @@ $(function() {
 		}
 	})
 
-	// 確認項目一資料
+	// 確認項目一、二必填資料
 	$('#next-btn-1').click(function() {
 		let notFill = checkFillInput();
 		let year = $("#_010100").val();
@@ -196,13 +236,43 @@ $(function() {
 		}
 	})
 
+	// 確認項目三必填資料
+	$('#next-btn-3').click(function() {
+		let notFill = checkFillInput();
+		console.log(notFill);
+		if(notFill.length) {
+			$('#next').modal('show');
+			var nextModal = document.getElementById('next')	
+			nextModal.addEventListener('shown.bs.modal', function () {
+				let input = {
+					"_030101" : "請點選問項一【組織別】(1、2、3、4、5)",
+					"_030210" : "請選擇問項二【以上最主要經營方式為】",
+				}
+				
+				let element = ''
+				notFill.forEach((e,i) => {	
+					if((i) % 2 == 0 ) {
+						element += `<p class="popup-list-r" title="${i+=1}">${input[e]}</p>`  ;	
+					} else {
+						element += `<p class="popup-list-r text-danger" title="${i+=1}">${input[e]}</p>`  ;
+					}
+					
+				})
+				
+				$('#next').find('.modal-body').empty().html(element);
+			});
+		} else {
+			// window.location.href = "/step03.html";
+		}
+	})
+
 	displayQuestion()
 
 	// 確認必填欄位
 	function checkFillInput() {
 		let notFill = [];
 
-		$('form').find('input[required]').each(function(){
+		$('form').find('input[required], select[required]').each(function(){
 			if($(this).is(":radio")) {
 				if(!$("input[type='radio']:checked").val()){
 					notFill.push($(this).attr('id'))

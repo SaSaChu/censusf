@@ -165,7 +165,7 @@
                   <div class="col-12 pb-3">
                     <!-- ★★★ 此處下拉選單，選擇不同項目會連動下方資料顯示 ★★★ -->
                     <label for="_030101" class="form-label">(一)主要經營項目是否屬於下列行業</label>
-                    <select id="_030101" name="_030101" class="form-select" aria-label="Default select example">
+                    <select id="_030101" name="_030101" class="form-select" aria-label="Default select example" required>
                       <!-- <option selected>請選擇</option> -->
                       <!-- ★★★ 選1.製造業會顯示 第279行 的內容 ★★★ -->
                       <option value="1">1. 製造業</option>
@@ -178,15 +178,15 @@
                       <!-- ★★★ 選1.製造業會顯示 第437行 的內容 ★★★ -->
                       <option value="5">5. 租賃業</option>
                       <!-- ★★★ 選1.製造業會顯示 第469行 的內容 ★★★ -->
-                      <option value="65">6. 其他行業</option>
+                      <option value="6">6. 其他行業</option>
                     </select>
                   </div>
 
                   <!-- ★★★ 選1. 製造業（169行）：會出現下方文字 ★★★ -->
-                  <div class="col-12">含印刷業、儲存媒體複製、產業機械修配</div>
+                  <div class="col-12 _030101 _030101-1">含印刷業、儲存媒體複製、產業機械修配</div>
 
                   <!-- ★★★ 選2. 營建工程業（170行）：會出現下方文字 ★★★ -->
-                  <!-- <div class="col-12">含水電、管線、管道施工</div> -->
+                  <div class="col-12 _030101 _030101-2 d-none">含水電、管線、管道施工</div>
                 </div>
 
                 <!-- 分隔線 虛線 -->
@@ -197,7 +197,7 @@
               
               <div class="container-fluid px-4 px-xl-5">
                 <!-- ★★★ 選1.製造業（169行）：表單欄位02會出現的內容 ★★★ -->
-                <div class="py-5">
+                <div class="py-5 _030101 _030101-1">
                   <div class="row">
                     <div class="col-xl-6 col-12 order-xl-5">
                       <!-- (二)範例說明 - popoup 按鈕 -->
@@ -234,8 +234,8 @@
                     <!-- ★★★ 選下方2.修配，會連動247行不可填寫 ★★★ -->
                     <div class="col-xl-3 col-6 pt-4 ps-xl-5 ms-xl-5">
                       <label for="_030210" class="form-label">以上最主要經營方式為</label>
-                      <select class="form-select" id="_030210" name="_030210" aria-label="Default select example">
-                        <option selected>請選擇</option>
+                      <select class="form-select" id="_030210" name="_030210" aria-label="Default select example" required>
+                        <option value selected>請選擇</option>
                         <option value="1">(1)製造</option>
                         <option value="2">(2)修配</option>
                         <option value="3">(3)代客加工</option>
@@ -284,7 +284,7 @@
                 </div>
 
                 <!-- ★★★ 選2.營建工程業（170行）：表單欄位02會出現的內容 ★★★ -->
-                <div class="py-5">
+                <div class="d-none _030101 _030101-2">
                   <div class="row pt-5">
                     <div class="col-xl-6 col-12 ">(二)請就主要工程項目或建築設備安裝(維修)項目擇一填寫：</div>
                   </div>
@@ -345,9 +345,8 @@
                   </div>
                 </div>
 
-
                 <!-- ★★★ 選3.營建工程業（171行）：表單欄位02會出現的內容 ★★★ -->
-                <div class="py-5">
+                <div class="d-none _030101 _030101-3">
                   <div class="row gy-5 pt-5">
                     <div class="col-xl-6 col-12 ">
                       <label for="exampleFormControlInput1" class="form-label">(二)  1.銷售給一般家庭民眾的比率：</label>
@@ -394,9 +393,8 @@
                   </div>
                 </div>
 
-
                 <!-- ★★★ 選4.運輸業（172行）：表單欄位02會出現的內容 ★★★ -->
-                <div class="py-5">
+                <div class="d-none _030101 _030101-4">
                   <div class="row gy-5 pt-5">
                     <div class="col-xl-6 col-12 ">
                       <label for="exampleFormControlInput1" class="form-label">(二)  1.運輸業主要營運方式：</label>
@@ -424,9 +422,8 @@
                   </div>
                 </div>
 
-
                 <!-- ★★★ 選5.租賃業（173行）：表單欄位02會出現的內容 ★★★ -->
-                <div class="py-5">
+                <div class="d-none _030101 _030101-5">
                   <div class="row gy-5 pt-5">
                     <div class="col-xl-6 col-12 ">
                       <label for="_030251" class="form-label">(二) 1.主要租賃項目：</label>
@@ -459,9 +456,8 @@
                   </div>
                 </div>
 
-
                 <!-- ★★★ 選6.其他行業（174行）：表單欄位02會出現的內容 ★★★ -->
-                <div class="py-5">
+                <div class="d-none _030101 _030101-6">
                   <div class="row gy-5 pt-5">
                     <div class="col-12 ">
                       <label for="_030261" class="form-label">(二) 主要生產產品或經營服務之項目：</label>
@@ -470,12 +466,9 @@
                   </div>
                 </div>
 
-
                 <!-- 分隔線 虛線 -->
                 <div class="container-fluid border-bs px-4"></div>
               </div>
-
-              
 
               <!-- ● 表單欄位03 -->
               <div class="container-fluid px-4 px-xl-5">
@@ -692,7 +685,7 @@
                 </div>
                 <div class="col-md-4 col-6">
                   <!-- 下一步 - 跳出檢查視窗 -->
-                  <button type="button" class="btn btn-primary container-fluid" data-bs-toggle="modal" data-bs-target="#next">下一步</button>
+                  <button type="button" id="next-btn-3" class="btn btn-primary container-fluid">下一步</button>
                   <!-- <button type="button" class="btn btn-primary float-end container-fluid">下一步</button> -->
                 </div>
               </div>
@@ -706,10 +699,6 @@
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body py-4">
-                      <p class="popup-list-r" title="1.">(一)(二)至少應填寫其中一項</p>
-                      <p class="popup-list-r text-danger" title="2.">請點選 (一)2.有無部分工時員工「(1)有」或「(2)無」</p>
-                      <p class="popup-list-r" title="3.">(一)(二)至少應填寫其中一項</p>
-                      <p class="popup-list-r text-danger" title="4.">(一)(二)至少應填寫其中一項</p>
                     </div>
                   </div>
                 </div>
