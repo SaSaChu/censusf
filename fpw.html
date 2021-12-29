@@ -56,63 +56,65 @@
 
 
     <div class="container my-5">
-      <div class="row justify-content-center align-content-center h-c">
-        <div class="col-md-8 col-lg-6 col-xl-5">
-          <div class="card overflow-hidden">
-            <div class="card-body py-3 px-5">
-              <h3 class="mt-5 mb-4 color-main"><i class="bi bi-lock-fill color-main" style="margin-right: 5px;"></i>密碼查詢</h3>
+      <form action="" style="width: 100%;">
+        <div class="row justify-content-center align-content-center h-c">
+          <div class="col-md-8 col-lg-6 col-xl-5">
+            <div class="card overflow-hidden">
+              <div class="card-body py-3 px-5">
+                <h3 class="mt-5 mb-4 color-main"><i class="bi bi-lock-fill color-main" style="margin-right: 5px;"></i>密碼查詢</h3>
 
-              <div class="container-fluid px-4 mb-5">
-                <div class="row infoBoxs">
-                  <div class="col-xl-2 col-3 infoIcon"><i class="bi bi-info-circle infotype"></i></div>
-                  <div class="col-xl-10 col-9 p-3">
-                    說明：</br>
-                    1. 電子郵件信箱請填寫第一次登入如所填寫的位置。</br>
-                    2. 送出後系統自動發信通知。
+                <div class="container-fluid px-4 mb-5">
+                  <div class="row infoBoxs">
+                    <div class="col-xl-2 col-3 infoIcon"><i class="bi bi-info-circle infotype"></i></div>
+                    <div class="col-xl-10 col-9 p-3">
+                      說明：</br>
+                      1. 電子郵件信箱請填寫第一次登入如所填寫的位置。</br>
+                      2. 送出後系統自動發信通知。
+                    </div>
                   </div>
                 </div>
-              </div>
-              
-              <div class="contaniner-fluid p-3">
+                
+                <div class="contaniner-fluid p-3">
+                    <div class="row">
+                      <div class="col-12 px-0 py-3 px-1">
+                        <label for="SURVEY_NO" class="form-label">受訪者代碼</label>
+                        <input type="text" class="form-control" id="SURVEY_NO" name="SURVEY_NO" maxlength="11" placeholder="行業編號+樣本編號，共8碼">
+                      </div>
+
+                      <div class="col-12 px-0 py-3 px-1">
+                        <label for="_350000" class="form-label">統一編號</label>
+                        <input type="text" class="form-control" id="_350000" name="_350000" maxlength="8" placeholder="若無統一編號請填8個0">
+                      </div>
+
+                      <div class="col-12 px-0 py-3 px-1">
+                        <label for="EMAIL" class="form-label">電子郵件信箱</label>
+                        <input type="text" class="form-control" id="EMAIL" name="EMAIL" maxlength="100" placeholder="請輸入有效的電子郵件信箱">
+                      </div>
+                    </div>
+                </div>
+
                 <div class="row">
-                  <div class="col-12 px-0 py-3 px-1">
-                    <label for="exampleFormControlInput1" class="form-label">受訪者代碼</label>
-                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="行業編號+樣本編號，共8碼">
+                  <div class="col-12"><p class="mb-0 pb-3">驗證碼</p></div>
+                  <div class="col-xl-4 col-12">
+                    <input type="text" class="form-control" id="VCODE" name="VCODE" maxlength="4" placeholder="請輸入">
+                    
                   </div>
-
-                  <div class="col-12 px-0 py-3 px-1">
-                    <label for="exampleFormControlInput1" class="form-label">統一編號</label>
-                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="若無統一編號請填8個0">
-                  </div>
-
-                  <div class="col-12 px-0 py-3 px-1">
-                    <label for="exampleFormControlInput1" class="form-label">電子郵件信箱</label>
-                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="請輸入有效的電子郵件信箱">
+                  <div class="col-xl-4 col-6 pt-4"></div>
+                  <div class="col-xl-4 col-6 pt-4">
+                    <button type="button" id="btnRandom" class="btn btn-secondary btn-s btn_set float-end">重新產出</button>
                   </div>
                 </div>
-              </div>
 
-              <div class="row">
-                <div class="col-12"><p class="mb-0 pb-3">驗證碼</p></div>
-                <div class="col-xl-4 col-12">
-                  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="請輸入">
-                  
+                <div class="modal-footer pwUse  pt-5">
+                  <button type="button" class="flex-fill btn btn-primary">送出</button>
+                  <a href="/" class="flex-fill btn btn-secondary" data-bs-dismiss="modal">離開</a>
                 </div>
-                <div class="col-xl-4 col-6 pt-4"></div>
-                <div class="col-xl-4 col-6 pt-4">
-                  <button type="button" class="btn btn-secondary btn-s btn_set float-end">重新產出</button>
-                </div>
-              </div>
 
-              <div class="modal-footer pwUse  pt-5">
-                <button type="button" class="flex-fill btn btn-primary">送出</button>
-                <button type="button" class="flex-fill btn btn-secondary" data-bs-dismiss="modal">離開</button>
               </div>
-
             </div>
           </div>
         </div>
-      </div>
+      </form>
     </div>
 
     <footer>

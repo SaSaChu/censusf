@@ -56,62 +56,64 @@
 
     <div class="in-cent-bg">
       <div class="container px-xl-0 p-5 t-mt220">
-        <div class="row">
-          <div class="col-xl-7 d-xl-inline-block d-none">
-            <img src="img/kv_01.png">
-            <img src="img/kv_02.png" style="mix-blend-mode: screen;">
-            <img src="img/kv_03.png">
-          </div>
-          <div class="col-xl-5 col-12 p-0">
-            <img src="img/s-title.png" class="container-fluid d-xl-inline-block d-none py-5 mb-5">
+        <form action="" style="width: 100%;">
+          <div class="row">
+            <div class="col-xl-7 d-xl-inline-block d-none">
+              <img src="img/kv_01.png">
+              <img src="img/kv_02.png" style="mix-blend-mode: screen;">
+              <img src="img/kv_03.png">
+            </div>
+            <div class="col-xl-5 col-12 p-0">
+              <img src="img/s-title.png" class="container-fluid d-xl-inline-block d-none py-5 mb-5">
 
-            <div class="card overflow-hidden">
-              <div class="card-body py-3 px-5">
-                <h3 class="mt-5 mb-4 color-main"><i class="bi bi-person-circle color-main" style="margin-right: 5px;"></i>使用者登入</h3>
-                
-                <div class="contaniner-fluid p-3">
+              <div class="card overflow-hidden">
+                <div class="card-body py-3 px-5">
+                  <h3 class="mt-5 mb-4 color-main"><i class="bi bi-person-circle color-main" style="margin-right: 5px;"></i>使用者登入</h3>
+                  
+                  <div class="contaniner-fluid p-3">
+                    <div class="row">
+                      <div class="col-12 px-0 py-3 px-1">
+                        <label for="SURVEY_NO" class="form-label">普查編號</label>
+                        <input type="text" class="form-control" id="SURVEY_NO" name="SURVEY_NO" maxlength="11" placeholder="鄉（鎮、市、區）+村里+連續編號">
+                      </div>
+
+                      <div class="col-12 px-0 py-3 px-1">
+                        <label for="_320000" class="form-label">判定編號</label>
+                        <input type="text" class="form-control" id="_320000" name="_320000" maxlength="7" placeholder="請輸入">
+                      </div>
+
+                      <div class="col-12 px-0 py-3 px-1">
+                        <label for="PWD" class="form-label">密碼</label>
+                        <input type="password" class="form-control" id="PWD" name="PWD" maxlength="32" placeholder="首次登入為判定編號">
+                      </div>
+                    </div>
+                  </div>
+
                   <div class="row">
-                    <div class="col-12 px-0 py-3 px-1">
-                      <label for="exampleFormControlInput1" class="form-label">普查編號</label>
-                      <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="鄉（鎮、市、區）+村里+連續編號">
+                    <div class="col-12"><p class="mb-0 pb-3">驗證碼</p></div>
+                    <div class="col-xl-4 col-12">
+                      <input type="text" class="form-control" id="VCODE" name="VCODE" maxlength="4" placeholder="請輸入">
+                      
                     </div>
-
-                    <div class="col-12 px-0 py-3 px-1">
-                      <label for="exampleFormControlInput1" class="form-label">判定編號</label>
-                      <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="請輸入">
-                    </div>
-
-                    <div class="col-12 px-0 py-3 px-1">
-                      <label for="exampleFormControlInput1" class="form-label">密碼</label>
-                      <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="首次登入為判定編號">
+                    <div class="col-xl-4 col-6 pt-4"></div>
+                    <div class="col-xl-4 col-6 pt-4">
+                      <button type="button" id="btnRandom" class="btn btn-secondary btn-s btn_set float-end">重新產出</button>
                     </div>
                   </div>
-                </div>
 
-                <div class="row">
-                  <div class="col-12"><p class="mb-0 pb-3">驗證碼</p></div>
-                  <div class="col-xl-4 col-12">
-                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="請輸入">
-                    
-                  </div>
-                  <div class="col-xl-4 col-6 pt-4"></div>
-                  <div class="col-xl-4 col-6 pt-4">
-                    <button type="button" class="btn btn-secondary btn-s btn_set float-end">重新產出</button>
+                  <div class="modal-footer pwUse  pt-5">
+                    <a href="./page.html" class="flex-fill btn btn-primary">登 入</a>
+                    <a href="./fpw.html" class="flex-fill btn btn-dark" data-bs-dismiss="modal">忘記密碼</a>
                   </div>
                 </div>
-
-                <div class="modal-footer pwUse  pt-5">
-                  <button type="button" class="flex-fill btn btn-primary">登 入</button>
-                  <button type="button" class="flex-fill btn btn-dark" data-bs-dismiss="modal">忘記密碼</button>
+                <div class="card-footer alert-warning p-5">
+                  <p class="mb-0">系統及操作客服專線：0800-868-257</p>
+                  <p class="mb-0">填表相關客服電話：(02)2380-3685</p>
                 </div>
-              </div>
-              <div class="card-footer alert-warning p-5">
-                <p class="mb-0">系統及操作客服專線：0800-868-257</p>
-                <p class="mb-0">填表相關客服電話：(02)2380-3685</p>
               </div>
             </div>
           </div>
-        </div>
+        </form>
       </div>
     </div>
 
