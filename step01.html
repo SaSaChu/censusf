@@ -47,7 +47,7 @@
             <div class="col px-0">
               <!-- 倒數計時 -->
               <div id="clockdiv"></div>
-              <button type="button" class="btn btn-primary btn-s btn_set">重新計算</button>
+              <button type="button" class="btn btn-primary btn-s btn_set btn-clock-restart">重新計算</button>
             </div>
 
             <div class="w-100"></div>
@@ -103,119 +103,135 @@
 
     <!-- 內容區塊 -->
     <div class="container-xl my-xl-5 py-xl-4">
-      <div class="row">
-        <!-- 左邊 - 填寫表單 -->
-        <div class="col-xl-9 col ps-xl-0 pe-xl-5 px-0">  
-          <div class="container-fluid bg-light px-0">
-            <!-- step標題 01 -->
-            <div class="container-fluid bg-title py-3">
-              <div class="row">
-                <div class="col pe-0">
-                  <p class="title-type">一、組織別</p>
+      <form action="" style="width: 100%;">
+        <div class="row">
+          <!-- 左邊 - 填寫表單 -->
+          <div class="col-xl-9 col ps-xl-0 pe-xl-5 px-0">  
+            <div class="container-fluid bg-light px-0">
+              <!-- step標題 01 -->
+              <div class="container-fluid bg-title py-3">
+                <div class="row">
+                  <div class="col pe-0">
+                    <p class="title-type">一、組織別</p>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <!-- 表單內容區 01 -->
-            <div class="container-fluid px-4 px-xl-5">
-              <div class="row py-5">
-                <div class="col-12">民營</div>
-                <div class="col-12 col-xl-4">
-                  <div class="form-check pt-3">
-                    <input class="form-check-input" type="radio" id="_000000" name="_000000" value="1" required>
-                    <label class="form-check-label" for="">1. 公司組織</label>
+              <!-- 表單內容區 01 -->
+              <div class="container-fluid px-4 px-xl-5">
+                <div class="row py-5">
+                  <div class="col-12">民營</div>
+                  <div class="col-12 col-xl-4">
+                    <div class="form-check pt-3">
+                      <input class="form-check-input" type="radio" id="_000000" name="_000000" value="1" required>
+                      <label class="form-check-label" for="">1. 公司組織</label>
+                    </div>
+                  </div>
+                  <div class="col-12 col-xl-4">
+                    <div class="form-check pt-3">
+                      <input class="form-check-input" type="radio" id="_000000" name="_000000" value="2">
+                      <label class="form-check-label" for="">2. 獨資或合夥
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-12 col-xl-4">
+                    <div class="form-check pt-3">
+                      <input class="form-check-input" type="radio" id="_000000" name="_000000" value="3">
+                      <label class="form-check-label" for="">3. 其他組織</label>
+                    </div>
                   </div>
                 </div>
-                <div class="col-12 col-xl-4">
-                  <div class="form-check pt-3">
-                    <input class="form-check-input" type="radio" id="_000000" name="_000000" value="2">
-                    <label class="form-check-label" for="">2. 獨資或合夥
-                    </label>
+                <div class="row pb-5">
+                  <div class="col-12">公營</div>
+                  <div class="col-12 col-xl-4">
+                    <div class="form-check pt-3">
+                      <input class="form-check-input" type="radio" id="_000000" name="_000000" value="4">
+                      <label class="form-check-label" for="">4. 公司組織</label>
+                    </div>
                   </div>
-                </div>
-                <div class="col-12 col-xl-4">
-                  <div class="form-check pt-3">
-                    <input class="form-check-input" type="radio" id="_000000" name="_000000" value="3">
-                    <label class="form-check-label" for="">3. 其他組織</label>
+                  <div class="col-12 col-xl-4">
+                    <div class="form-check pt-3">
+                      <input class="form-check-input" type="radio" id="_000000" name="_000000" value="5">
+                      <label class="form-check-label" for="">5. 非公司及其他組織</label>
+                    </div>
                   </div>
                 </div>
               </div>
-              <div class="row pb-5">
-                <div class="col-12">公營</div>
-                <div class="col-12 col-xl-4">
-                  <div class="form-check pt-3">
-                    <input class="form-check-input" type="radio" id="_000000" name="_000000" value="4">
-                    <label class="form-check-label" for="">4. 公司組織</label>
-                  </div>
-                </div>
-                <div class="col-12 col-xl-4">
-                  <div class="form-check pt-3">
-                    <input class="form-check-input" type="radio" id="_000000" name="_000000" value="5">
-                    <label class="form-check-label" for="">5. 非公司及其他組織</label>
-                  </div>
-                </div>
-              </div>
-            </div>
 
-            <!-- step標題 02 -->
-            <div class="container-fluid bg-title py-3">
-              <div class="row">
-                <div class="col pe-0">
-                  <p class="title-type">二、實際開業年月</p>
+              <!-- step標題 02 -->
+              <div class="container-fluid bg-title py-3">
+                <div class="row">
+                  <div class="col pe-0">
+                    <p class="title-type">二、實際開業年月</p>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <!-- 表單內容區 02 -->
-            <div class="container-fluid px-4 px-xl-5">
-              <div class="row g-3 py-5 align-items-center">
-                <div class="col-2">民國</div>
-                <div class="col-4">
-                  <input type="text" class="form-control" id="_010100" name="_010100" maxlength="3" placeholder="請輸入" required>
+              <!-- 表單內容區 02 -->
+              <div class="container-fluid px-4 px-xl-5">
+                <div class="row g-3 py-5 align-items-center">
+                  <div class="col-2">民國</div>
+                  <div class="col-4">
+                    <input type="text" class="form-control" id="_010100" name="_010100" maxlength="3" placeholder="請輸入" required>
+                  </div>
+                  <div class="col-1 text-center">年</div>
+                  <div class="col-4">
+                    <input type="text" class="form-control" id="_010200" name="_010200" maxlength="2" placeholder="請輸入" required>
+                  </div>
+                  <div class="col-1 text-center">月</div>
                 </div>
-                <div class="col-1 text-center">年</div>
-                <div class="col-4">
-                  <input type="text" class="form-control" id="_010200" name="_010200" maxlength="2" placeholder="請輸入" required>
-                </div>
-                <div class="col-1 text-center">月</div>
               </div>
-            </div>
 
-            <div class="row d-flex justify-content-center px-4 py-5">
-              <div class="col-md-4 col-6">
-                <a href="/page.html" class="btn btn-secondary container-fluid">上一步</a>
-                <!-- <button type="button" class="flex-fill btn btn-secondary container-fluid">上一步</button> -->
+              <!-- 下一步 - 跳出檢查視窗pop up -->
+              <div class="modal fade" id="next" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="false">
+                <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content popup-r">
+                    <div class="modal-header">
+                      <h5 class="modal-title">確認項目</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body py-4">
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div class="col-md-4 col-6">
-                <a href="/step03.html" class="btn btn-primary container-fluid">下一步</a>
-                <!-- <button type="button" class="btn btn-primary float-end container-fluid">下一步</button> -->
+
+              <div class="row d-flex justify-content-center px-4 py-5">
+                <div class="col-md-4 col-6">
+                  <a href="/page.html" class="btn btn-secondary container-fluid">上一步</a>
+                  <!-- <button type="button" class="flex-fill btn btn-secondary container-fluid">上一步</button> -->
+                </div>
+                <div class="col-md-4 col-6">
+                  <!-- <a href="/step03.html" class="btn btn-primary container-fluid">下一步</a> -->
+                  <button type="button" id="next-btn-1" class="btn btn-primary float-end container-fluid">下一步</button>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
 
-        <!-- 右邊 - 步驟（手機會隱藏） -->
-        <div class="col-3 px-0 d-none d-xl-inline-block">
-          <div class="container-fluid bg-light rounded-3 px-0 overflow-hidden">
-            <div class="w-menu on-step stepone"><a href="/page.html">基本資料</a></div>
-            <div class="w-menu on-step" data-question="1" title='一、'>組織別</div>
-            <div class="w-menu on-step" data-question="2" title='二、'>實際開業年月</div>
-            <div class="w-menu" data-question="3" title='三、'><a href="step03.html">110年生產之產品或經、服務之項目</a></div>
-            <div class="w-menu" data-question="4" title='四、'>110年從業員工及薪資</div>
-            <div class="w-menu pass-step" data-question="5" title='五、'>110年人力派遣情形</div>
-            <div class="w-menu pass-step" data-question="6" title='六、'>110年營運數位化狀況</div>
-            <div class="w-menu pass-step" data-question="7" title='七、'>110年經營特徵</div>
-            <div class="w-menu pass-step" data-question="8" title='八、'>110年跨國(境)服務交易、投資及外資持股情形</div>
-            <div class="w-menu pass-step" data-question="9" title='九、'>110年全年支出、收入狀況及年底實際運用資產</div>
-            <div class="w-menu pass-step" data-question="10" title='十、'>110年商品銷售管道</div>
-            <div class="w-menu pass-step" data-question="11" title='十一、'>110年產(商)品外銷及三(多)角貿易情形</div>
-            <div class="w-menu pass-step" data-question="12" title='十二、'>110年環保概況(循環經濟)</div>
-            <div class="w-menu pass-step" data-question="13" title='十三、'>110年底靠行司機人數</div>
-            <a class="w-menu stepone">附記欄</a>
+          <!-- 右邊 - 步驟（手機會隱藏） -->
+          <div class="col-3 px-0 d-none d-xl-inline-block">
+            <div class="container-fluid bg-light rounded-3 px-0 overflow-hidden">
+              <div class="w-menu on-step stepone"><a href="/page.html">基本資料</a></div>
+              <div class="w-menu on-step" data-question="1" title='一、'>組織別</div>
+              <div class="w-menu on-step" data-question="2" title='二、'>實際開業年月</div>
+              <div class="w-menu" data-question="3" title='三、'><a href="step03.html">110年生產之產品或經、服務之項目</a></div>
+              <div class="w-menu" data-question="4" title='四、'>110年從業員工及薪資</div>
+              <div class="w-menu pass-step" data-question="5" title='五、'>110年人力派遣情形</div>
+              <div class="w-menu pass-step" data-question="6" title='六、'>110年營運數位化狀況</div>
+              <div class="w-menu pass-step" data-question="7" title='七、'>110年經營特徵</div>
+              <div class="w-menu pass-step" data-question="8" title='八、'>110年跨國(境)服務交易、投資及外資持股情形</div>
+              <div class="w-menu pass-step" data-question="9" title='九、'>110年全年支出、收入狀況及年底實際運用資產</div>
+              <div class="w-menu pass-step" data-question="10" title='十、'>110年商品銷售管道</div>
+              <div class="w-menu pass-step" data-question="11" title='十一、'>110年產(商)品外銷及三(多)角貿易情形</div>
+              <div class="w-menu pass-step" data-question="12" title='十二、'>110年環保概況(循環經濟)</div>
+              <div class="w-menu pass-step" data-question="13" title='十三、'>110年底靠行司機人數</div>
+              <a class="w-menu stepone">附記欄</a>
+            </div>
           </div>
         </div>
-      </div>
+      </from>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>

@@ -153,6 +153,49 @@ $(function() {
 		}
 	})
 
+	// 確認項目一資料
+	$('#next-btn-1').click(function() {
+		let notFill = checkFillInput();
+		let year = $("#_010100").val();
+		let month = $("#_010200").val();
+
+		if(year < 0 || year > 110 && year) {
+			notFill.push("_010100-1");
+		}
+
+		if(month > 12 || month < 1 && month) {
+			notFill.push("_010200-1");
+		}
+
+		if(notFill.length) {
+			$('#next').modal('show');
+			var nextModal = document.getElementById('next')	
+			nextModal.addEventListener('shown.bs.modal', function () {
+				let input = {
+					"_000000" : "請點選問項一【組織別】(1、2、3、4、5)",
+					"_010100" : "實際開業年必須填寫",
+					"_010100-1" : "【實際開業年月】之年份應為民國110年之前；若為民國前開業，請填民國1年",
+					"_010200" : "實際開業月必須填寫",
+					"_010200-1":"【實際開業年月】之月份應為1月~12月",
+				}
+				
+				let element = ''
+				notFill.forEach((e,i) => {	
+					if((i) % 2 == 0 ) {
+						element += `<p class="popup-list-r" title="${i+=1}">${input[e]}</p>`  ;	
+					} else {
+						element += `<p class="popup-list-r text-danger" title="${i+=1}">${input[e]}</p>`  ;
+					}
+					
+				})
+				
+				$('#next').find('.modal-body').empty().html(element);
+			});
+		} else {
+			window.location.href = "/step03.html";
+		}
+	})
+
 	displayQuestion()
 
 	// 確認必填欄位
