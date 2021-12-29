@@ -116,7 +116,7 @@ $(function() {
 		displayQuestion()
 	});
 
-	//step3: 110年生產之產品或經營、服務之項目
+	//項目三: 110年生產之產品或經營、服務之項目 主要經營項目是否屬於下列行業
 	$("select[id='_030101']").change(function() {
 		$('._030101').each(function(){
 			$(this).addClass('d-none');
@@ -130,29 +130,66 @@ $(function() {
 			$('._030101-2').each(function(){
 				$(this).removeClass('d-none');
 			});
+			$("#_030210").prop("required", false);
 		} else if ($(this).val() == 3) {
 			$('._030101-3').each(function(){
 				$(this).removeClass('d-none');
 			});
+			$("#_030210").prop("required", true);
 		} else if ($(this).val() == 4) {
 			$('._030101-4').each(function(){
 				$(this).removeClass('d-none');
 			});
+			$("#_030210").prop("required", false);
 		} else if ($(this).val() == 5) {
 			$('._030101-5').each(function(){
 				$(this).removeClass('d-none');
 			});
+			$("#_030210").prop("required", false);
 		} else if ($(this).val() == 6) {
 			$('._030101-6').each(function(){
 				$(this).removeClass('d-none');
 			});
+			$("#_030210").prop("required", false);
 		}
-		
 	})
-	// step3: 最主要經營方式
+
+	//項目三: 1. 製造業 最主要經營方式
 	$("select[id='_030210']").change(function() {
 		if($(this).val() == 2) {
-			$('#_030216').prop('readonly', true);
+			$('#_030216').prop('disabled', true);
+			$('#_030216').attr('placeholder', '');
+		}
+	})
+
+	//項目三: 3. 有行商品買賣、仲介或貿易代理 銷售給一般家庭民眾的比率
+	$("select[id='_030231']").change(function() {
+		if($(this).val() == 1) {
+			$('._030232').removeClass('d-none')
+			$('._030233').addClass('d-none')
+		} else if ($(this).val() == 2) {
+			$('._030232').addClass('d-none')
+			$('._030233').removeClass('d-none')	
+		}
+	})
+
+	//項目三: 4.運輸業 運輸業主要營運方式
+	$("select[id='_030241']").change(function() {
+		if($(this).val() == 3) {
+			$('._030242').removeClass('d-none')
+			$('._030243').addClass('d-none')
+		} else {
+			$('._030242').addClass('d-none')
+			$('._030243').removeClass('d-none')	
+		}
+	})
+
+	//項目三: 5.租賃業 主要租賃項目
+	$("select[id='_030251']").change(function() {
+		if($(this).val() == 1 || $(this).val() == 4 || $(this).val() == 5) {
+			$('._030253').addClass('d-none')
+		} else if ($(this).val() == 3) {
+			$('._030253').removeClass('d-none')	
 		}
 	})
 
@@ -189,7 +226,7 @@ $(function() {
 			});
 		} else {
 			// $('#next').modal('hide');
-			window.location.href = "/step01.html";
+			window.location.href = "./step01.html";
 		}
 	})
 
@@ -232,7 +269,7 @@ $(function() {
 				$('#next').find('.modal-body').empty().html(element);
 			});
 		} else {
-			window.location.href = "/step03.html";
+			window.location.href = "./step03.html";
 		}
 	})
 
