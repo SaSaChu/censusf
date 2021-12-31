@@ -214,6 +214,7 @@ body {
   padding-left: 75px;
   text-decoration: none;
   background-color: $light;
+  cursor: pointer;
 
   &:before {
     display: inline-block;
@@ -241,6 +242,55 @@ body {
   &.pass-step {
     color: $gray-600;
     background-color: $gray-200;
+    cursor: default;
+  }
+
+  > a {
+    text-decoration: none;
+    color: rgba(43, 43, 43, 1.00); 
+  }
+}
+
+.m-menu {
+  display: inline-block;
+  width: 100%;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid white;
+  color: rgba(43, 43, 43, 1.00);
+  font-size: 1.12rem;
+  position: relative;
+  padding-left: 75px;
+  text-decoration: none;
+  background-color: $light;
+  cursor: pointer;
+
+  &:before {
+    display: inline-block;
+    content: attr(title);
+    margin-right: 5px;
+    position: absolute;
+    left: 20px;
+  }
+
+  &.no-border {
+    border: 0;
+  }
+
+  &.stepone {
+    padding-left: 20px;
+  }
+
+  &.on-step {
+    color: $blue;
+    > a {
+      color: transparent;
+    }
+  }
+
+  &.pass-step {
+    color: $gray-600;
+    background-color: $gray-200;
+    cursor: default;
   }
 
   > a {

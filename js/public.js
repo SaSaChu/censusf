@@ -1,5 +1,6 @@
 
 $(function() {
+	// 倒數計時器
 
 	var time_in_minutes = 15;
 	var timeinterval;
@@ -35,10 +36,38 @@ $(function() {
     run_clock('clockdiv');
 
 	// 時間重新計算
-	$(".btn-clock-restart").click(function(){
+	$(".btn-clock-restart").click(function() {
 		clearInterval(timeinterval);
 		run_clock('clockdiv');
 	})
+
+	// 右側&手機menu
+	$('.w-menu:not(.pass-step)').click(function() {
+		let step = $(this).data('step');
+		$(this).addClass('on-step');
+		$(`.step-box`).addClass('d-none');
+		$(`.step-box[data-step="${step}"`).removeClass('d-none');	
+	})
+
+	$('.m-menu:not(.pass-step)').click(function() {
+		$('.offcanvas').find('.btn').click();
+		let step = $(this).data('step');
+		if(step === 0) {
+			$('.bg-title-1').removeClass('d-none')
+			$('.bg-title-3').addClass('d-none')
+		} else if (step === 3){
+			$('.bg-title-1').addClass('d-none')
+			$('.bg-title-3').removeClass('d-none')
+		} else {
+			$('.bg-title-1,.bg-title-3').addClass('d-none')
+		}
+		$(this).addClass('on-step');
+		$(`.step-box`).addClass('d-none');
+		$(`.step-box[data-step="${step}"`).removeClass('d-none');	
+
+	})
+
+	// 基本資料 start 
 
     // 同聯絡人姓名
     $("input[id='B067']").change(function() {
@@ -98,7 +127,7 @@ $(function() {
 		}
 	})
 
-	//基本資料：單位級別
+	// 單位級別
 	$("input[id='_340000']").change(function(){
 		let _340000 = "" + $(this).val();
 		let question = [6, 7, 8, 9, 10, 11, 12, 13];
@@ -116,7 +145,10 @@ $(function() {
 		displayQuestion()
 	});
 
-	//項目三: 110年生產之產品或經營、服務之項目 主要經營項目是否屬於下列行業
+	// 基本資料 end
+
+	// 項目三 start
+	//110年生產之產品或經營、服務之項目 主要經營項目是否屬於下列行業
 	$("select[id='_030101']").change(function() {
 		$('._030101').each(function(){
 			$(this).addClass('d-none');
@@ -154,7 +186,7 @@ $(function() {
 		}
 	})
 
-	//項目三: 1. 製造業 最主要經營方式
+	//1. 製造業 最主要經營方式
 	$("select[id='_030210']").change(function() {
 		if($(this).val() == 2) {
 			$('#_030216').prop('disabled', true);
@@ -162,7 +194,7 @@ $(function() {
 		}
 	})
 
-	//項目三: 3. 有行商品買賣、仲介或貿易代理 銷售給一般家庭民眾的比率
+	//3. 有行商品買賣、仲介或貿易代理 銷售給一般家庭民眾的比率
 	$("select[id='_030231']").change(function() {
 		if($(this).val() == 1) {
 			$('._030232').removeClass('d-none')
@@ -173,7 +205,7 @@ $(function() {
 		}
 	})
 
-	//項目三: 4.運輸業 運輸業主要營運方式
+	//4.運輸業 運輸業主要營運方式
 	$("select[id='_030241']").change(function() {
 		if($(this).val() == 3) {
 			$('._030242').removeClass('d-none')
@@ -184,7 +216,7 @@ $(function() {
 		}
 	})
 
-	//項目三: 5.租賃業 主要租賃項目
+	//5.租賃業 主要租賃項目
 	$("select[id='_030251']").change(function() {
 		if($(this).val() == 1 || $(this).val() == 4 || $(this).val() == 5) {
 			$('._030253').addClass('d-none')
@@ -193,75 +225,56 @@ $(function() {
 		}
 	})
 
-	// 確認基本資料有無填寫
-	$('#next-btn').click(function() {
-		let notFill = checkFillInput();
-		if(notFill.length) {
-			$('#next').modal('show');
-			var nextModal = document.getElementById('next')	
-			nextModal.addEventListener('shown.bs.modal', function () {
-				let input = {
-					"UNIT" : "單位名稱",
-					"B06" : "負責人姓名",
-					"B061" : "聯絡人姓名",
-					"B062" : "聯絡人電話",
-					"B063" : "填表人姓名",
-					"B064" : "填表人電話",
-					"B07Z" : "實際營業地址",
-					"B07Z_BR" : "實際營業地址",
-					"_340000" : "單位級別",
-				}
-				
-				let element = ''
-				notFill.forEach((e,i) => {	
-					if((i) % 2 == 0 ) {
-						element += `<p class="popup-list-r" title="${i+=1}">${input[e]}必須填寫</p>`  ;	
-					} else {
-						element += `<p class="popup-list-r text-danger" title="${i+=1}">${input[e]}必須填寫</p>`  ;
-					}
-					
-				})
-				
-				$('#next').find('.modal-body').empty().html(element);
-			});
+	// 項目三 end
+
+	// 上一步
+	$('.pre-btn').click(function() {
+		let step = $(this).data('step');
+		let pre;
+
+		if(step === 3) {
+			pre = parseInt(step) - 2; 	
 		} else {
-			// $('#next').modal('hide');
-			window.location.href = "./step01.html";
+			pre = parseInt(step) - 1;	
 		}
+		
+		$(`.w-menu[data-step="${step}"`).removeClass('on-step');
+		$(`.step-box[data-step="${step}"]`).addClass('d-none');
+		$(`.step-box[data-step="${pre}"`).removeClass('d-none');
+		console.log(pre);
 	})
 
-	// 確認項目一、二必填資料
-	$('#next-btn-1').click(function() {
-		let notFill = checkFillInput();
-		let year = $("#_010100").val();
-		let month = $("#_010200").val();
+	// 下一步確認必填欄位
+	// 確認各題目資料有無填寫
+	const step00 = {
+		"UNIT" : "單位名稱","B06" : "負責人姓名","B061" : "聯絡人姓名","B062" : "聯絡人電話","B063" : "填表人姓名","B064" : "填表人電話","B07Z" : "實際營業地址","B07Z_BR" : "實際營業地址", "_350000" : "統一編號不可空白或勾確實無統一編號", "_340000" : "單位級別",
+	} 
 
-		if(year < 0 || year > 110 && year) {
-			notFill.push("_010100-1");
-		}
+	const step01 = {
+		"_000000" : "請點選問項一【組織別】(1、2、3、4、5)","_010100" : "實際開業年必須填寫","_010100-1" : "【實際開業年月】之年份應為民國110年之前；若為民國前開業，請填民國1年","_010200" : "實際開業月必須填寫","_010200-1":"【實際開業年月】之月份應為1月~12月",
+	}
 
-		if(month > 12 || month < 1 && month) {
-			notFill.push("_010200-1");
-		}
+	const step03 = {
+		"_030101" : "請點選問項一【組織別】(1、2、3、4、5)","_030210" : "請選擇問項二【以上最主要經營方式為】",
+	}
 
+	let input = [step00, step01, step01, step03]
+
+	// 下一步確認必填欄位
+	$('.next-btn').click(function() {
+		let step = $(this).data('step');
+		let next = step === 1 ? 3 : parseInt(step) + 1;
+		let notFill = checkFillInput(step);	
 		if(notFill.length) {
 			$('#next').modal('show');
-			var nextModal = document.getElementById('next')	
+			var nextModal = document.getElementById('next')
 			nextModal.addEventListener('shown.bs.modal', function () {
-				let input = {
-					"_000000" : "請點選問項一【組織別】(1、2、3、4、5)",
-					"_010100" : "實際開業年必須填寫",
-					"_010100-1" : "【實際開業年月】之年份應為民國110年之前；若為民國前開業，請填民國1年",
-					"_010200" : "實際開業月必須填寫",
-					"_010200-1":"【實際開業年月】之月份應為1月~12月",
-				}
-				
 				let element = ''
 				notFill.forEach((e,i) => {	
 					if((i) % 2 == 0 ) {
-						element += `<p class="popup-list-r" title="${i+=1}">${input[e]}</p>`  ;	
+						element += `<p class="popup-list-r" title="${i+=1}">${input[step][e]}必須填寫</p>`  ;	
 					} else {
-						element += `<p class="popup-list-r text-danger" title="${i+=1}">${input[e]}</p>`  ;
+						element += `<p class="popup-list-r text-danger" title="${i+=1}">${input[step][e]}必須填寫</p>`  ;
 					}
 					
 				})
@@ -269,49 +282,21 @@ $(function() {
 				$('#next').find('.modal-body').empty().html(element);
 			});
 		} else {
-			window.location.href = "./step03.html";
-		}
-	})
-
-	// 確認項目三必填資料
-	$('#next-btn-3').click(function() {
-		let notFill = checkFillInput();
-		console.log(notFill);
-		if(notFill.length) {
-			$('#next').modal('show');
-			var nextModal = document.getElementById('next')	
-			nextModal.addEventListener('shown.bs.modal', function () {
-				let input = {
-					"_030101" : "請點選問項一【組織別】(1、2、3、4、5)",
-					"_030210" : "請選擇問項二【以上最主要經營方式為】",
-				}
-				
-				let element = ''
-				notFill.forEach((e,i) => {	
-					if((i) % 2 == 0 ) {
-						element += `<p class="popup-list-r" title="${i+=1}">${input[e]}</p>`  ;	
-					} else {
-						element += `<p class="popup-list-r text-danger" title="${i+=1}">${input[e]}</p>`  ;
-					}
-					
-				})
-				
-				$('#next').find('.modal-body').empty().html(element);
-			});
-		} else {
-			// window.location.href = "/step03.html";
+			$(`.step-box[data-step="${step}"`).addClass('d-none');
+			$(`.step-box[data-step="${next}"`).removeClass('d-none');
+			$(`.w-menu[data-step="${next}"]`).addClass('on-step');
 		}
 	})
 
 	displayQuestion()
-
+	
 	// 確認必填欄位
-	function checkFillInput() {
-		let notFill = [];
-
-		$('form').find('input[required], select[required]').each(function(){
+	function checkFillInput(step) {
+		let notFill = [];	
+		
+		$(`.step-box[data-step="${step}"]`).find('input[required], select[required]').each(function(){
 			if($(this).is(":radio")) {
-				if(!$("input[type='radio']:checked").val()){
+				if(!$("input[id='" + $(this).attr('id') + "']:checked").val()){
 					notFill.push($(this).attr('id'))
 				}
 			} else {
@@ -322,6 +307,26 @@ $(function() {
 
 		});
 
+		if(step === 0) {
+			if(!$('input[id="_350000"]').val()) {
+				if(!$('input[id="_130200"]:checked').val()) {
+					notFill.push($('#_350000').attr('id'));	
+				}
+			}
+		}
+
+		if(step === 1) {
+			let year = $("#_010100").val();
+			let month = $("#_010200").val();
+			if(year < 0 || year > 110 && year) {
+				notFill.push("_010100-1");
+			}
+	
+			if(month > 12 || month < 1 && month) {
+				notFill.push("_010200-1");
+			}
+		}	
+
 		return notFill;
 	}
 
@@ -330,7 +335,7 @@ $(function() {
 		let question = JSON.parse(localStorage.getItem("question"))	
 		if(question) {
 			question.forEach(e => {
-				$(".w-menu[data-question^='"+e+"']").addClass('pass-step')	;
+				$(".w-menu[data-step^='"+e+"']").addClass('pass-step')	;
 			});
 		} else {
 			if($("input[id='_340000']").val() == "1" || $("input[id='_340000']").val() == "8") {
