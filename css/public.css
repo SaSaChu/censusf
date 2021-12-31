@@ -3076,14 +3076,23 @@ body { position: relative; display: inline-block; width: 100%; margin: 0; paddin
 .btn-orange { color: white; background-color: #fd7e14; }
 .btn-orange:hover { color: white; background-color: #fd9843; }
 
-.w-menu { display: inline-block; width: 100%; padding: 1rem 1.5rem; border-bottom: 1px solid white; color: #2b2b2b; font-size: 1.12rem; position: relative; padding-left: 75px; text-decoration: none; background-color: #ebf1f9; }
+.w-menu { display: inline-block; width: 100%; padding: 1rem 1.5rem; border-bottom: 1px solid white; color: #2b2b2b; font-size: 1.12rem; position: relative; padding-left: 75px; text-decoration: none; background-color: #ebf1f9; cursor: pointer; }
 .w-menu:before { display: inline-block; content: attr(title); margin-right: 5px; position: absolute; left: 20px; }
 .w-menu.no-border { border: 0; }
 .w-menu.stepone { padding-left: 20px; }
 .w-menu.on-step { color: #0d6efd; }
 .w-menu.on-step > a { color: transparent; }
-.w-menu.pass-step { color: #6c757d; background-color: #e9ecef; }
+.w-menu.pass-step { color: #6c757d; background-color: #e9ecef; cursor: default; }
 .w-menu > a { text-decoration: none; color: #2b2b2b; }
+
+.m-menu { display: inline-block; width: 100%; padding: 1rem 1.5rem; border-bottom: 1px solid white; color: #2b2b2b; font-size: 1.12rem; position: relative; padding-left: 75px; text-decoration: none; background-color: #ebf1f9; cursor: pointer; }
+.m-menu:before { display: inline-block; content: attr(title); margin-right: 5px; position: absolute; left: 20px; }
+.m-menu.no-border { border: 0; }
+.m-menu.stepone { padding-left: 20px; }
+.m-menu.on-step { color: #0d6efd; }
+.m-menu.on-step > a { color: transparent; }
+.m-menu.pass-step { color: #6c757d; background-color: #e9ecef; cursor: default; }
+.m-menu > a { text-decoration: none; color: #2b2b2b; }
 
 .link-header { display: inline-block; font-size: 1.1rem; color: white; line-height: 68px; text-decoration: none; margin-left: 30px; }
 .link-header:before { display: inline-block; content: '●'; margin-right: 10px; }
