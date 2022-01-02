@@ -239,7 +239,6 @@ $(function() {
 		$(`.w-menu[data-step="${step}"`).removeClass('on-step');
 		$(`.step-box[data-step="${step}"]`).addClass('d-none');
 		$(`.step-box[data-step="${pre}"`).removeClass('d-none');
-		console.log(pre);
 	})
 
 	// 下一步確認必填欄位
