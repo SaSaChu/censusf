@@ -1,7 +1,5 @@
-
 $(function() {
 	// 倒數計時器
-
 	var time_in_minutes = 15;
 	var timeinterval;
     function time_remaining(deadline){
@@ -246,19 +244,6 @@ $(function() {
 
 	// 下一步確認必填欄位
 	// 確認各題目資料有無填寫
-	const step00 = {
-		"UNIT" : "單位名稱","B06" : "負責人姓名","B061" : "聯絡人姓名","B062" : "聯絡人電話","B063" : "填表人姓名","B064" : "填表人電話","B07Z" : "實際營業地址","B07Z_BR" : "實際營業地址", "_350000" : "統一編號不可空白或勾確實無統一編號", "_340000" : "單位級別",
-	} 
-
-	const step01 = {
-		"_000000" : "請點選問項一【組織別】(1、2、3、4、5)","_010100" : "實際開業年必須填寫","_010100-1" : "【實際開業年月】之年份應為民國110年之前；若為民國前開業，請填民國1年","_010200" : "實際開業月必須填寫","_010200-1":"【實際開業年月】之月份應為1月~12月",
-	}
-
-	const step03 = {
-		"_030101" : "請點選問項一【組織別】(1、2、3、4、5)","_030210" : "請選擇問項二【以上最主要經營方式為】",
-	}
-
-	let input = [step00, step01, step01, step03]
 
 	// 下一步確認必填欄位
 	$('.next-btn').click(function() {
@@ -272,9 +257,9 @@ $(function() {
 				let element = ''
 				notFill.forEach((e,i) => {	
 					if((i) % 2 == 0 ) {
-						element += `<p class="popup-list-r" title="${i+=1}">${input[step][e]}必須填寫</p>`  ;	
+						element += `<p class="popup-list-r" title="${i+=1}">${ERRORCODE[e]}必須填寫</p>`  ;	
 					} else {
-						element += `<p class="popup-list-r text-danger" title="${i+=1}">${input[step][e]}必須填寫</p>`  ;
+						element += `<p class="popup-list-r text-danger" title="${i+=1}">${ERRORCODE[e]}必須填寫</p>`  ;
 					}
 					
 				})
