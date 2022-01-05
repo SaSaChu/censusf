@@ -239,6 +239,16 @@ $(function() {
 		$(`.w-menu[data-step="${step}"`).removeClass('on-step');
 		$(`.step-box[data-step="${step}"]`).addClass('d-none');
 		$(`.step-box[data-step="${pre}"`).removeClass('d-none');
+
+		if(pre === 0) {
+			$('.bg-title-1').removeClass('d-none')
+			$('.bg-title-3').addClass('d-none')
+		} else if (pre === 3){
+			$('.bg-title-1').addClass('d-none')
+			$('.bg-title-3').removeClass('d-none')
+		} else {
+			$('.bg-title-1,.bg-title-3').addClass('d-none')
+		}
 	})
 
 	// 下一步確認必填欄位
@@ -269,6 +279,16 @@ $(function() {
 			$(`.step-box[data-step="${step}"`).addClass('d-none');
 			$(`.step-box[data-step="${next}"`).removeClass('d-none');
 			$(`.w-menu[data-step="${next}"]`).addClass('on-step');
+			
+			if(next === 0) {
+				$('.bg-title-1').removeClass('d-none')
+				$('.bg-title-3').addClass('d-none')
+			} else if (next === 3){
+				$('.bg-title-1').addClass('d-none')
+				$('.bg-title-3').removeClass('d-none')
+			} else {
+				$('.bg-title-1,.bg-title-3').addClass('d-none')
+			}
 		}
 	})
 
