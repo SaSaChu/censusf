@@ -57,6 +57,9 @@
 						<!-- 倒數計時 -->
 						<div id="clockdiv"></div>
 						<button type="button" class="btn btn-primary btn-s btn_set btn-clock-restart">重新計算</button>
+						<button type="button" class="btn btn-orange float-end d-xl-none d-inline-block btn-s btn_set">傳送</button>
+						<button type="button" class="btn btn-secondary float-end d-xl-none d-inline-block btn-s btn_set me-3">暫存</button>
+						
 					</div>
 
 					<div class="w-100"></div>
@@ -70,13 +73,12 @@
 					</div>
 
 					<div class="col-1 mob-close"></div>
-					<div class="col-6 mob-open"></div>
 
-					<div class="col-xl-1 col-3 pe-0 mt-4 mt-xl-0">
+					<div class="col-xl-1 col-3 pe-0 mt-4 mt-xl-0 d-xl-inline-block d-none">
 						<button type="button" class="btn btn-secondary container-xl btn-s btn_set">暫存</button>
 					</div>
 
-					<div class="col-xl-1 col-3 pe-0 mt-4 mt-xl-0">
+					<div class="col-xl-1 col-3 pe-0 mt-4 mt-xl-0 d-xl-inline-block d-none">
 						<button type="button" class="btn btn-orange container-xl btn-s btn_set">傳送</button>
 					</div>
 				</div>
@@ -85,7 +87,7 @@
 		<!-- 進度條區塊 End -->
 
 		<!-- 手機版 - 基本資料 - 標題 -->
-		<div class="container-fluid bg-title py-3 d-xl-none d-xl-inline-block bg-title-1">
+		<div class="container-fluid bg-title py-2 d-xl-none d-xl-inline-block bg-title-1">
 			<div class="row">
 				<div class="col-10 pe-0">
 					<p class="title-type">基本資料</p>
@@ -210,9 +212,9 @@
 						<div class="container-fluid bg-light px-0">
 							<!-- 標單欄位01 -->
 							<div class="container-fluid px-4 px-xl-5">
-								<div class="row py-5">
+								<div class="row py-4">
 									<div class="col-12 col-xl-6">
-										<p class="fs-6 mb-xl-0">普查編號：<span id="SURVEY_NO">0201 001 0020</span></p>
+										<p class="fs-6 mb-xl-0 mb-3">普查編號：<span id="SURVEY_NO">0201 001 0020</span></p>
 									</div>
 									<div class="col-12 col-xl-6">
 										<p class="fs-6 mb-0">判定編號：<span id="_320000">A000020</p></span>
@@ -225,7 +227,7 @@
 
 							<!-- 表單欄位02 -->
 							<div class="container-fluid px-4 px-xl-5">
-								<div class="row py-5">
+								<div class="row py-4">
 									<div class="col-12 pb-3">
 										<div class="form-check">
 											<input class="form-check-input" type="checkbox" value="1" id="_130100"
@@ -269,7 +271,7 @@
 
 							<!-- 表單欄位03 -->
 							<div class="container-fluid px-4 px-xl-5">
-								<div class="row py-5">
+								<div class="row py-4">
 									<div class="col-12 pb-3">
 										<label for="B061" class="form-label">聯絡人姓名<i
 												class="text-danger markUse">*</i><button type="button" title="罕見字輸入"
@@ -297,7 +299,7 @@
 
 							<!-- 表單欄位04 -->
 							<div class="container-fluid px-4 px-xl-5">
-								<div class="row py-5">
+								<div class="row py-4">
 
 									<div class="col-12 pb-3">
 										<div class="form-check">
@@ -331,7 +333,7 @@
 
 							<!-- 表單欄位05 -->
 							<div class="container-fluid px-4 px-xl-5">
-								<div class="row py-5">
+								<div class="row py-4">
 									<div class="col-12 pb-3">
 										<label for="B07Z" class="form-label py-3">實際營業地址<i
 												class="text-danger markUse">*</i></label>
@@ -574,7 +576,7 @@
 
 							<!-- 表單內容區 01 -->
 							<div class="container-fluid px-4 px-xl-5">
-								<div class="row py-5">
+								<div class="row py-4">
 									<div class="col-12">民營</div>
 									<div class="col-12 col-xl-4">
 										<div class="form-check pt-3">
@@ -599,7 +601,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="row pb-5">
+								<div class="row pb-4">
 									<div class="col-12">公營</div>
 									<div class="col-12 col-xl-4">
 										<div class="form-check pt-3">
@@ -680,7 +682,7 @@
 						<div class="container-fluid bg-light px-0">
 							<!-- ● 表單欄位01 -->
 							<div class="container-fluid px-4 px-xl-5">
-								<div class="row py-5">
+								<div class="row py-4">
 									<div class="col-12 pb-3">
 										<!-- ★★★ 此處下拉選單，選擇不同項目會連動下方資料顯示 ★★★ -->
 										<label for="_030101" class="form-label">(一)主要經營項目是否屬於下列行業</label>
@@ -716,7 +718,7 @@
 							<!-- ● 表單欄位02：注意，表單2區塊內容，會依照表單欄位01選擇的下拉選單內容，而有所不同，詳細對應請見下方備註 -->
 							<div class="container-fluid px-4 px-xl-5">
 								<!-- ★★★ 選1.製造業（169行）：表單欄位02會出現的內容 ★★★ -->
-								<div class="py-5 _030101 _030101-1">
+								<div class="py-4 _030101 _030101-1">
 									<div class="row">
 										<div class="col-xl-6 col-12 order-xl-5">
 											<!-- (二)範例說明 - popoup 按鈕 -->
@@ -825,7 +827,7 @@
 
 								<!-- ★★★ 選2.營建工程業（170行）：表單欄位02會出現的內容 ★★★ -->
 								<div class="d-none _030101 _030101-2">
-									<div class="row pt-5">
+									<div class="row pt-4">
 										<div class="col-xl-6 col-12 ">(二)請就主要工程項目或建築設備安裝(維修)項目擇一填寫：</div>
 									</div>
 									<div class="row pt-5">
@@ -897,7 +899,7 @@
 
 								<!-- ★★★ 選3.有行商品買賣、仲介或貿易代理（171行）：表單欄位02會出現的內容 ★★★ -->
 								<div class="d-none _030101 _030101-3">
-									<div class="row gy-5 pt-5">
+									<div class="row gy-5 pt-4">
 										<div class="col-xl-6 col-12 ">
 											<label for="_030231" class="form-label">(二) 1.銷售給一般家庭民眾的比率：</label>
 											<select id="_030231" name="_030231" class="w-50 form-select"
@@ -949,7 +951,7 @@
 
 								<!-- ★★★ 選4.運輸業（172行）：表單欄位02會出現的內容 ★★★ -->
 								<div class="d-none _030101 _030101-4">
-									<div class="row gy-5 pt-5">
+									<div class="row gy-5 pt-4">
 										<div class="col-xl-6 col-12 ">
 											<label for="_030241" class="form-label">(二) 1.運輸業主要營運方式：</label>
 											<select id="_030241" name="_030241" class="w-50 form-select"
@@ -981,7 +983,7 @@
 
 								<!-- ★★★ 選5.租賃業（173行）：表單欄位02會出現的內容 ★★★ -->
 								<div class="d-none _030101 _030101-5">
-									<div class="row gy-5 pt-5">
+									<div class="row gy-5 pt-4">
 										<div class="col-xl-6 col-12 ">
 											<label for="_030251" class="form-label">(二) 1.主要租賃項目：</label>
 											<select id="_030251" name="_030251" class="w-50 form-select"
@@ -1018,7 +1020,7 @@
 
 								<!-- ★★★ 選6.其他行業（174行）：表單欄位02會出現的內容 ★★★ -->
 								<div class="d-none _030101 _030101-6">
-									<div class="row gy-5 pt-5">
+									<div class="row gy-5 pt-4">
 										<div class="col-12 ">
 											<label for="_030261" class="form-label">(二) 主要生產產品或經營服務之項目：</label>
 											<input type="text" id="_030261" name="_030261" class="form-control" id=""
@@ -1034,7 +1036,7 @@
 							<!-- ● 表單欄位03 -->
 							<div class="container-fluid px-4 px-xl-5">
 								<div class="row">
-									<div class="col-12 py-5">
+									<div class="col-12 py-4">
 										<label for="_030300" class="form-label">(三) 是否有從事與主要經營項目不同之業務</label>
 										<select id="_030300" name="_030300" class="form-select w-2550"
 											aria-label="Default select example">
@@ -1047,7 +1049,7 @@
 								</div>
 
 								<!-- ★★★ 表單欄位31 ★★★-->
-								<div class="pb-5">
+								<div class="pb-4">
 									<div class="row">
 										<div class="col-12 pb-3">
 											<!-- ★★★ 此處下拉選單，選擇不同項目會連動下方資料顯示 ★★★ -->
@@ -1079,7 +1081,7 @@
 
 							<!-- ● 表單欄位04 -->
 							<div class="container-fluid px-4 px-xl-5 mb-5">
-								<div class="row pt-5">
+								<div class="row pt-4">
 									<div class="col-xl-6 col-12 order-xl-5 pb-xl-0 pb-4">
 										<!-- 範例說明 - popoup 按鈕 (內容在297行) -->
 										<button type="button" class="btn btn-orange btn-s btn_set float-end"

@@ -2,7 +2,7 @@
 @import "bootstrap/bootstrap";
 
 html {
-  font-size: 16px;
+  font-size: 13px;
   height: 100%;
 }
 
@@ -175,6 +175,10 @@ body {
   width: 100%;
   max-width: 200px;
 
+  @include range-width(0, 450px) {
+    max-width: 135px;
+  }
+
   &.inUse {
     max-width: 269px;
     padding-top: 9px;
@@ -342,6 +346,10 @@ body {
   color: white;
   margin-bottom: 0;
   line-height: 40px;
+
+  @include range-width(0, 450px) {
+    line-height: 33px;
+  }
 }
 
 .title-type2 {
@@ -505,7 +513,7 @@ footer {
   display: inline-block;
   margin-right: 15px;
   font-size: 1.1rem;
-  line-height: 38px;
+  line-height: 30px;
 }
 
 
