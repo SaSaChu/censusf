@@ -3008,7 +3008,7 @@ textarea.form-control-lg { min-height: calc(1.5em + (1rem + 2px)); }
   .d-print-flex { display: flex !important; }
   .d-print-inline-flex { display: inline-flex !important; }
   .d-print-none { display: none !important; } }
-html { font-size: 16px; height: 100%; }
+html { font-size: 13px; height: 100%; }
 
 body { position: relative; display: inline-block; width: 100%; margin: 0; padding: 0; color: #5a5a5a; font-family: 'Roboto', 'Noto Sans TC', "Helvetica Neue", HelveticaNeue, Helvetica, Arial, sans-serif; }
 
@@ -3065,6 +3065,7 @@ body { position: relative; display: inline-block; width: 100%; margin: 0; paddin
 .mob-menu-icon { font-size: 1.8rem; }
 
 .img-Hlogo { display: inline-block; width: 100%; max-width: 200px; }
+@media screen and (max-width: 449px) and (min-width: 0) { .img-Hlogo { max-width: 135px; } }
 .img-Hlogo.inUse { max-width: 269px; padding-top: 9px; }
 
 .bg-green { background-color: #7cc23e; }
@@ -3076,14 +3077,23 @@ body { position: relative; display: inline-block; width: 100%; margin: 0; paddin
 .btn-orange { color: white; background-color: #fd7e14; }
 .btn-orange:hover { color: white; background-color: #fd9843; }
 
-.w-menu { display: inline-block; width: 100%; padding: 1rem 1.5rem; border-bottom: 1px solid white; color: #2b2b2b; font-size: 1.12rem; position: relative; padding-left: 75px; text-decoration: none; background-color: #ebf1f9; }
+.w-menu { display: inline-block; width: 100%; padding: 1rem 1.5rem; border-bottom: 1px solid white; color: #2b2b2b; font-size: 1.12rem; position: relative; padding-left: 75px; text-decoration: none; background-color: #ebf1f9; cursor: pointer; }
 .w-menu:before { display: inline-block; content: attr(title); margin-right: 5px; position: absolute; left: 20px; }
 .w-menu.no-border { border: 0; }
 .w-menu.stepone { padding-left: 20px; }
 .w-menu.on-step { color: #0d6efd; }
 .w-menu.on-step > a { color: transparent; }
-.w-menu.pass-step { color: #6c757d; background-color: #e9ecef; }
+.w-menu.pass-step { color: #6c757d; background-color: #e9ecef; cursor: default; }
 .w-menu > a { text-decoration: none; color: #2b2b2b; }
+
+.m-menu { display: inline-block; width: 100%; padding: 1rem 1.5rem; border-bottom: 1px solid white; color: #2b2b2b; font-size: 1.12rem; position: relative; padding-left: 75px; text-decoration: none; background-color: #ebf1f9; cursor: pointer; }
+.m-menu:before { display: inline-block; content: attr(title); margin-right: 5px; position: absolute; left: 20px; }
+.m-menu.no-border { border: 0; }
+.m-menu.stepone { padding-left: 20px; }
+.m-menu.on-step { color: #0d6efd; }
+.m-menu.on-step > a { color: transparent; }
+.m-menu.pass-step { color: #6c757d; background-color: #e9ecef; cursor: default; }
+.m-menu > a { text-decoration: none; color: #2b2b2b; }
 
 .link-header { display: inline-block; font-size: 1.1rem; color: white; line-height: 68px; text-decoration: none; margin-left: 30px; }
 .link-header:before { display: inline-block; content: '●'; margin-right: 10px; }
@@ -3094,6 +3104,7 @@ body { position: relative; display: inline-block; width: 100%; margin: 0; paddin
 .link-header2:hover { color: rgba(0, 44, 95, 0.8); }
 
 .title-type { font-size: 1.25rem; color: white; margin-bottom: 0; line-height: 40px; }
+@media screen and (max-width: 449px) and (min-width: 0) { .title-type { line-height: 33px; } }
 
 .title-type2 { font-size: 1.25rem; color: white; margin-bottom: 0; line-height: 40px; padding-left: 40px; position: relative; }
 .title-type2:before { display: inline-block; content: attr(title); position: absolute; left: 0; }
@@ -3125,4 +3136,4 @@ body { position: relative; display: inline-block; width: 100%; margin: 0; paddin
 footer { display: inline-block; position: fixed; bottom: 0; width: 100%; background-color: white; padding: 20px 0; }
 @media screen and (max-width: 449px) and (min-width: 0) { footer { position: inherit; } }
 
-#clockdiv { color: red; display: inline-block; margin-right: 15px; font-size: 1.1rem; line-height: 38px; }
+#clockdiv { color: red; display: inline-block; margin-right: 15px; font-size: 1.1rem; line-height: 30px; }
