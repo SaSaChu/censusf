@@ -42,7 +42,8 @@
 					<div class="col-3 pe-0 d-xl-none d-flex align-items-center justify-content-end">
 						<button class="btn btn-primary mob-menu-icon" type="button" data-bs-toggle="offcanvas"
 							data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i
-								class="bi bi-justify"></i></button>
+								class="bi bi-justify"></i>
+							</button>
 					</div>
 				</div>
 			</div>
@@ -89,10 +90,10 @@
 		<!-- 手機版 - 基本資料 - 標題 -->
 		<div class="container-fluid bg-title py-2 d-xl-none d-xl-inline-block bg-title-1">
 			<div class="row">
-				<div class="col-10 pe-0">
+				<div class="col-11 pe-0 d-flex align-items-center">
 					<p class="title-type">基本資料</p>
 				</div>
-				<div class="col-2 p-0 d-flex align-items-center justify-content-end">
+				<div class="col-1 p-0 d-flex align-items-center justify-content-end">
 					<button type="button" class="btn btn-q" data-bs-toggle="modal" data-bs-target="#pageExampleModal">
 						<!-- 問號 - popup -->
 						<i class="bi bi-question-circle-fill"></i>
@@ -104,10 +105,10 @@
 		<!-- 手機版 - step3標題 -->
 		<div class="container-fluid bg-title py-3 d-xl-none d-xl-inline-block bg-title-3 d-none">
 			<div class="row">
-				<div class="col-10 pe-0">
+				<div class="col-11 pe-0 d-flex align-items-center">
 					<p class="title-type2" title="三、">110年生產之產品或經營、服務之項目</p>
 				</div>
-				<div class="col-2 p-0 d-flex align-items-center justify-content-end">
+				<div class="col-1 p-0 d-flex align-items-center justify-content-end">
 					<button type="button" class="btn btn-q" data-bs-toggle="modal" data-bs-target="#step03ExampleModal">
 						<i class="bi bi-question-circle-fill"></i>
 					</button>
@@ -175,9 +176,9 @@
 			<div class="m-menu pass-step" data-step="8" title='八、'>110年跨國(境)服務交易、投資及外資持股情形</div>
 			<div class="m-menu pass-step" data-step="9" title='九、'>110年全年支出、收入狀況及年底實際運用資產</div>
 			<div class="m-menu pass-step" data-step="10" title='十、'>110年商品銷售管道</div>
-			<div class="m-menu pass-step" data-step="11" title='十一、'>110年產(商)品外銷及三(多)角貿易情形</div>
-			<div class="m-menu pass-step" data-step="12" title='十二、'>110年環保概況(循環經濟)</div>
-			<div class="m-menu pass-step" data-step="13" title='十三、'>110年底靠行司機人數</div>
+			<div class="m-menu m-menu2 pass-step" data-step="11" title='十一、'>110年產(商)品外銷及三(多)角貿易情形</div>
+			<div class="m-menu m-menu2 pass-step" data-step="12" title='十二、'>110年環保概況(循環經濟)</div>
+			<div class="m-menu m-menu2 pass-step" data-step="13" title='十三、'>110年底靠行司機人數</div>
 			<a class="m-menu stepone">附記欄</a>
 			<a class="m-menu stepone">變更密碼</a>
 			<a class="m-menu stepone">登出</a>
@@ -548,15 +549,17 @@
 								</div>
 							</div>
 
-							<div class="row d-flex justify-content-center px-4 py-5">
-								<div class="col-md-4 col-6">
-									<!-- TODO 基本資料上步? -->
-									<button type="button" class="btn btn-secondary container-fluid">上一步</button>
-								</div>
-								<div class="col-md-4 col-6">
-									<!-- 下一步 - 跳出檢查視窗 -->
-									<button type="button" class="btn btn-primary float-end container-fluid next-btn"
-										data-step="0">下一步</button>
+							<div class="container-fluid">
+								<div class="row d-flex justify-content-center px-4 py-5">
+									<div class="col-md-4 col-6">
+										<!-- TODO 基本資料上步? -->
+										<button type="button" class="btn btn-secondary container-fluid">上一步</button>
+									</div>
+									<div class="col-md-4 col-6">
+										<!-- 下一步 - 跳出檢查視窗 -->
+										<button type="button" class="btn btn-primary float-end container-fluid next-btn"
+											data-step="0">下一步</button>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -634,28 +637,29 @@
 								<div class="row g-3 py-5 align-items-center">
 									<div class="col-2">民國</div>
 									<div class="col-4">
-										<input type="text" class="form-control" id="_010100" name="_010100"
+										<input type="number" class="form-control" id="_010100" name="_010100"
 											maxlength="3" placeholder="請輸入" required>
 									</div>
 									<div class="col-1 text-center">年</div>
 									<div class="col-4">
-										<input type="text" class="form-control" id="_010200" name="_010200"
+										<input type="number" class="form-control" id="_010200" name="_010200"
 											maxlength="2" placeholder="請輸入" required>
 									</div>
 									<div class="col-1 text-center">月</div>
 								</div>
 							</div>
 
-
-							<div class="row d-flex justify-content-center px-4 py-5">
-								<div class="col-md-4 col-6">
-									<button type="button" class="flex-fill btn btn-secondary container-fluid pre-btn"
-										data-step="1">上一步</button>
-								</div>
-								<div class="col-md-4 col-6">
-									<!-- <a href="/step03.html" class="btn btn-primary container-fluid">下一步</a> -->
-									<button type="button" class="btn btn-primary float-end container-fluid next-btn"
-										data-step="1">下一步</button>
+							<div class="container-fluid">
+								<div class="row d-flex justify-content-center px-4 py-5">
+									<div class="col-md-4 col-6">
+										<button type="button" class="flex-fill btn btn-secondary container-fluid pre-btn"
+											data-step="1">上一步</button>
+									</div>
+									<div class="col-md-4 col-6">
+										<!-- <a href="/step03.html" class="btn btn-primary container-fluid">下一步</a> -->
+										<button type="button" class="btn btn-primary float-end container-fluid next-btn"
+											data-step="1">下一步</button>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -1249,15 +1253,17 @@
 								</div>
 							</div>
 
-							<div class="row d-flex justify-content-center px-4 py-5">
-								<div class="col-md-4 col-6">
-									<button type="button" class="btn btn-secondary container-fluid pre-btn"
-										data-step="3">上一步</button>
-								</div>
-								<div class="col-md-4 col-6">
-									<!-- 下一步 - 跳出檢查視窗 -->
-									<button type="button" class="btn btn-primary container-fluid next-btn"
-										data-step="3">下一步</button>
+							<div class="container-fluid">
+								<div class="row d-flex justify-content-center px-4 py-5">
+									<div class="col-md-4 col-6">
+										<button type="button" class="btn btn-secondary container-fluid pre-btn"
+											data-step="3">上一步</button>
+									</div>
+									<div class="col-md-4 col-6">
+										<!-- 下一步 - 跳出檢查視窗 -->
+										<button type="button" class="btn btn-primary container-fluid next-btn"
+											data-step="3">下一步</button>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -1295,9 +1301,9 @@
 					<div class="w-menu pass-step" data-step="8" title='八、'>110年跨國(境)服務交易、投資及外資持股情形</div>
 					<div class="w-menu pass-step" data-step="9" title='九、'>110年全年支出、收入狀況及年底實際運用資產</div>
 					<div class="w-menu pass-step" data-step="10" title='十、'>110年商品銷售管道</div>
-					<div class="w-menu pass-step" data-step="11" title='十一、'>110年產(商)品外銷及三(多)角貿易情形</div>
-					<div class="w-menu pass-step" data-step="12" title='十二、'>110年環保概況(循環經濟)</div>
-					<div class="w-menu pass-step" data-step="13" title='十三、'>110年底靠行司機人數</div>
+					<div class="w-menu w-menu2 pass-step" data-step="11" title='十一、'>110年產(商)品外銷及三(多)角貿易情形</div>
+					<div class="w-menu w-menu2 pass-step" data-step="12" title='十二、'>110年環保概況(循環經濟)</div>
+					<div class="w-menu w-menu2 pass-step" data-step="13" title='十三、'>110年底靠行司機人數</div>
 					<a class="w-menu stepone">附記欄</a>
 				</div>
 			</div>

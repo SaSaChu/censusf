@@ -55,7 +55,7 @@
     </div>
 
     <div class="in-cent-bg">
-      <div class="container px-xl-0 p-5 t-mt220">
+      <div class="container px-xl-0 px-5 t-mt220">
         <form action="" style="width: 100%;">
           <div class="row">
             <div class="col-xl-7 d-xl-inline-block d-none">
@@ -64,40 +64,42 @@
               <img src="img/kv_03.png">
             </div>
             <div class="col-xl-5 col-12 p-0">
-              <img src="img/s-title.png" class="container-fluid d-xl-inline-block d-none py-5 mb-5">
+              <img src="img/s-title.png" class="container-fluid d-xl-inline-block d-none py-5">
 
               <div class="card overflow-hidden">
                 <div class="card-body py-3 px-5">
-                  <h3 class="mt-5 mb-4 color-main"><i class="bi bi-person-circle color-main" style="margin-right: 5px;"></i>使用者登入</h3>
+                  <h3 class="my-4 color-main"><i class="bi bi-person-circle color-main" style="margin-right: 5px;"></i>使用者登入</h3>
                   
                   <div class="contaniner-fluid p-3">
                     <div class="row">
-                      <div class="col-12 px-0 py-3 px-1">
-                        <label for="SURVEY_NO" class="form-label">普查編號</label>
-                        <input type="text" class="form-control" id="SURVEY_NO" name="SURVEY_NO" maxlength="11" placeholder="鄉（鎮、市、區）+村里+連續編號">
+                      <div class="col-12 mb-4 in-bord">
+                        <label for="SURVEY_NO" class="form-label in-lineH30">普查編號</label>
+                        <input type="text" class="form-control in-input" id="SURVEY_NO" name="SURVEY_NO" maxlength="11" placeholder="鄉（鎮、市、區）+村里+連續編號">
                       </div>
 
-                      <div class="col-12 px-0 py-3 px-1">
-                        <label for="_320000" class="form-label">判定編號</label>
-                        <input type="text" class="form-control" id="_320000" name="_320000" maxlength="7" placeholder="請輸入">
+                      <div class="col-12 mb-4 in-bord">
+                        <label for="_320000" class="form-label in-lineH30">判定編號</label>
+                        <input type="text" class="form-control in-input" id="_320000" name="_320000" maxlength="7" placeholder="請輸入">
                       </div>
 
-                      <div class="col-12 px-0 py-3 px-1">
-                        <label for="PWD" class="form-label">密碼</label>
-                        <input type="password" class="form-control" id="PWD" name="PWD" maxlength="32" placeholder="首次登入為判定編號">
+                      <div class="col-12 in-bord">
+                        <label for="PWD" class="form-label in-lineH30">密碼</label>
+                        <input type="password" class="form-control in-input" id="PWD" name="PWD" maxlength="32" placeholder="首次登入為判定編號">
                       </div>
                     </div>
                   </div>
 
-                  <div class="row">
-                    <div class="col-12"><p class="mb-0 pb-3">驗證碼</p></div>
-                    <div class="col-xl-4 col-12">
-                      <input type="text" class="form-control" id="VCODE" name="VCODE" maxlength="4" placeholder="請輸入">
-                      
-                    </div>
-                    <div class="col-xl-4 col-6 pt-4"></div>
-                    <div class="col-xl-4 col-6 pt-4">
-                      <button type="button" id="btnRandom" class="btn btn-secondary btn-s btn_set float-end">重新產出</button>
+                  <div class="contaniner-fluid p-3">
+                    <div class="row in-code">
+                      <div class="col-12 col-xl-6 mb-4 in-bord in-no-w">
+                        <p class="d-inline-block mb-0 in-lineH30">驗證碼</p>
+                        <input type="text" class="form-control in-input" id="VCODE" name="VCODE" maxlength="4" placeholder="請輸入">
+                      </div>
+                      <div class="col-6 col-xl-3"></div>
+                        
+                      <div class="col-6 col-xl-3">
+                        <button type="button" id="btnRandom" class="btn btn-secondary btn-s btn_set float-end">重新產出</button>
+                      </div>
                     </div>
                   </div>
 

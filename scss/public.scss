@@ -215,10 +215,14 @@ body {
   color: rgba(43, 43, 43, 1.00);
   font-size: 1.12rem;
   position: relative;
-  padding-left: 75px;
+  padding-left: 49px;
   text-decoration: none;
   background-color: $light;
   cursor: pointer;
+
+  &.w-menu2 {
+    padding-left: 65px;
+  }
 
   &:before {
     display: inline-block;
@@ -263,10 +267,14 @@ body {
   color: rgba(43, 43, 43, 1.00);
   font-size: 1.12rem;
   position: relative;
-  padding-left: 75px;
+  padding-left: 49px;
   text-decoration: none;
   background-color: $light;
   cursor: pointer;
+
+  &.m-menu2 {
+    padding-left: 65px;
+  }
 
   &:before {
     display: inline-block;
@@ -356,9 +364,14 @@ body {
   font-size: 1.25rem;
   color: white;
   margin-bottom: 0;
-  line-height: 40px;
-  padding-left: 40px;
+  line-height: 33px;
+  padding-left: 32px;
   position: relative;
+
+  @include range-width(0, 450px) {
+    line-height: 22px;
+    padding-left: 32px;
+  }
 
   &:before {
     display: inline-block;
@@ -500,7 +513,7 @@ footer {
   bottom: 0;
   width: 100%;
   background-color: white;
-  padding: 20px 0;
+  padding: 10px 0;
 
   @include range-width(0, 450px) {
     position: inherit;
@@ -516,9 +529,35 @@ footer {
   line-height: 30px;
 }
 
+.in-input {
+  display: inline-block !important;
+  width: calc(100% - 75px) !important;
+  // border: 1px solid transparent !important;
+}
 
+.in-lineH30 {
+  line-height: 30px;
+  margin-bottom: 0;
+  width: 65px;
+}
 
+.in-bord {
+  display: inline-block;
+  width: 100%;
+  // border: 1px solid rgba(199, 206, 213, 1.00);
+  @include border-radius(5px);
+  padding-left: 10px;
 
+  &.in-no-w {
+    width: auto !important;
+  }
+}
+
+.in-code {
+  @include range-width(0, 450px) {
+    flex-direction: column !important;
+  }
+}
 
 
 
