@@ -179,7 +179,7 @@ body {
   max-width: 200px;
 
   @include range-width(0, 450px) {
-    max-width: 135px;
+    max-width: 155px;
   }
 
   &.inUse {

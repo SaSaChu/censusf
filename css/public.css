@@ -3065,7 +3065,7 @@ body { position: relative; display: inline-block; width: 100%; margin: 0; paddin
 .mob-menu-icon { font-size: 1.8rem; }
 
 .img-Hlogo { display: inline-block; width: 100%; max-width: 200px; }
-@media screen and (max-width: 449px) and (min-width: 0) { .img-Hlogo { max-width: 135px; } }
+@media screen and (max-width: 449px) and (min-width: 0) { .img-Hlogo { max-width: 155px; } }
 .img-Hlogo.inUse { max-width: 269px; padding-top: 9px; }
 
 .bg-green { background-color: #7cc23e; }
