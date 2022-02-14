@@ -13,7 +13,6 @@
 	<script language="javascript" type="text/javascript" src="js/public.js"></script>
 
 
-
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"
 		integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
@@ -27,6 +26,122 @@
 </head>
 
 <body>
+	<!-- 0214更新 - 首次登入 - 變更密碼 - popup -->
+	<div class="modal fade" id="change02" data-bs-backdrop="static"
+		data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
+		aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content pop-none">
+				<div class="modal-header">
+					<h5 class="modal-title text-primary ">首次登入變更密碼</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal"
+						aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<div class="p-4">
+						<form>
+						  <div class="row mb-3">
+						    <label for="inputEmail3" class="col-sm-3 col-form-label">輸入原密碼</label>
+						    <div class="col-sm-9">
+						      <input type="email" class="form-control" id="">
+						    </div>
+						  </div>
+						  <div class="row mb-3">
+						    <label for="inputPassword3" class="col-sm-3 col-form-label">輸入新密碼</label>
+						    <div class="col-sm-9">
+						      <input type="password" class="form-control" id="">
+						    </div>
+						  </div>
+						  <div class="row mb-3">
+						    <label for="inputPassword3" class="col-sm-3 col-form-label">確認新密碼</label>
+						    <div class="col-sm-9">
+						      <input type="password" class="form-control" id="">
+						    </div>
+						    <div class="col-sm-3"></div>
+						    <div class="col-sm-9 mt-3 text-danger">密碼需大寫英文、小寫英文、數字及特殊符號各至少1位，且密碼長度需8位以上（如Aa&23803577)。</div>
+						    
+						  </div>
+						  <div class="row mb-5">
+						    <label for="inputPassword3" class="col-sm-3 col-form-label">電子郵件信箱</label>
+						    <div class="col-sm-9">
+						      <input type="password" class="form-control" id="">
+						    </div>
+						    <div class="col-sm-3"></div>
+						    <div class="col-sm-9 mt-3">如果你忘記密碼，重設密碼的網址將會寄送到此電子郵件信箱，<i class="text-danger" style="font-style: normal;">為保護個別資料，絕不洩漏此E-Mail</i>。</div>
+						  </div>
+						  <div class="row">
+						  	<div class="col-6">
+								  <button type="button" class="container-fluid btn btn-primary ">確定</button>
+								</div>
+								<div class="col-6">
+									<button type="button" class="container-fluid btn btn-secondary" data-bs-dismiss="modal">取消</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- 0214更新 - 變更密碼 - popup -->
+	<div class="modal fade" id="change01" data-bs-backdrop="static"
+		data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
+		aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content pop-none">
+				<div class="modal-header">
+					<h5 class="modal-title text-primary ">變更密碼</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal"
+						aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<div class="p-4">
+						<form>
+						  <div class="row mb-3">
+						    <label for="inputEmail3" class="col-sm-3 col-form-label">輸入原密碼</label>
+						    <div class="col-sm-9">
+						      <input type="email" class="form-control" id="">
+						    </div>
+						  </div>
+						  <div class="row mb-3">
+						    <label for="inputPassword3" class="col-sm-3 col-form-label">輸入新密碼</label>
+						    <div class="col-sm-9">
+						      <input type="password" class="form-control" id="">
+						    </div>
+						  </div>
+						  <div class="row mb-3">
+						    <label for="inputPassword3" class="col-sm-3 col-form-label">確認新密碼</label>
+						    <div class="col-sm-9">
+						      <input type="password" class="form-control" id="">
+						    </div>
+						    <div class="col-sm-3"></div>
+						    <div class="col-sm-9 mt-3 text-danger">密碼需大寫英文、小寫英文、數字及特殊符號各至少1位，且密碼長度需8位以上（如Aa&23803577)。</div>
+						    
+						  </div>
+						  <div class="row mb-5">
+						    <label for="inputPassword3" class="col-sm-3 col-form-label">電子郵件信箱</label>
+						    <div class="col-sm-9">
+						      <input type="password" class="form-control" id="">
+						    </div>
+						    <div class="col-sm-3"></div>
+						    <div class="col-sm-9 mt-3">如果你忘記密碼，重設密碼的網址將會寄送到此電子郵件信箱，<i class="text-danger" style="font-style: normal;">為保護個別資料，絕不洩漏此E-Mail</i>。</div>
+						  </div>
+						  <div class="row">
+						  	<div class="col-6">
+								  <button type="button" class="container-fluid btn btn-primary ">確定</button>
+								</div>
+								<div class="col-6">
+									<button type="button" class="container-fluid btn btn-secondary" data-bs-dismiss="modal">取消</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
 	<div class="container-fluid px-0 sticky-top shadow-sm">
 		<!-- 登出、變更密碼 start -->
 		<div class="container-fluid bg-primary pe-0">
@@ -37,7 +152,7 @@
 					</div>
 					<div class="col-3 pe-0 d-xl-inline-block d-none">
 						<a href="" class="link-header float-end">登出</a>
-						<a href="" class="link-header float-end">變更密碼</a>
+						<button class="link-header float-end" data-bs-toggle="modal" data-bs-target="#change01">變更密碼</button>
 					</div>
 					<div class="col-3 pe-0 d-xl-none d-flex align-items-center justify-content-end">
 						<button class="btn btn-primary mob-menu-icon" type="button" data-bs-toggle="offcanvas"
@@ -139,23 +254,23 @@
 
 	<!-- step03 - 問號 - popup -->
 	<div class="modal fade" id="step03ExampleModal" tabindex="-1" aria-labelledby="step03ExampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content popup-y">
-          <div class="modal-header">
-            <h5 class="modal-title" id="step03ExampleModalLabel">說明</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <p class='popup-list s3-use-no'>製造業其它主要經營方式:複選</p>
-            <p class='popup-list s3-use-list' title='(1)'>製造 <span class="text-primary">(含印刷)</span></p>
-            <p class='popup-list s3-use-list' title='(2)'>修配 <span class="text-primary">(指產業用機械設備維修及安裝)</span></p>
-            <p class='popup-list s3-use-list' title='(3)'>代客加工 <span class="text-primary">(以收取加工費為主)</span></p>
-            <p class='popup-list s3-use-list' title='(4)'>委外生產 <span class="text-primary">(指產品委託其他企業製造， 且貴單位擁有最終所有權)</span></p>
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content popup-y">
+        <div class="modal-header">
+          <h5 class="modal-title" id="step03ExampleModalLabel">說明</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p class='popup-list s3-use-no'>製造業其它主要經營方式:複選</p>
+          <p class='popup-list s3-use-list' title='(1)'>製造 <span class="text-primary">(含印刷)</span></p>
+          <p class='popup-list s3-use-list' title='(2)'>修配 <span class="text-primary">(指產業用機械設備維修及安裝)</span></p>
+          <p class='popup-list s3-use-list' title='(3)'>代客加工 <span class="text-primary">(以收取加工費為主)</span></p>
+          <p class='popup-list s3-use-list' title='(4)'>委外生產 <span class="text-primary">(指產品委託其他企業製造， 且貴單位擁有最終所有權)</span></p>
 
-          </div>
         </div>
       </div>
     </div>
+  </div>
 
 	<!-- mobile menu -->
 	<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
@@ -180,7 +295,7 @@
 			<div class="m-menu m-menu2 pass-step" data-step="12" title='十二、'>110年環保概況(循環經濟)</div>
 			<div class="m-menu m-menu2 pass-step" data-step="13" title='十三、'>110年底靠行司機人數</div>
 			<a class="m-menu stepone">附記欄</a>
-			<a class="m-menu stepone">變更密碼</a>
+			<button class="m-menu stepone nob" data-bs-toggle="modal" data-bs-target="#change01">變更密碼</button>
 			<a class="m-menu stepone">登出</a>
 		</div>
 	</div>
@@ -241,8 +356,7 @@
 
 									<div class="col-12 py-4">
 										<label for="exampleFormControlInput1" class="form-label">單位名稱(請填全名)<i
-												class="text-danger markUse">*</i><button type="button" title="罕見字輸入"
-												class="btn-hard">難</button></label>
+												class="text-danger markUse">*</i></label>
 										<input type="text" class="form-control" id="UNIT" name="UNIT" maxlength="70"
 											placeholder="請輸入" required>
 									</div>
@@ -552,10 +666,6 @@
 							<div class="container-fluid">
 								<div class="row d-flex justify-content-center px-4 py-5">
 									<div class="col-md-4 col-6">
-										<!-- TODO 基本資料上步? -->
-										<button type="button" class="btn btn-secondary container-fluid">上一步</button>
-									</div>
-									<div class="col-md-4 col-6">
 										<!-- 下一步 - 跳出檢查視窗 -->
 										<button type="button" class="btn btn-primary float-end container-fluid next-btn"
 											data-step="0">下一步</button>
@@ -664,6 +774,7 @@
 							</div>
 						</div>
 					</div>
+
 					<!-- step03 -->
 					<div class="step-box d-none" data-step="3">
 						<!-- step標題 -->
@@ -1312,7 +1423,8 @@
 
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
-		crossorigin="anonymous"></script>
+		crossorigin="anonymous">
+	</script>
 
 
 </body>

@@ -19,6 +19,12 @@ body {
   font-family:'Roboto', 'Noto Sans TC', "Helvetica Neue", HelveticaNeue, Helvetica, Arial, sans-serif;
 }
 
+.btn {
+  &:focus {
+    box-shadow: none !important;
+  }
+}
+
 .t-mt220 {
   @include range-width(0, 450px) {
     margin-top: 220px;
@@ -274,6 +280,7 @@ body {
   text-decoration: none;
   background-color: $light;
   cursor: pointer;
+  text-align: left;
 
   &.m-menu2 {
     padding-left: 65px;
@@ -289,6 +296,13 @@ body {
 
   &.no-border {
     border: 0;
+  }
+
+  &.nob {
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 1px solid white;
   }
 
   &.stepone {
@@ -321,6 +335,8 @@ body {
   line-height: 68px;
   text-decoration: none;
   margin-left: 30px;
+  background-color: transparent;
+  border: 0;
 
   &:before {
     display: inline-block;
