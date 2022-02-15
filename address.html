@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+	<meta http-equiv="Content-Language" content="zh-tw">
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,minimal-ui">
+
+	<title></title>
+
+	<script language="javascript" type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+	<script language="javascript" type="text/javascript" src="js/address.js"></script>	
+	<!-- <script language="javascript" type="text/javascript" src="js/errorCode.js"></script> -->
+	<!-- <script language="javascript" type="text/javascript" src="js/public.js"></script> -->
+
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="css/public.css">
+	<link rel="stylesheet" type="text/css" href="css/icon.css">
+
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;500;900&display=swap"
+		rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+<!-- 修改地址pop up -->
+<div class="modal fade show" id="staticBackdrop" data-bs-backdrop="static"
+data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
+aria-hidden="true" role="dialog" style="display: block;">
+<div class="modal-dialog modal-dialog-centered">
+	<div class="modal-content">
+		<div class="modal-header">
+			<h5 class="modal-title">選擇地址</h5>
+			<!-- <button type="button" class="btn-close" data-bs-dismiss="modal"
+				aria-label="Close"></button> -->
+		</div>
+		<div class="modal-body">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-6 px-2 py-3">
+						<select title="縣市" id="B071" class="form-select"
+							aria-label="Default select example">
+							<option value selected>縣市</option>
+							<option value="宜蘭縣">宜蘭縣</option>
+						</select>
+					</div>
+					<div class="col-6 px-2 py-3">
+						<select title="鄉鎮市區" id="B072" class="form-select"
+							aria-label="Default select example">
+							<option valaue selected>鄉鎮市區</option>
+							<option value="宜蘭市">宜蘭市</option>
+						</select>
+					</div>
+
+					<div class="col-12 px-2 py-3">
+						<select title="村里" id="B073" class="form-select"
+							aria-label="Default select example">
+							<option value selected>村里</option>
+							<option value="神農里">神農里</option>
+						</select>
+					</div>
+
+					<div class="col-12 px-2 py-3">
+						<select title="路街段" id="B0745" class="form-select"
+							aria-label="Default select example">
+							<option value selected>路街段</option>
+							<option value="農權路">農權路</option>
+						</select>
+					</div>
+
+					<div class="col-12 px-2 py-3">
+						<select title="巷弄" id="B0768" class="form-select"
+							aria-label="Default select example">
+							<option selected>巷弄</option>
+							<option value="１３巷">１３巷</option>
+						</select>
+					</div>
+
+					<div class="row g-3 align-items-center">
+						<div class="col-2">
+							<input title="號" type="text" id="B079" maxlength="4"
+								class="form-control p-2" placeholder="">
+						</div>
+						<div class="col-2 text-center">之</div>
+						<div class="col-2">
+							<input title="號" type="text" id="B07A" maxlength="4"
+								class="form-control p-2" placeholder="">
+						</div>
+						<div class="col-2 text-center">之</div>
+						<div class="col-2">
+							<input title="號" type="text" id="B07B" maxlength="4"
+								class="form-control p-2" placeholder="">
+						</div>
+						<div class="col-2 text-center">號之</div>
+					</div>
+
+					<div class="row g-3 align-items-center">
+						<div class="col-2">
+							<input title="號" type="text" id="B07C" maxlength="4"
+								class="form-control p-2" placeholder="">
+						</div>
+						<div class="col-2 text-center">之</div>
+						<div class="col-2">
+							<input title="號" type="text" id="B07D" maxlength="4"
+								class="form-control p-2" placeholder="">
+						</div>
+						<div class="col-2">
+							<input title="樓" type="text" id="B07E" maxlength="5"
+								class="form-control p-2" placeholder="">
+						</div>
+						<div class="col-2">
+							<span>樓之</span>
+						</div>
+					</div>
+
+					<div class="row g-3 pb-5 align-items-center">
+						<div class="col-2">
+							<input title="樓" type="text" id="B07F" maxlength="6"
+								class="form-control p-2" placeholder="">
+						</div>
+						<div class="col-2">
+							<input title="室" type="text" id="B07G" maxlength="6"
+								class="form-control p-2" placeholder="">
+						</div>
+						<div class="col-2">
+							<span>室</span>
+						</div>
+					</div>
+
+					<div class="col-12 px-2 py-3">
+						<input title="其他" type="text" id="B07H" maxlength="20"
+							class="form-control" id="exampleFormControlInput1"
+							placeholder="其他">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal-footer">
+			<button type="button" id="btnConfirm"
+				class="flex-fill btn btn-primary ">確定</button>
+			<!-- <button type="button" class="flex-fill btn btn-secondary"
+				data-bs-dismiss="modal">取消</button> -->
+			<a href="page.html" class="flex-fill btn btn-secondary"
+				data-bs-dismiss="modal">取消</a>
+		</div>
+	</div>
+</div>
+</div>
+</body>

@@ -86,25 +86,29 @@ $(function() {
     })
 
 	// 修改地址
-	$("#btnConfirm").click(function(){
-		let B071 = $("#B071").val();
-		let B072 = $("#B072").val();
-		let B073 = $("#B073").val();
-		let B0745 = $("#B0745").val();
-		let B0768 = $("#B0768").val();
-		let B079 = $("#B079").val();
-		let B07A = $("#B07A").val();
-		let B07B = $("#B07B").val();
-		let B07C = $("#B07C").val();
-		let B07D = $("#B07D").val();
-		let B07E = $("#B07E").val();
-		let B07F = $("#B07F").val();
-		let B07G = $("#B07G").val();
-		let B07H = $("#B07H").val();
-		let address = B071 + B072 + B073 + B0745 + B0768 + B079 + B07A + B07B + B07C + B07D + B07E + B07F + B07G + B07H 
-		$("#B07Z").val(address);
-		$("#staticBackdrop").modal('hide');
-	})
+	let address = JSON.parse(localStorage.getItem("address"))
+	if(address) {
+		$("#B07Z").val(address);	
+	}
+	// $("#btnConfirm").click(function(){
+	// 	let B071 = $("#B071").val();
+	// 	let B072 = $("#B072").val();
+	// 	let B073 = $("#B073").val();
+	// 	let B0745 = $("#B0745").val();
+	// 	let B0768 = $("#B0768").val();
+	// 	let B079 = $("#B079").val();
+	// 	let B07A = $("#B07A").val();
+	// 	let B07B = $("#B07B").val();
+	// 	let B07C = $("#B07C").val();
+	// 	let B07D = $("#B07D").val();
+	// 	let B07E = $("#B07E").val();
+	// 	let B07F = $("#B07F").val();
+	// 	let B07G = $("#B07G").val();
+	// 	let B07H = $("#B07H").val();
+	// 	let address = B071 + B072 + B073 + B0745 + B0768 + B079 + B07A + B07B + B07C + B07D + B07E + B07F + B07G + B07H 
+	// 	$("#B07Z").val(address);
+	// 	$("#staticBackdrop").modal('hide');
+	// })
 
 	// 同實際營業地址
 	$("input[id='BR']").change(function() {
