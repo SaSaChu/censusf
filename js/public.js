@@ -148,40 +148,54 @@ $(function() {
 	// 項目三 start
 	//110年生產之產品或經營、服務之項目 主要經營項目是否屬於下列行業
 	$("select[id='_030101']").change(function() {
+		let question;
 		$('._030101').each(function(){
 			$(this).addClass('d-none');
 		})
 		if($(this).val() == 1) {
-			$('._030101-2').each(function(){
+			question = [10, 13];
+
+			$('._030101-1').each(function(){
 				$('._030101-1').removeClass('d-none');
 			});
 			$("#_030210").prop("required", true);
 		} else if ($(this).val() == 2) {
+			question = [10, 11, 13];
+
 			$('._030101-2').each(function(){
 				$(this).removeClass('d-none');
 			});
 			$("#_030210").prop("required", false);
 		} else if ($(this).val() == 3) {
+			question = [12, 13];
+
 			$('._030101-3').each(function(){
 				$(this).removeClass('d-none');
 			});
 			$("#_030210").prop("required", true);
 		} else if ($(this).val() == 4) {
+			question = [10, 11 ,12];
+			
 			$('._030101-4').each(function(){
 				$(this).removeClass('d-none');
 			});
 			$("#_030210").prop("required", false);
 		} else if ($(this).val() == 5) {
+			question = [10, 11 ,12, 13];
 			$('._030101-5').each(function(){
 				$(this).removeClass('d-none');
 			});
 			$("#_030210").prop("required", false);
 		} else if ($(this).val() == 6) {
+			question = [10, 11 ,12, 13];
+			
 			$('._030101-6').each(function(){
 				$(this).removeClass('d-none');
 			});
 			$("#_030210").prop("required", false);
 		}
+		localStorage.setItem('question', JSON.stringify(question));
+		displayQuestion();
 	})
 
 	//1. 製造業 最主要經營方式
@@ -216,12 +230,47 @@ $(function() {
 
 	//5.租賃業 主要租賃項目
 	$("select[id='_030251']").change(function() {
+		let question = [10, 11, 12, 13]
 		if($(this).val() == 1 || $(this).val() == 4 || $(this).val() == 5) {
 			$('._030253').addClass('d-none')
-		} else if ($(this).val() == 3) {
+			localStorage.setItem('question', JSON.stringify(question));
+			displayQuestion()	
+		} else if ( $(this).val() == 2 || $(this).val() == 3) {
 			$('._030253').removeClass('d-none')	
 		}
+		$("select[id='_030253']").val('請選擇');
 	})
+
+	//5.租賃業 是否附駕駛
+	$("select[id='_030253']").change(function() {
+		let question = [];
+		if($(this).val() == 1 && $("select[id='_030251']").val() == 2) {
+			question = [10, 11, 13]
+		} else if ($(this).val() == 1 && $("select[id='_030251']").val() == 3) {
+			question = [10, 11, 12]
+		}
+		localStorage.setItem('question', JSON.stringify(question));
+		displayQuestion()
+	})
+
+	//次要經營項目
+	$("select[id='_030301']").change(function() {
+		$('._030301').each(function(){
+			$(this).addClass('d-none');
+		})
+		if($(this).val() == 1) {
+			$('._030301-1').each(function(){
+				$('._030301-1').removeClass('d-none');
+			});
+		}
+
+		if($(this).val() == 2) {
+			$('._030301-2').each(function(){
+				$('._030301-2').removeClass('d-none');
+			});
+		}
+	});
+
 
 	// 項目三 end
 
@@ -337,7 +386,10 @@ $(function() {
 	// 顯示或隱藏題目
 	function displayQuestion() {
 		let question = JSON.parse(localStorage.getItem("question"))	
-		if(question) {
+		if(question) {	
+			if($("select[id='_030251']").val() == 2 || $("select[id='_030251']").val() == 3) {
+				$('.w-menu').removeClass('pass-step')
+			}
 			question.forEach(e => {
 				$(".w-menu[data-step^='"+e+"']").addClass('pass-step')	;
 			});
