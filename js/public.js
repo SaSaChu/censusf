@@ -39,6 +39,12 @@ $(function() {
 		run_clock('clockdiv');
 	})
 
+	// 首次登入變更密碼
+	var change02 = new bootstrap.Modal(document.getElementById('change02'), {
+		keyboard: false
+	})
+	change02.show();
+
 	// 右側&手機menu
 	$('.w-menu:not(.pass-step)').click(function() {
 		let step = $(this).data('step');
