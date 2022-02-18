@@ -569,6 +569,9 @@ footer {
 
   &.in-no-w {
     width: auto !important;
+    @include range-width(0, 450px) {
+       width: 100% !important;
+    }
   }
 }
 
@@ -578,6 +581,11 @@ footer {
   }
 }
 
+.p75 {
+  @include range-width(0, 450px) {
+    padding-left: 75px !important;
+  }
+}
 
 
 

@@ -3150,5 +3150,8 @@ footer { display: inline-block; width: 100%; background-color: white; padding: 1
 
 .in-bord { display: inline-block; width: 100%; border-radius: 5px; padding-left: 10px; }
 .in-bord.in-no-w { width: auto !important; }
+@media screen and (max-width: 449px) and (min-width: 0) { .in-bord.in-no-w { width: 100% !important; } }
 
 @media screen and (max-width: 449px) and (min-width: 0) { .in-code { flex-direction: column !important; } }
+
+@media screen and (max-width: 449px) and (min-width: 0) { .p75 { padding-left: 75px !important; } }
