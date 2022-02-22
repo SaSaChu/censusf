@@ -99,6 +99,15 @@ body {
   }
 }
 
+.f-25 {
+  display: inline-block;
+  width: 25% !important;
+}
+
+.pl-45 {
+  padding-left: 45px;
+}
+
 .m-100 {
   @include range-width(0, 450px) {
     width: 100% !important;
@@ -393,12 +402,33 @@ body {
   color: white;
   margin-bottom: 0;
   line-height: 33px;
-  padding-left: 32px;
+  padding-left: 40px;
   position: relative;
 
   @include range-width(0, 450px) {
     line-height: 22px;
     padding-left: 39px;
+  }
+
+  &:before {
+    display: inline-block;
+    content: attr(title);
+    position: absolute;
+    left: 0;
+  }
+}
+
+.title-type3 {
+  font-size: 1.25rem;
+  color: white;
+  margin-bottom: 0;
+  line-height: 33px;
+  padding-left: 60px;
+  position: relative;
+
+  @include range-width(0, 450px) {
+    line-height: 22px;
+    padding-left: 60px;
   }
 
   &:before {
