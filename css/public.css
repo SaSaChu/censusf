@@ -3039,6 +3039,7 @@ body { position: relative; display: inline-block; width: 100%; margin: 0; paddin
 .f-25 { display: inline-block; width: 25% !important; }
 
 .pl-45 { padding-left: 45px; }
+@media screen and (max-width: 449px) and (min-width: 0) { .pl-45 { padding-left: 56px; } }
 
 @media screen and (max-width: 449px) and (min-width: 0) { .m-100 { width: 100% !important; margin-top: 10px; } }
 
@@ -3116,6 +3117,8 @@ body { position: relative; display: inline-block; width: 100%; margin: 0; paddin
 
 .title-type { font-size: 1.25rem; color: white; margin-bottom: 0; line-height: 40px; }
 @media screen and (max-width: 449px) and (min-width: 0) { .title-type { line-height: 33px; } }
+
+.title-type1 { font-size: 1.25rem; color: white; margin-bottom: 0; line-height: 33px; }
 
 .title-type2 { font-size: 1.25rem; color: white; margin-bottom: 0; line-height: 33px; padding-left: 40px; position: relative; }
 @media screen and (max-width: 449px) and (min-width: 0) { .title-type2 { line-height: 22px; padding-left: 39px; } }
