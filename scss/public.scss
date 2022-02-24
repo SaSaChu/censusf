@@ -19,6 +19,41 @@ body {
   font-family:'Roboto', 'Noto Sans TC', "Helvetica Neue", HelveticaNeue, Helvetica, Arial, sans-serif;
 }
 
+ul {
+  list-style: none;
+  padding-left: 2.3rem;
+  padding-top: 10px;
+  margin-bottom: 0;
+
+  li {
+
+    &.li-nos {
+
+      &:before {
+        display: none;
+      }
+    }
+
+    display: flex;
+  /*  使用自訂標號  */
+    counter-increment: my-counter;
+  /* 段落首行縮排 */
+    // text-indent: -1em;
+
+    &:before {
+      content: "("counter(my-counter) ")";
+      line-height: 40px;
+      padding-right: 10px;
+    }
+  }
+
+  @include range-width(0, 450px) {
+    padding-left: 0;
+  }
+}
+
+
+
 .btn {
   &:focus {
     box-shadow: none !important;
@@ -104,6 +139,14 @@ body {
   width: 25% !important;
 }
 
+.pl-34 {
+  padding-left: 34px;
+
+  @include range-width(0, 450px) {
+    padding-left: 0;
+  }
+}
+
 .pl-45 {
   padding-left: 45px;
 
@@ -133,6 +176,10 @@ body {
 
 .border-bs {
   border-bottom: 2px dotted rgba(217, 222, 226, .8);
+}
+
+.bor-test01 {
+  border: 1px solid rgba(255, 0, 0, .3);
 }
 
 .bg-test01 {

@@ -70,17 +70,54 @@
         </div>
       </div>
 
-      <!-- ★★★ 手機版 - step10標題 ★★★ -->
+      <!-- ★★★ 手機版 - step7標題 ★★★ -->
       <div class="container-fluid bg-title py-3 d-xl-none d-xl-inline-block">
         <div class="row align-items-center">
           <div class="col-10 pe-0">
-            <p class="title-type1">附記欄</p>
+            <p class="title-type2" title="六、">110年營運數位化狀況</p>
           </div>
-          <div class="col-2 p-0 d-flex align-items-center justify-content-end"></div>
+          <div class="col-2 p-0 d-flex align-items-center justify-content-end">
+            <button type="button" class="btn btn-q" data-bs-toggle="modal" data-bs-target="#step04ExampleModal">
+               <!-- 問號 - popup -->
+              <i class="bi bi-question-circle-fill"></i>
+            </button>
+          </div>
         </div>
       </div>
     </div>
 
+    <!-- ★★★ step6標題問號 - popup ★★★ -->
+    <div class="modal fade" id="step04ExampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content popup-y">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">說明</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p class='popup-list s3-use-list' title="・">
+              透過網路提供營業資訊：</br>
+              <span class="text-primary">
+                例如設置企業網站(含社群網站及通訊軟體，如FB、LINE、IG等)、上網刊登廣告、電子郵件傳送營業資訊等。
+              </span>
+            </p>
+            <p class='popup-list s3-use-list' title="・">
+              透過網路進行產品或服務之銷售或接單：</br>
+              <span class="text-primary">
+                指透過網路，於特定交易平臺、網站或系統(含EDI)進行接單、銷售作業；不含僅提供商品資訊查詢及利用電子郵件、社群網站傳遞訂單。
+              </span>
+            </p>
+            <p class='popup-list s3-use-list' title="・">
+              第三方支付：</br>
+              <span class="text-primary">
+                指在交易買賣雙方間，由第三方建立網路電子支付平臺，為買賣雙方提供款項代收代付服。
+              </span>
+            </p>
+
+          </div>
+        </div>
+      </div>
+    </div>
 
     <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
       <div class="offcanvas-header bg-primary">
@@ -113,13 +150,18 @@
         <div class="row">
           <!-- ★★★ 左邊 - 填寫表單 ★★★ -->
           <div class="col-xl-9 col ps-xl-0 pe-xl-5 px-0">
-            <!-- step10標題 -->
+            <!-- step4標題 -->
             <div class="container-fluid bg-title py-3 d-xl-inline-block d-none">
               <div class="row align-items-center">
                 <div class="col-10 pe-0">
-                  <p class="title-type1">附記欄</p>
+                  <p class="title-type2" title="六、">110年營運數位化狀況</p>
                 </div>
-                <div class="col-2 p-0 d-flex align-items-center justify-content-end"></div>
+                <div class="col-2 p-0 d-flex align-items-center justify-content-end">
+                  <button type="button" class="btn btn-q" data-bs-toggle="modal" data-bs-target="#step04ExampleModal">
+                    <!-- 問號 - popup -->
+                    <i class="bi bi-question-circle-fill"></i>
+                  </button>
+                </div>
               </div>
             </div>
 
@@ -128,154 +170,22 @@
               <!-- ● 表單欄位01 -->
               <div class="container-fluid px-4 px-xl-5">
                 <div class="row py-5">
-                  <div class="col-12">
-                    <div class="form-check">
-                      <input class="form-check-input" id="" name="" type="checkbox" value="1">
-                      <label class="form-check-label check_list" for="flexCheckDefault" title="1.">110年有受疫情影響：</label>
+                  <div class="col-12">(二)有無透過網路提供營業資訊？</div>
+
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="form-check pt-3 pe-3">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                        <label class="form-check-label" for="flexRadioDefault1">(1)有</label>
+                      </div>
                     </div>
-                  </div>
 
-                  <div class="col-12">
-                    <ul>
-                      <!-- 選項01 -->
-                      <li>
-                        <div class="input-group">
-                          <div class="col-auto">
-                            <div class="form-check pt-3">
-                              <input class="form-check-input" type="checkbox" name="flexRadioDefault" id="flexRadioDefault1" disabled>
-                              <label class="form-check-label pe-0" for="flexRadioDefault1">曾停業，停業</label>
-                            </div>
-                          </div>
-                          <div class="col-xl-1 col-3 px-3">
-                            <label for="" class="visually-hidden"></label>
-                            <input type="" class="form-control" id="" readonly>
-                          </div>
-                          <div class="col-auto pt-3 px-3">天</div>
-                        </div>
-                      </li>
-
-                      <!-- 選項02 -->
-                      <li>
-                        <div class="input-group">
-                          <div class="form-check pt-3">
-                            <input class="form-check-input" type="checkbox" name="flexRadioDefault" id="flexRadioDefault1" disabled>
-                            <label class="form-check-label pe-0" for="flexRadioDefault1">曾放無薪假</label>
-                          </div>
-                        </div>
-                      </li>
-
-                      <!-- 選項03 -->
-                      <li>
-                        <div class="w-100">
-                          <p class='mb-0' style="line-height: 40px;">若與一般無疫情之狀況比較：</p>
-                          
-                          <div class="w-100">
-                            <p class='mb-3'>110年全年營業收入：</p>
-                          </div>
-
-                          <div class="row row-cols-lg-3 row-cols-1 mb-4">
-                            <div class="col">
-                              <div class="input-group">
-                                <div class="col-auto">
-                                  <div class="form-check pt-3">
-                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-                                    <label class="form-check-label" for="flexRadioDefault2">增加(約增</label>
-                                  </div>
-                                </div>
-                                <div class="col-3 px-3">
-                                  <label for="" class="visually-hidden"></label>
-                                  <input type="" class="form-control" id="" readonly>
-                                </div>
-                                <div class="col-auto pt-3 px-3">%)</div>
-                              </div>
-                            </div>
-
-                            <div class="col">
-                              <div class="form-check pt-3 pe-3">
-                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-                                <label class="form-check-label" for="flexRadioDefault2">不變</label>
-                              </div>
-                            </div>
-
-                            <div class="col">
-                              <div class="input-group">
-                                <div class="col-auto">
-                                  <div class="form-check pt-3">
-                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-                                    <label class="form-check-label" for="flexRadioDefault2">減少(約減</label>
-                                  </div>
-                                </div>
-                                <div class="col-3 px-3">
-                                  <label for="" class="visually-hidden"></label>
-                                  <input type="" class="form-control" id="" readonly>
-                                </div>
-                                <div class="col-auto pt-3 px-3">%)</div>
-                              </div>
-                            </div>
-                          </div>
-
-                          <!-- 分隔線 虛線 -->
-                          <div class="container-fluid border-bs"></div>
-
-                          <div class="w-100 mt-4">
-                            <p class='mb-3'>110年全年薪資支出：</p>
-                          </div>
-
-                          <div class="row row-cols-lg-3 row-cols-1 mb-3">
-                            <div class="col">
-                              <div class="input-group">
-                                <div class="col-auto">
-                                  <div class="form-check pt-3">
-                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-                                    <label class="form-check-label" for="flexRadioDefault2">增加(約增</label>
-                                  </div>
-                                </div>
-                                <div class="col-3 px-3">
-                                  <label for="" class="visually-hidden"></label>
-                                  <input type="" class="form-control" id="" readonly>
-                                </div>
-                                <div class="col-auto pt-3 px-3">%)</div>
-                              </div>
-                            </div>
-
-                            <div class="col">
-                              <div class="form-check pt-3 pe-3">
-                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-                                <label class="form-check-label" for="flexRadioDefault2">不變</label>
-                              </div>
-                            </div>
-
-                            <div class="col">
-                              <div class="input-group">
-                                <div class="col-auto">
-                                  <div class="form-check pt-3">
-                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-                                    <label class="form-check-label" for="flexRadioDefault2">減少(約減</label>
-                                  </div>
-                                </div>
-                                <div class="col-3 px-3">
-                                  <label for="" class="visually-hidden"></label>
-                                  <input type="" class="form-control" id="" readonly>
-                                </div>
-                                <div class="col-auto pt-3 px-3">%)</div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        
-                      </li>
-
-                      <!-- 選項04 -->
-                      <li>
-                        <div class="input-group">
-                          <div class="form-check pt-3">
-                            <input class="form-check-input" id="" name="" type="checkbox" value="1"  disabled>
-                            <label class="form-check-label pb-4" for="flexCheckDefault">其他受影響項目，請說明(如110年受疫情影響，未能提供國(境)外客戶旅遊、維修服務等)： </label>
-                            <input type="text" id="" name="" class="form-control" maxlength="30" placeholder="請輸入">
-                          </div>
-                        </div>
-                      </li>
-                    </ul>
+                    <div class="col-12">
+                      <div class="form-check pt-3 pe-3">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                        <label class="form-check-label" for="flexRadioDefault2">(2)無</label>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
@@ -286,42 +196,84 @@
               <!-- ● 表單欄位02 -->
               <div class="container-fluid px-4 px-xl-5">
                 <div class="row py-5">
+                  <div class="col-12">(三)有無透過網路進行產品或服務之銷售或接單？<i class="text-danger markUse">(含透過供應鏈採購系統銷售)</i></div>
+
                   <div class="col-12">
-                    <div class="form-check pt-3">
-                      <input class="form-check-input" id="" name="" type="checkbox" value="1">
-                      <label class="form-check-label check_list pb-4" for="flexCheckDefault" title="2.">其他特殊情形，請以文字說明<i class="text-danger markUse">(如無收入、巨額虧損或獲利等)</i></label>
-                      <input type="text" id="" name="" class="form-control" maxlength="30" placeholder="請輸入">
-                    </div>
+                    <ul style="padding-left: 0;">
+                      <li class="li-nos">
+                        <div class="form-check pt-3 pe-3">
+                          <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                          <label class="form-check-label" for="flexRadioDefault1">(1)有</label>
+                        </div>
+                      </li>
+                      <li class="li-nos pl-34">
+                        <div class="input-group">
+                            <div class="col-auto pt-3 pe-3">1A.全年交易金額占總收入之比率</div>
+                            <div class="col-3">
+                              <label for="" class="visually-hidden"></label>
+                              <input type="" class="form-control" id="">
+                            </div>
+                            <div class="col-auto pt-3 px-3">％<i class="text-primary markUse">(四捨五入至整數)</i></div>
+                        </div>
+                      </li>
+                      <li class="li-nos pl-34">
+                        <div class="col-auto pt-3 pe-3">1B.其中有無跨國(境)銷售</div>
+                        <div class="row row-cols-lg-2 row-cols-1 mb-4">
+                          <div class="col">
+                            <div class="form-check pt-3 pe-3">
+                              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                              <label class="form-check-label" for="flexRadioDefault1">(1)有</label>
+                            </div>
+                          </div>
+
+                          <div class="col">
+                            <div class="form-check pt-3 pe-3">
+                              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                              <label class="form-check-label" for="flexRadioDefault2">(2)無</label>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="li-nos pl-34">
+                        <div class="col-auto pt-3 pe-3"> 1C.其中有無使用第三方支付</div>
+                        <div class="row row-cols-lg-2 row-cols-1 mb-4">
+                          <div class="col">
+                            <div class="form-check pt-3 pe-3">
+                              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                              <label class="form-check-label" for="flexRadioDefault1">(1)有</label>
+                            </div>
+                          </div>
+
+                          <div class="col">
+                            <div class="form-check pt-3 pe-3">
+                              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                              <label class="form-check-label" for="flexRadioDefault2">(2)無</label>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+
+
+                      <li class="li-nos">
+                        <div class="form-check pt-3 pe-3">
+                          <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                          <label class="form-check-label" for="flexRadioDefault2">(2)無</label>
+                        </div>
+                      </li>
+                    </ul>
                   </div>
                 </div>
-
-                <!-- 分隔線 虛線 -->
-                <div class="container-fluid border-bs px-4"></div>
               </div>
 
-              <!-- ● 表單欄位03 -->
-              <div class="container-fluid px-4 px-xl-5">
-                <div class="row py-5">
-                  <div class="col-12">
-                    <div class="form-check pt-3">
-                      <input class="form-check-input" id="" name="" type="checkbox" value="1">
-                      <label class="form-check-label check_list" for="flexCheckDefault" title="3.">CAPI</label>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- 分隔線 虛線 -->
-                <div class="container-fluid border-bs px-4"></div>
-              </div>
 
               <div class="container-fluid">
                 <div class="row d-flex justify-content-center px-4 py-5">
                   <div class="col-md-4 col-6">
-                    <a href="/step13.html" class="btn btn-secondary container-fluid">上一步</a>
+                    <a href="/step06-1.html" class="btn btn-secondary container-fluid">上一步</a>
                     <!-- <button type="button" class="btn btn-secondary container-fluid">上一步</button> -->
                   </div>
                   <div class="col-md-4 col-6">
-                    <a href="/survery.html" class="btn btn-primary container-fluid">下一步</a>
+                    <a href="/step06-3.html" class="btn btn-primary container-fluid">下一步</a>
                     <!-- <button type="button" class="btn btn-primary float-end container-fluid">下一步</button> -->
                   </div>
                 </div>

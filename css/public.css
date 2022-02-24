@@ -3012,6 +3012,12 @@ html { font-size: 16px; height: 100%; }
 
 body { position: relative; display: inline-block; width: 100%; margin: 0; padding: 0; color: #5a5a5a; font-family: 'Roboto', 'Noto Sans TC', "Helvetica Neue", HelveticaNeue, Helvetica, Arial, sans-serif; }
 
+ul { list-style: none; padding-left: 2.3rem; padding-top: 10px; margin-bottom: 0; }
+ul li { display: flex; /*  使用自訂標號  */ counter-increment: my-counter; /* 段落首行縮排 */ }
+ul li.li-nos:before { display: none; }
+ul li:before { content: "(" counter(my-counter) ")"; line-height: 40px; padding-right: 10px; }
+@media screen and (max-width: 449px) and (min-width: 0) { ul { padding-left: 0; } }
+
 .btn:focus { box-shadow: none !important; }
 
 @media screen and (max-width: 449px) and (min-width: 0) { .t-mt220 { margin-top: 150px; } }
@@ -3038,6 +3044,9 @@ body { position: relative; display: inline-block; width: 100%; margin: 0; paddin
 
 .f-25 { display: inline-block; width: 25% !important; }
 
+.pl-34 { padding-left: 34px; }
+@media screen and (max-width: 449px) and (min-width: 0) { .pl-34 { padding-left: 0; } }
+
 .pl-45 { padding-left: 45px; }
 @media screen and (max-width: 449px) and (min-width: 0) { .pl-45 { padding-left: 56px; } }
 
@@ -3049,6 +3058,8 @@ body { position: relative; display: inline-block; width: 100%; margin: 0; paddin
 .w-3 { width: 3% !important; }
 
 .border-bs { border-bottom: 2px dotted rgba(217, 222, 226, 0.8); }
+
+.bor-test01 { border: 1px solid rgba(255, 0, 0, 0.3); }
 
 .bg-test01 { height: 30px; border: 1px solid rgba(255, 0, 0, 0.3); }
 
