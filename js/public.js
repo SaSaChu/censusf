@@ -286,16 +286,25 @@ $(function() {
 
 	// 上一步
 	$('.pre-btn').click(function() {
-		let step = $(this).data('step');
-		let pre;
+		let step = $(this).parents('.step-box').data('step');
+		let pre = parseInt(step) - 1
 
-		if(step === 3) {
-			pre = parseInt(step) - 2; 	
-		} else {
-			pre = parseInt(step) - 1;	
+		if(pre < 0) {
+			pre = 0;
+		} else if (pre === 2) {
+			pre = 1;
+		} else if (pre === 60) {
+			pre = 5;
+		} else if (pre === 6) {
+			pre = 64
 		}
 		
-		$(`.w-menu[data-step="${step}"`).removeClass('on-step');
+		if(pre === 5) {
+			$(`.w-menu[data-step="6"`).removeClass('on-step');
+		} else {
+			$(`.w-menu[data-step="${step}"`).removeClass('on-step');
+		}
+		
 		$(`.step-box[data-step="${step}"]`).addClass('d-none');
 		$(`.step-box[data-step="${pre}"`).removeClass('d-none');
 
@@ -315,9 +324,20 @@ $(function() {
 
 	// 下一步確認必填欄位
 	$('.next-btn').click(function() {
-		let step = $(this).data('step');
-		let next = step === 1 ? 3 : parseInt(step) + 1;
-		let notFill = checkFillInput(step);	
+		let step = $(this).parents('.step-box').data('step'); 
+		let next = parseInt(step) + 1;
+		
+		if(next === 2) {
+			next = 3;
+		} else if(next === 6) {
+			next = 61
+		} else if(next === 65) {
+			next = 7
+		}
+		
+		// 確認必填功能
+		// let notFill = checkFillInput(step);	
+		let notFill = 0;
 		if(notFill.length) {
 			$('#next').modal('show');
 			var nextModal = document.getElementById('next')
@@ -335,9 +355,14 @@ $(function() {
 				$('#next').find('.modal-body').empty().html(element);
 			});
 		} else {
+			
 			$(`.step-box[data-step="${step}"`).addClass('d-none');
 			$(`.step-box[data-step="${next}"`).removeClass('d-none');
-			$(`.w-menu[data-step="${next}"]`).addClass('on-step');
+			if(next == 61) {
+				$(`.w-menu[data-step="6"]`).addClass('on-step');
+			} else {
+				$(`.w-menu[data-step="${next}"]`).addClass('on-step');
+			}
 			
 			if(next === 0) {
 				$('.bg-title-1').removeClass('d-none')
