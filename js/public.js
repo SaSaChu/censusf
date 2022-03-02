@@ -280,9 +280,317 @@ $(function() {
 			});
 		}
 	});
-
-
 	// 項目三 end
+	//step4
+	//前項僱用員工中，有無部分工時(part-time，PT)員工？
+	$("input[id='_040104'").change(function() {
+		if($(this).val() == 1) {
+			$("input[id='_0401045").prop('readonly', false);
+		} else {
+			$("input[id='_0401045").val('');
+			$("input[id='_0401045").prop('readonly', true);
+		}
+	})
+	//step5
+	//全年有無使用派遣人力？
+	$("input[id='_050100'").change(function() {
+		if($(this).val() == 1) {
+			$("input[id='_050101").prop('readonly', false);
+			$("input[id='_050102").prop('readonly', false);
+			$("input[id='_050103").prop('readonly', false);
+		} else {
+			$("input[id='_050101").val('');
+			$("input[id='_050102").val('');
+			$("input[id='_050103").val('');
+			$("input[id='_050101").prop('readonly', true);
+			$("input[id='_050102").prop('readonly', true);
+			$("input[id='_050103").prop('readonly', true);
+		}
+	})
+	//全年有無經營勞動派遣業務？
+	$("input[id='_050200'").change(function() {
+		if($(this).val() == 1) {
+			$("input[id='_050201").prop('readonly', false);
+			$("input[id='_050202").prop('readonly', false);
+			$("input[id='_050203").prop('readonly', false);
+		} else {
+			$("input[id='_050201").val('');
+			$("input[id='_050202").val('');
+			$("input[id='_050203").val('');
+			$("input[id='_050201").prop('readonly', true);
+			$("input[id='_050202").prop('readonly', true);
+			$("input[id='_050203").prop('readonly', true);
+		}
+	})
+	//step 6
+	//step 6-2
+	//有無透過網路進行產品或服務之銷售或接單？
+	$("input[id='_060300'").change(function() {
+		if($(this).val() == 1) {
+			$("input[id='_060311").prop('readonly', false);
+			$("input[id='_060320").prop('disabled', false);
+			$("input[id='_060330").prop('disabled', false);
+		} else {
+			$("input[id='_060311").val('');
+			$("input[id='_060320").prop('checked', false);
+			$("input[id='_060330").prop('checked', false);
+			$("input[id='_060311").prop('readonly', true);
+			$("input[id='_060320").prop('disabled', true);
+			$("input[id='_060330").prop('disabled', true);
+		}
+	})
+	//step 6-3
+	//有無採行下列措施，以加強資(通)訊安全？
+	$("input[id='_060500'").change(function() {
+		if($(this).val() == 1) {
+			$("input[id='_060501").prop('disabled', false);
+			$("input[id='_060502").prop('disabled', false);
+			$("input[id='_060503").prop('disabled', false);
+		} else {
+			$("input[id='_060501").prop('checked', false);
+			$("input[id='_060502").prop('checked', false);
+			$("input[id='_060503").prop('checked', false);
+			$("input[id='_060501").prop('disabled', true);
+			$("input[id='_060502").prop('disabled', true);
+			$("input[id='_060503").prop('disabled', true);
+		}
+	})
+	//step 6-4
+	//同時使用於基礎及生產服務等進階作業
+	$("input[id='_060600'").change(function() {
+		if($(this).val() == 2) {
+			$("input[id='_060611").prop('disabled', false);
+			$("input[id='_060612").prop('disabled', false);
+			
+		} else {
+			$("input[id='_060611").prop('checked', false);
+			$("input[id='_060612").prop('checked', false);
+			$("input[id='_060611").prop('disabled', true);
+			$("input[id='_060612").prop('disabled', true);
+		}
+	})	
+	//step 6-5
+	//有無運用下列技術？點選有時請勾選下列技術中有運用者(可複選)，並選擇至少一項之主要運用作業
+	$("input[id='_060620']").on('click',function() {
+		$("._060621").toggleClass('d-none');
+		$("._060622").toggleClass('d-none');	
+	})
+	$("input[id='_060630']").on('click',function() {
+		$("._060631").toggleClass('d-none');
+		$("._060632").toggleClass('d-none');	
+	})
+	$("input[id='_060640']").on('click',function() {
+		$("._060641").toggleClass('d-none');
+		$("._060642").toggleClass('d-none');	
+	})
+	$("input[id='_060650']").on('click',function() {
+		$("._060651").toggleClass('d-none');
+		$("._060652").toggleClass('d-none');	
+	})
+	$("input[id='_060660']").on('click',function() {
+		$("._060661").toggleClass('d-none');
+		$("._060662").toggleClass('d-none');	
+	})
+
+	//step 8
+	//全年有無跨國(境)服務交易、投資布局或外資持股？
+	$("input[id='_080000']").change(function() {
+		if($(this).val() == 1) {
+			$("input[id='_080100']").prop('disabled', false);
+			$("input[id='_080100']").change(function() {
+				if($(this).val() == 1) {
+					$("input[id='_080101']").prop('disabled', false);	
+				}else {
+					$("input[id='_080101']").prop('checked', false);		
+					$("input[id='_080101']").prop('disabled', true);		
+				}
+			})	
+			$("input[id='_080200']").prop('disabled', false);
+			$("input[id='_080200']").change(function() {
+				if($(this).val() == 1) {
+					$("input[id='_080201']").prop('readonly', false);	
+					$("input[id='_080202']").prop('readonly', false);	
+				}else {
+					$("input[id='_080201']").val('');		
+					$("input[id='_080202']").val('');		
+					$("input[id='_080201']").prop('readonly', true);		
+					$("input[id='_080202']").prop('readonly', true);		
+				}
+			})	
+			$("input[id='_080300']").prop('disabled', false);
+			$("input[id='_080300']").change(function() {
+				if($(this).val() == 1) {
+					$("input[id='_080301']").prop('readonly', false);	
+				}else {
+					$("input[id='_080301']").val('');		
+					$("input[id='_080301']").prop('readonly', true);		
+				}
+			})	
+			$("input[id='_080400']").prop('disabled', false);
+			$("input[id='_080400']").change(function() {
+				if($(this).val() == 1) {
+					$("input[id='_080401']").prop('readonly', false);	
+				}else {
+					$("input[id='_080401']").val('');		
+					$("input[id='_080401']").prop('readonly', true);		
+				}
+			})	
+			
+		} else {
+			$("input[id='_080100']").prop('disabled', true);
+			$("input[id='_080100']").prop('checked', false);
+			$("input[id='_080101']").prop('checked', false);		
+			$("input[id='_080101']").prop('disabled', true);	
+
+			$("input[id='_080200']").prop('disabled', true);
+			$("input[id='_080200']").prop('checked', false);
+			$("input[id='_080201']").val('');		
+			$("input[id='_080202']").val('');		
+			$("input[id='_080201']").prop('readonly', true);		
+			$("input[id='_080202']").prop('readonly', true);
+
+			$("input[id='_080300']").prop('disabled', true);
+			$("input[id='_080300']").prop('checked', false);
+			$("input[id='_080301']").val('');		
+			$("input[id='_080301']").prop('readonly', true);			
+
+			$("input[id='_080400']").prop('disabled', true);
+			$("input[id='_080400']").prop('checked', false);
+			$("input[id='_080401']").val('');		
+			$("input[id='_080401']").prop('readonly', true);		
+		}
+	})	
+
+	//step 9
+	$("input[id='_090200']").change(function() {
+		if($(this).val() == 1) {
+			$("input[id='_090201']").prop('readonly', false)	
+			$("input[id='_090202']").prop('readonly', false)	
+		} else {
+			$("input[id='_090201']").val('')
+			$("input[id='_090202']").val('')
+			$("input[id='_090201']").prop('readonly', true)	
+			$("input[id='_090202']").prop('readonly', true)		
+		}	
+	})
+
+	//step 10
+	$("input[id='_100800']").click(function() {
+		if ($("input[id='_100800']").is(":checked")){
+			$("input[id='_100899']").prop('readonly', false)
+		} else {
+			$("input[id='_100899']").val('')
+			$("input[id='_100899']").prop('readonly', true)
+		}
+	})
+
+	//step 11
+	$("input[id='_110200']").change(function() {
+		if($(this).val() == 1) {
+			$("input[id='_110201']").prop('readonly', false)
+			$("input[id='_110202']").prop('readonly', false)
+		}else {
+			$("input[id='_110201']").val('')
+			$("input[id='_110202']").val('')
+			$("input[id='_110201']").prop('readonly', true)	
+			$("input[id='_110202']").prop('readonly', true)	
+		}
+	})
+
+	//step 14 附記欄
+	$("input[id='_130400']").click(function() {
+		if ($("input[id='_130400']").is(":checked")){
+			$("input[id='_130410']").prop('disabled', false)
+			$("input[id='_130411']").prop('readonly', false)
+			$("input[id='_130412']").prop('disabled', false)
+			$("input[id='_130421']").prop('disabled', false)
+			$("input[id='_130424']").prop('disabled', false)
+			$("input[id='_130430']").prop('disabled', false)
+			
+			// 110年全年營業收入
+			$("input[id='_130421']").change(function() {
+				if($(this).val() == 1) {
+					$("input[id='_130422']").prop('readonly', false)
+					$("input[id='_130423']").val('')
+					$("input[id='_130423']").prop('readonly', true)
+				} else if( $(this).val() == 3) {
+					$("input[id='_130423']").prop('readonly', false)
+					$("input[id='_130422']").val('')
+					$("input[id='_130422']").prop('readonly', true)
+				} else {
+					$("input[id='_130422']").val('')
+					$("input[id='_130422']").prop('readonly', true)
+					$("input[id='_130423']").val('')
+					$("input[id='_130423']").prop('readonly', true)
+				}
+			})
+			// 110年全年薪資支出
+			$("input[id='_130424']").change(function() {
+				if($(this).val() == 1) {
+					$("input[id='_130425']").prop('readonly', false)
+					$("input[id='_130426']").val('')
+					$("input[id='_130426']").prop('readonly', true)
+				} else if( $(this).val() == 3) {
+					$("input[id='_130426']").prop('readonly', false)
+					$("input[id='_130425']").val('')
+					$("input[id='_130425']").prop('readonly', true)
+				} else {
+					$("input[id='_130425']").val('')
+					$("input[id='_130425']").prop('readonly', true)
+					$("input[id='_130426']").val('')
+					$("input[id='_130426']").prop('readonly', true)
+				}
+			})
+			// 其他受影響項目
+			$("input[id='_130430']").click(function() {
+				if($(this).is(':checked')) {
+					$("input[id='_130499']").prop('readonly', false)
+				} else {
+					$("input[id='_130499']").val('')
+					$("input[id='_130499']").prop('readonly', true)	
+				}
+			})
+
+			// 2. 其他特殊情形，請以文字說明
+			$("input[id='_130500']").click(function() {
+				if($(this).is(':checked')) {
+					$("input[id='_130599']").prop('readonly', false)
+				} else {
+					$("input[id='_130599']").val('')
+					$("input[id='_130599']").prop('readonly', true)	
+				}
+			})
+		} else {
+			$("input[id='_130410']").prop('checked', false)
+			$("input[id='_130410']").prop('disabled', true)
+
+			$("input[id='_130411']").val('')
+			$("input[id='_130411']").prop('readonly', true)
+
+			$("input[id='_130412']").prop('checked', false)
+			$("input[id='_130412']").prop('disabled', true)
+			
+			$("input[id='_130421']").prop('checked', false)
+			$("input[id='_130421']").prop('disabled', true)
+			$("input[id='_130422']").val('')
+			$("input[id='_130422']").prop('readonly', true)	
+			$("input[id='_130423']").val('')
+			$("input[id='_130423']").prop('readonly', true)
+
+			$("input[id='_130424']").prop('checked', false)
+			$("input[id='_130424']").prop('disabled', true)
+			$("input[id='_130425']").val('')
+			$("input[id='_130425']").prop('readonly', true)
+			$("input[id='_130426']").val('')
+			$("input[id='_130426']").prop('readonly', true)
+
+			$("input[id='_130430']").prop('checked', false)	
+			$("input[id='_130430']").prop('disabled', true)
+			$("input[id='_130499']").val('')
+			$("input[id='_130499']").prop('readonly', true)
+		}
+	})
+	
 
 	// 上一步
 	$('.pre-btn').click(function() {
@@ -296,7 +604,7 @@ $(function() {
 		} else if (pre === 60) {
 			pre = 5;
 		} else if (pre === 6) {
-			pre = 64
+			pre = 65
 		}
 		
 		if(pre === 5) {
@@ -331,7 +639,7 @@ $(function() {
 			next = 3;
 		} else if(next === 6) {
 			next = 61
-		} else if(next === 65) {
+		} else if(next === 66) {
 			next = 7
 		}
 		
