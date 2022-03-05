@@ -128,11 +128,11 @@ $(function() {
 	})
 
 	// 確實無統一編號
-	$("input[id='_130200']").change(function() {
-		if(this.checked) {
-			$("#_350000").val('').prop('readonly', true);	
+	$("input[id='_130200']").click(function() {
+		if($(this).is(':checked')) {
+			$("#_350000").val('').prop('readonly', true).prop('required', false);	
 		} else {
-			$("#_350000").prop('readonly', false);
+			$("#_350000").prop('readonly', false).prop('required', true);	
 		}
 	})
 
@@ -183,7 +183,7 @@ $(function() {
 			$('._030101-3').each(function(){
 				$(this).removeClass('d-none');
 			});
-			$("#_030210").prop("required", true);
+			$("#_030210").prop("required", false);
 		} else if ($(this).val() == 4) {
 			question = [10, 11 ,12];
 			
@@ -264,7 +264,16 @@ $(function() {
 		displayQuestion()
 	})
 
-	//次要經營項目
+	//(三) 是否有從事與主要經營項目不同之業務
+	$("select[id='_030300']").change(function() {
+		if($(this).val() == 1) {
+			$("select[id='_030301']").prop('disabled', false)	
+		} else {
+			$("select[id='_030301']").val('')
+			$("select[id='_030301']").prop('disabled', true)
+		}
+	})
+    // 次要經營項目是否屬於下列行業
 	$("select[id='_030301']").change(function() {
 		$('._030301').each(function(){
 			$(this).addClass('d-none');
@@ -273,15 +282,77 @@ $(function() {
 			$('._030301-1').each(function(){
 				$('._030301-1').removeClass('d-none');
 			});
-		}
-
-		if($(this).val() == 2) {
+			$("#_030310").prop("required", true);
+		} else if ($(this).val() == 2) {
 			$('._030301-2').each(function(){
-				$('._030301-2').removeClass('d-none');
+				$(this).removeClass('d-none');
 			});
+			$("#_030310").prop("required", false);
+		} else if ($(this).val() == 3) {
+			$('._030301-3').each(function(){
+				$(this).removeClass('d-none');
+			});
+			$("#_030310").prop("required", false);
+		} else if ($(this).val() == 4) {
+			$('._030301-4').each(function(){
+				$(this).removeClass('d-none');
+			});
+			$("#_030310").prop("required", false);
+		} else if ($(this).val() == 5) {
+			$('._030301-5').each(function(){
+				$(this).removeClass('d-none');
+			});
+			$("#_030310").prop("required", false);
+		} else if ($(this).val() == 6) {
+			$('._030301-6').each(function(){
+				$(this).removeClass('d-none');
+			});
+			$("#_030310").prop("required", false);
 		}
-	});
+	})
+
+	//次要 1. 製造業 最主要經營方式
+	$("select[id='_030310']").change(function() {
+		if($(this).val() == 2) {
+			$('#_030316').prop('disabled', true);
+			$('#_030316').attr('placeholder', '');
+		}
+	})
+
+	//次要 3. 有行商品買賣、仲介或貿易代理 銷售給一般家庭民眾的比率
+	$("select[id='_030331']").change(function() {
+		if($(this).val() == 1) {
+			$('._030332').removeClass('d-none')
+			$('._030333').addClass('d-none')
+		} else if ($(this).val() == 2) {
+			$('._030332').addClass('d-none')
+			$('._030333').removeClass('d-none')	
+		}
+	})
+
+	//次要 4.運輸業 運輸業主要營運方式
+	$("select[id='_030341']").change(function() {
+		if($(this).val() == 3) {
+			$('._030242').removeClass('d-none')
+			$('._030243').addClass('d-none')
+		} else {
+			$('._030342').addClass('d-none')
+			$('._030343').removeClass('d-none')	
+		}
+	})
+
+	//次要 5.租賃業 主要租賃項目
+	$("select[id='_030351']").change(function() {
+		if($(this).val() == 1 || $(this).val() == 4 || $(this).val() == 5) {
+			$('._030353').addClass('d-none')
+			$("select[id='_030353']").val('');
+		} else if ( $(this).val() == 2 || $(this).val() == 3) {
+			$('._030353').removeClass('d-none')	
+			
+		}	
+	})
 	// 項目三 end
+
 	//step4
 	//前項僱用員工中，有無部分工時(part-time，PT)員工？
 	$("input[id='_040104']").change(function() {
@@ -831,6 +902,7 @@ $(function() {
 		
 		// 確認必填功能
 		let notFill = checkFillInput(step);
+		// let notFill = 0;
 		if(notFill.length) {
 			$('#next').modal('show');
 			var nextModal = document.getElementById('next')
@@ -886,11 +958,7 @@ $(function() {
 		});
 
 		if(step === 0) {
-			if(!$('input[id="_350000"]').val()) {
-				if(!$('input[id="_130200"]:checked').val()) {
-					notFill.push($('#_350000').attr('id'));	
-				}
-			}
+			
 		}
 
 		if(step === 1) {
@@ -903,7 +971,10 @@ $(function() {
 			if(month > 12 || month < 1 && month) {
 				notFill.push("_010200-1");
 			}
-		}	
+		}
+		
+		if(step === 3) {
+		}
 
 		if(step === 4) {
 			let _040101 = $("input[id='_040101']").val()
