@@ -171,7 +171,7 @@ $(function() {
 			});
 			$("#_030210").prop("required", true);
 		} else if ($(this).val() == 2) {
-			question = [10, 11, 13];
+			question = [11, 13];
 
 			$('._030101-2').each(function(){
 				$(this).removeClass('d-none');
@@ -991,7 +991,7 @@ $(function() {
 				notFill.unshift("_040101");	
 			}
 
-			if(_040101 !== '' && _040102 !== '') {
+			if(_040101 !== '' && _040102 !== '' && _040103 == '') {
 				notFill.unshift("_040103");		
 			}
 		}
