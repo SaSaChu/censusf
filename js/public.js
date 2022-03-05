@@ -46,28 +46,27 @@ $(function() {
 	change02.show();
 
 	// 右側&手機menu
-	$('.w-menu:not(.pass-step)').click(function() {
-		let step = $(this).data('step');
-		$(this).addClass('on-step');
-		$(`.step-box`).addClass('d-none');
-		$(`.step-box[data-step="${step}"`).removeClass('d-none');	
+	localStorage.removeItem('question');
+	
+	$('.w-menu').click(function() {
+		if(!$(this).hasClass('pass-step')) {
+			let step = $(this).data('step');
+			$(this).addClass('on-step');
+			$(`.step-box`).addClass('d-none');
+			$(`.step-box[data-step="${step}"`).removeClass('d-none');	
+		}
 	})
 
-	$('.m-menu:not(.pass-step)').click(function() {
-		$('.offcanvas').find('.btn').click();
-		let step = $(this).data('step');
-		if(step === 0) {
-			$('.bg-title-1').removeClass('d-none')
-			$('.bg-title-3').addClass('d-none')
-		} else if (step === 3){
-			$('.bg-title-1').addClass('d-none')
-			$('.bg-title-3').removeClass('d-none')
-		} else {
-			$('.bg-title-1,.bg-title-3').addClass('d-none')
+	$('.m-menu').click(function() {
+		if(!$(this).hasClass('pass-step')) {
+			$('.offcanvas').find('.btn').click();
+			let step = $(this).data('step');
+			$('.bg-title').addClass('d-none')
+			$(`.bg-title-${step}`).removeClass('d-none')
+			$(this).addClass('on-step');
+			$(`.step-box`).addClass('d-none');
+			$(`.step-box[data-step="${step}"`).removeClass('d-none');	
 		}
-		$(this).addClass('on-step');
-		$(`.step-box`).addClass('d-none');
-		$(`.step-box[data-step="${step}"`).removeClass('d-none');	
 
 	})
 
@@ -141,13 +140,13 @@ $(function() {
 		let _340000 = "" + $(this).val();
 		let question = [6, 7, 8, 9, 10, 11, 12, 13];
 		if (_340000 == "1" || _340000 == "8") {
-			$("#_360000").val('').prop("readOnly", true);
+			$("#_360000").val('').prop("readOnly", true).prop('required', false);
 			localStorage.clear();
 		} else if (_340000 == "2") {
-			$("#_360000").prop("readOnly", false);
+			$("#_360000").prop("readOnly", false).prop("required", true);
 			localStorage.setItem('question', JSON.stringify(question));
 		} else {
-			$("#_360000").val('').prop("readOnly", true);
+			$("#_360000").val('').prop("readOnly", true).prop("required", false);
 			localStorage.setItem('question', JSON.stringify(question));
 		}
 
@@ -1022,14 +1021,18 @@ $(function() {
 		}
 
 		if(step == 65) {
+			let _060612 = $("input[id='_060612']:checked").val(); 
 			let _060620 = $("input[id='_060620']:checked").val()
 			let _060630 = $("input[id='_060630']:checked").val()
 			let _060640 = $("input[id='_060640']:checked").val()
 			let _060650 = $("input[id='_060650']:checked").val()
 			let _060660 = $("input[id='_060660']:checked").val()
-			if(_060620 === undefined && _060630 === undefined && _060640 === undefined && _060650 === undefined && _060620 === undefined && _060660 === undefined) {
-				notFill.push("_060613");		
+			if(_060612 === '1') {
+				if(_060620 === undefined && _060630 === undefined && _060640 === undefined && _060650 === undefined && _060620 === undefined && _060660 === undefined) {
+					notFill.push("_060613");		
+				}
 			}
+			
 		}
 
 		if(step == 10) {
@@ -1068,23 +1071,26 @@ $(function() {
 				}
 			}
 		}
-		console.log(notFill);
 		return notFill;
 	}
 
 	// 顯示或隱藏題目
 	function displayQuestion() {
+		
 		let question = JSON.parse(localStorage.getItem("question"))	
 		if(question) {	
 			if($("select[id='_030251']").val() == 2 || $("select[id='_030251']").val() == 3) {
 				$('.w-menu').removeClass('pass-step')
+
 			}
 			question.forEach(e => {
 				$(".w-menu[data-step^='"+e+"']").addClass('pass-step')	;
+				$(".m-menu[data-step^='"+e+"']").addClass('pass-step')	;
 			});
 		} else {
 			if($("input[id='_340000']").val() == "1" || $("input[id='_340000']").val() == "8") {
 				$('.w-menu').removeClass('pass-step')
+				$('.m-menu').removeClass('pass-step')
 			}
 		}		
 	}
