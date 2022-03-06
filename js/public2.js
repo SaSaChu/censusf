@@ -138,18 +138,18 @@ $(function() {
 	// 單位級別
 	$("input[id='_340000']").change(function(){
 		let _340000 = "" + $(this).val();
-		let question = [6, 7, 8, 9, 10, 11, 12, 13];
+		let question;
 		if (_340000 == "1" || _340000 == "8") {
-			$("#_360000").val('').prop("readOnly", true).prop('required', false);
-			localStorage.clear();
+			question = [0, 1, 3, 4, 5, 61, 7, 81, 9, 10, 11, 12, 14, 15];
+			$("#_360000").val('').prop("readonly", true).prop('required', false);
 		} else if (_340000 == "2") {
-			$("#_360000").prop("readOnly", false).prop("required", true);
-			localStorage.setItem('question', JSON.stringify(question));
+			question = [0, 1, 3, 4, 14, 15];
+			$("#_360000").prop("readonly", false).prop("required", true);
 		} else {
-			$("#_360000").val('').prop("readOnly", true).prop("required", false);
-			localStorage.setItem('question', JSON.stringify(question));
+			question = [0, 1, 3, 4, 14, 15];
+			$("#_360000").val('').prop("readonly", true).prop("required", false);
 		}
-
+		localStorage.setItem('question', JSON.stringify(question));
 		displayQuestion()
 	});
 
@@ -162,48 +162,103 @@ $(function() {
 		$('._030101').each(function(){
 			$(this).addClass('d-none');
 		})
-		if($(this).val() == 1) {
-			question = [10, 13];
+	
+		// 單位級別 1 or 8
+		if($('#_340000:checked').val() == 1 || $('#_340000:checked').val() == 8) {
 
-			$('._030101-1').each(function(){
-				$('._030101-1').removeClass('d-none');
-			});
-			$("#_030210").prop("required", true);
-		} else if ($(this).val() == 2) {
-			question = [11, 13];
-
-			$('._030101-2').each(function(){
-				$(this).removeClass('d-none');
-			});
-			$("#_030210").prop("required", false);
-		} else if ($(this).val() == 3) {
-			question = [12, 13];
-
-			$('._030101-3').each(function(){
-				$(this).removeClass('d-none');
-			});
-			$("#_030210").prop("required", false);
-		} else if ($(this).val() == 4) {
-			question = [10, 11 ,12];
-			
-			$('._030101-4').each(function(){
-				$(this).removeClass('d-none');
-			});
-			$("#_030210").prop("required", false);
-		} else if ($(this).val() == 5) {
-			question = [10, 11 ,12, 13];
-			$('._030101-5').each(function(){
-				$(this).removeClass('d-none');
-			});
-			$("#_030210").prop("required", false);
-		} else if ($(this).val() == 6) {
-			question = [10, 11 ,12, 13];
-			
-			$('._030101-6').each(function(){
-				$(this).removeClass('d-none');
-			});
-			$("#_030210").prop("required", false);
+			if($(this).val() == 1) {
+				question = [0, 1, 3, 4, 5, 61, 62, 63, 64, 65, 7, 81, 82, 9, 11, 12, 14, 15];
+	
+				$('._030101-1').each(function(){
+					$('._030101-1').removeClass('d-none');
+				});
+				$("#_030210").prop("required", true);
+			} else if ($(this).val() == 2) {
+				question = [0, 1, 3, 4, 5, 61, 62, 63, 64, 65, 7, 81, 82, 9, 12, 14, 15];
+	
+				$('._030101-2').each(function(){
+					$(this).removeClass('d-none');
+				});
+				$("#_030210").prop("required", false);
+			} else if ($(this).val() == 3) {
+				question = [0, 1, 3, 4, 5, 61, 62, 63, 64, 65, 7, 81, 82, 9, 10, 11, 14, 15];
+	
+				$('._030101-3').each(function(){
+					$(this).removeClass('d-none');
+				});
+				$("#_030210").prop("required", false);
+			} else if ($(this).val() == 4) {
+				question = [0, 1, 3, 4, 5, 61, 62, 63, 64, 65, 7, 81, 82, 9, 13, 14, 15];
+				
+				$('._030101-4').each(function(){
+					$(this).removeClass('d-none');
+				});
+				$("#_030210").prop("required", false);
+			} else if ($(this).val() == 5) {
+				question = [0, 1, 3, 4, 5, 61, 62, 63, 64, 65, 7, 81, 82, 9, 14, 15];
+				
+				$('._030101-5').each(function(){
+					$(this).removeClass('d-none');
+				});
+				$("#_030210").prop("required", false);
+			} else if ($(this).val() == 6) {
+				question = [0, 1, 3, 4, 5, 61, 62, 63, 64, 65, 7, 81, 9, 14, 15];
+				
+				$('._030101-6').each(function(){
+					$(this).removeClass('d-none');
+				});
+				$("#_030210").prop("required", false);
+			}
+		} else if ($('#_340000:checked').val() == 2 || $('#_340000:checked').val() == 3) {
+			// 單位級別 2 or 3
+			if($(this).val() == 1) {
+				question = [0, 1, 3, 4, 11, 12, 14, 15];
+	
+				$('._030101-1').each(function(){
+					$('._030101-1').removeClass('d-none');
+				});
+				// $("#_030210").prop("required", true);
+			} else if ($(this).val() == 2) {
+				question = [0, 1, 3, 4, 12, 14, 15];
+	
+				$('._030101-2').each(function(){
+					$(this).removeClass('d-none');
+				});
+	
+				$("#_030210").prop("required", false);
+			} else if ($(this).val() == 3) {
+				question = [0, 1, 3, 4, 10, 11, 14, 15];
+	
+				$('._030101-3').each(function(){
+					$(this).removeClass('d-none');
+				});
+				$("#_030210").prop("required", false);
+			} else if ($(this).val() == 4) {
+				question = [0, 1, 3, 4, 13, 14, 15];
+				
+				$('._030101-4').each(function(){
+					$(this).removeClass('d-none');
+				});
+				$("#_030210").prop("required", false);
+			} else if ($(this).val() == 5) {
+				question = [0, 1, 3, 4, 14, 15];
+				$('._030101-5').each(function(){
+					$(this).removeClass('d-none');
+				});
+				$("#_030210").prop("required", false);
+			} else if ($(this).val() == 6) {
+				question = [0, 1, 3, 4, 14, 15];
+				
+				$('._030101-6').each(function(){
+					$(this).removeClass('d-none');
+				});
+				$("#_030210").prop("required", false);
+			}
+		} else {
+			question = [0, 1, 3, 4, 5, 61, 62, 63, 64, 65, 7, 81, 82, 9, 10, 11, 12, 13, 14, 15]
 		}
+		
+		localStorage.clear();
 		localStorage.setItem('question', JSON.stringify(question));
 		displayQuestion();
 	})
@@ -229,7 +284,7 @@ $(function() {
 
 	//4.運輸業 運輸業主要營運方式
 	$("select[id='_030241']").change(function() {
-		if($(this).val() == 3) {
+		if($(this).val() == 4) {
 			$('._030242').removeClass('d-none')
 			$('._030243').addClass('d-none')
 		} else {
@@ -240,24 +295,34 @@ $(function() {
 
 	//5.租賃業 主要租賃項目
 	$("select[id='_030251']").change(function() {
-		let question = [10, 11, 12, 13]
 		if($(this).val() == 1 || $(this).val() == 4 || $(this).val() == 5) {
 			$('._030253').addClass('d-none')
-			localStorage.setItem('question', JSON.stringify(question));
-			displayQuestion()	
+			$('#_030253').prop('required', false)
+			$("select[id='_030253']").val('');
+			
 		} else if ( $(this).val() == 2 || $(this).val() == 3) {
-			$('._030253').removeClass('d-none')	
+			$('._030253').removeClass('d-none')
+			$('#_030253').prop('required', true);	
 		}
-		$("select[id='_030253']").val('請選擇');
 	})
 
 	//5.租賃業 是否附駕駛
 	$("select[id='_030253']").change(function() {
 		let question = [];
-		if($(this).val() == 1 && $("select[id='_030251']").val() == 2) {
-			question = [10, 11, 13]
-		} else if ($(this).val() == 1 && $("select[id='_030251']").val() == 3) {
-			question = [10, 11, 12]
+		if($('#_340000:checked').val() == 1 || $('#_340000:checked').val() == 8) {
+			if($(this).val() == 1) {
+				question = [0, 1, 3, 4, 5, 61, 62, 63, 64, 65, 7, 81, 82, 9, 13, 14, 15];
+			} else {
+				question = [0, 1, 3, 4, 5, 61, 62, 63, 64, 65, 7, 81, 82, 9, 14, 15];	
+			}
+		} else if($('#_340000:checked').val() == 2 || $('#_340000:checked').val() == 3){
+			if($(this).val() == 1) {
+				question = [0, 1, 3, 4, 13, 14, 15]
+			} else {
+				question = [0, 1, 3, 4, 14, 15]	
+			}
+		} else {
+			question = [0, 1, 3, 4, 5, 61, 62, 63, 64, 65, 7, 81, 82, 9, 10, 11, 12, 13, 14, 15]
 		}
 		localStorage.setItem('question', JSON.stringify(question));
 		displayQuestion()
@@ -266,10 +331,10 @@ $(function() {
 	//(三) 是否有從事與主要經營項目不同之業務
 	$("select[id='_030300']").change(function() {
 		if($(this).val() == 1) {
-			$("select[id='_030301']").prop('disabled', false)	
+			$("select[id='_030301']").prop('disabled', false).prop('required', true)
 		} else {
 			$("select[id='_030301']").val('')
-			$("select[id='_030301']").prop('disabled', true)
+			$("select[id='_030301']").prop('disabled', true).prop('required', false)
 		}
 	})
     // 次要經營項目是否屬於下列行業
@@ -277,37 +342,536 @@ $(function() {
 		$('._030301').each(function(){
 			$(this).addClass('d-none');
 		})
-		if($(this).val() == 1) {
-			$('._030301-1').each(function(){
-				$('._030301-1').removeClass('d-none');
-			});
-			$("#_030310").prop("required", true);
-		} else if ($(this).val() == 2) {
-			$('._030301-2').each(function(){
-				$(this).removeClass('d-none');
-			});
-			$("#_030310").prop("required", false);
-		} else if ($(this).val() == 3) {
-			$('._030301-3').each(function(){
-				$(this).removeClass('d-none');
-			});
-			$("#_030310").prop("required", false);
-		} else if ($(this).val() == 4) {
-			$('._030301-4').each(function(){
-				$(this).removeClass('d-none');
-			});
-			$("#_030310").prop("required", false);
-		} else if ($(this).val() == 5) {
-			$('._030301-5').each(function(){
-				$(this).removeClass('d-none');
-			});
-			$("#_030310").prop("required", false);
-		} else if ($(this).val() == 6) {
-			$('._030301-6').each(function(){
-				$(this).removeClass('d-none');
-			});
-			$("#_030310").prop("required", false);
+		// 單位級別 1 or 8
+		if($('#_340000:checked').val() == 1 || $('#_340000:checked').val() == 8) {
+			if($('#_030101').val() === '1') {
+				if($(this).val() == 1) {
+					question = [0, 1, 3, 4, 5, 61, 62, 63, 64, 65, 7, 81, 82, 9, 11, 12, 14, 15];
+		
+					$('._030301-1').each(function(){
+						$('._030301-1').removeClass('d-none');
+					});
+					$("#_030310").prop("required", true);
+				} else if ($(this).val() == 2) {
+					question = [0, 1, 3, 4, 5, 61, 62, 63, 64, 65, 7, 81, 82, 9, 11, 12, 14, 15];
+		
+					$('._030301-2').each(function(){
+						$(this).removeClass('d-none');
+					});
+					$("#_030310").prop("required", false);
+				} else if ($(this).val() == 3) {
+					question = [0, 1, 3, 4, 5, 61, 62, 63, 64, 65, 7, 81, 82, 9, 10, 11, 12, 14, 15];
+		
+					$('._030301-3').each(function(){
+						$(this).removeClass('d-none');
+					});
+					$("#_030310").prop("required", false);
+				} else if ($(this).val() == 4) {
+					question = [0, 1, 3, 4, 5, 61, 62, 63, 64, 65, 7, 81, 82, 9, 11, 12, 13, 14, 15];
+					
+					$('._030301-4').each(function(){
+						$(this).removeClass('d-none');
+					});
+					$("#_030310").prop("required", false);
+				} else if ($(this).val() == 5) {
+					question = [0, 1, 3, 4, 5, 61, 62, 63, 64, 65, 7, 81, 82, 9, 11, 12, 14, 15];
+
+					$('._030301-5').each(function(){
+						$(this).removeClass('d-none');
+					});
+					$("#_030310").prop("required", false);
+				} else if ($(this).val() == 6) {
+					question = [0, 1, 3, 4, 5, 61, 62, 63, 64, 65, 7, 81, 9, 11, 12, 14, 15];
+					
+					$('._030301-6').each(function(){
+						$(this).removeClass('d-none');
+					});
+					$("#_030310").prop("required", false);
+				}
+			} else if ($('#_030101').val() === '2') {
+				if($(this).val() == 1) {
+					question = [0, 1, 3, 4, 5, 61, 62, 63, 64, 65, 7, 81, 82, 9, 11, 12, 14, 15];
+		
+					$('._030301-1').each(function(){
+						$('._030101-1').removeClass('d-none');
+					});
+				} else if ($(this).val() == 2) {
+					question = [0, 1, 3, 4, 5, 61, 62, 63, 64, 65, 7, 81, 82, 9, 12, 14, 15];
+		
+					$('._030301-2').each(function(){
+						$(this).removeClass('d-none');
+					});
+					$("#_030310").prop("required", false);
+				} else if ($(this).val() == 3) {
+					question = [0, 1, 3, 4, 5, 61, 62, 63, 64, 65, 7, 81, 82, 9, 10, 11, 12, 14, 15];
+		
+					$('._030301-3').each(function(){
+						$(this).removeClass('d-none');
+					});
+					$("#_030310").prop("required", false);
+				} else if ($(this).val() == 4) {
+					question = [0, 1, 3, 4, 5, 61, 62, 63, 64, 65, 7, 81, 82, 9, 12, 13, 14, 15];
+					
+					$('._030301-4').each(function(){
+						$(this).removeClass('d-none');
+					});
+					$("#_030310").prop("required", false);
+				} else if ($(this).val() == 5) {
+					question = [0, 1, 3, 4, 5, 61, 62, 63, 64, 65, 7, 81, 82, 9, 12, 14, 15];
+
+					$('._030301-5').each(function(){
+						$(this).removeClass('d-none');
+					});
+					$("#_030310").prop("required", false);
+				} else if ($(this).val() == 6) {
+					question = [0, 1, 3, 4, 5, 61, 62, 63, 64, 65, 7, 81, 9, 12, 14, 15];
+					
+					$('._030301-6').each(function(){
+						$(this).removeClass('d-none');
+					});
+					$("#_030310").prop("required", false);
+				}	
+			} else if ($('#_030101').val() === '3') {
+				if($(this).val() == 1) {
+					question = [0, 1, 3, 4, 5, 61, 62, 63, 64, 65, 7, 81, 82, 9, 10, 11, 12, 14, 15];
+		
+					$('._030301-1').each(function(){
+						$('._030301-1').removeClass('d-none');
+					});
+				} else if ($(this).val() == 2) {
+					question = [0, 1, 3, 4, 5, 61, 62, 63, 64, 65, 7, 81, 82, 9, 10, 11, 12, 14, 15];
+		
+					$('._030301-2').each(function(){
+						$(this).removeClass('d-none');
+					});
+					$("#_030310").prop("required", false);
+				} else if ($(this).val() == 3) {
+					question = [0, 1, 3, 4, 5, 61, 62, 63, 64, 65, 7, 81, 82, 9, 10, 11, 14, 15];
+		
+					$('._030301-3').each(function(){
+						$(this).removeClass('d-none');
+					});
+					$("#_030310").prop("required", false);
+				} else if ($(this).val() == 4) {
+					question = [0, 1, 3, 4, 5, 61, 62, 63, 64, 65, 7, 81, 82, 9, 10, 11, 13, 14, 15];
+					
+					$('._030301-4').each(function(){
+						$(this).removeClass('d-none');
+					});
+					$("#_030310").prop("required", false);
+				} else if ($(this).val() == 5) {
+					question = [0, 1, 3, 4, 5, 61, 62, 63, 64, 65, 7, 81, 82, 9, 10, 11, 14, 15];
+
+					$('._030301-5').each(function(){
+						$(this).removeClass('d-none');
+					});
+					$("#_030310").prop("required", false);
+				} else if ($(this).val() == 6) {
+					question = [0, 1, 3, 4, 5, 61, 62, 63, 64, 65, 7, 81, 9, 10, 11, 14, 15];
+					
+					$('._030301-6').each(function(){
+						$(this).removeClass('d-none');
+					});
+					$("#_030310").prop("required", false);
+				}	
+			} else if ($('#_030101').val() === '4') {
+				if($(this).val() == 1) {
+					question = [0, 1, 3, 4, 5, 61, 62, 63, 64, 65, 7, 81, 82, 9, 11, 12, 13, 14, 15];
+		
+					$('._030301-1').each(function(){
+						$('._030101-1').removeClass('d-none');
+					});
+				} else if ($(this).val() == 2) {
+					question = [0, 1, 3, 4, 5, 61, 62, 63, 64, 65, 7, 81, 82, 9, 12, 14, 15];
+		
+					$('._030301-2').each(function(){
+						$(this).removeClass('d-none');
+					});
+					$("#_030310").prop("required", false);
+				} else if ($(this).val() == 3) {
+					question = [0, 1, 3, 4, 5, 61, 62, 63, 64, 65, 7, 81, 82, 9, 10, 11, 13, 14, 15];
+		
+					$('._030301-3').each(function(){
+						$(this).removeClass('d-none');
+					});
+					$("#_030310").prop("required", false);
+				} else if ($(this).val() == 4) {
+					question = [0, 1, 3, 4, 5, 61, 62, 63, 64, 65, 7, 81, 82, 9, 13, 14, 15];
+					
+					$('._030301-4').each(function(){
+						$(this).removeClass('d-none');
+					});
+					$("#_030310").prop("required", false);
+				} else if ($(this).val() == 5) {
+					question = [0, 1, 3, 4, 5, 61, 62, 63, 64, 65, 7, 81, 82, 9, 13, 14, 15];
+
+					$('._030301-5').each(function(){
+						$(this).removeClass('d-none');
+					});
+					$("#_030310").prop("required", false);
+				} else if ($(this).val() == 6) {
+					question = [0, 1, 3, 4, 5, 61, 62, 63, 64, 65, 7, 81, 9, 13, 14, 15];
+					
+					$('._030301-6').each(function(){
+						$(this).removeClass('d-none');
+					});
+					$("#_030310").prop("required", false);
+				}	
+			} else if ($('#_030101').val() === '5') {
+				if($(this).val() == 1) {
+					question = [0, 1, 3, 4, 5, 61, 62, 63, 64, 65, 7, 81, 82, 9, 11, 12, 14, 15];
+		
+					$('._030301-1').each(function(){
+						$('._030101-1').removeClass('d-none');
+					});
+				} else if ($(this).val() == 2) {
+					question = [0, 1, 3, 4, 5, 61, 62, 63, 64, 65, 7, 81, 82, 9, 12, 14, 15];
+		
+					$('._030301-2').each(function(){
+						$(this).removeClass('d-none');
+					});
+					$("#_030310").prop("required", false);
+				} else if ($(this).val() == 3) {
+					question = [0, 1, 3, 4, 5, 61, 62, 63, 64, 65, 7, 81, 82, 9, 10, 11, 14, 15];
+		
+					$('._030301-3').each(function(){
+						$(this).removeClass('d-none');
+					});
+					$("#_030310").prop("required", false);
+				} else if ($(this).val() == 4) {
+					question = [0, 1, 3, 4, 5, 61, 62, 63, 64, 65, 7, 81, 82, 9, 13, 14, 15];
+					
+					$('._030301-4').each(function(){
+						$(this).removeClass('d-none');
+					});
+					$("#_030310").prop("required", false);
+				} else if ($(this).val() == 5) {
+					question = [0, 1, 3, 4, 5, 61, 62, 63, 64, 65, 7, 81, 82, 9, 14, 15];
+
+					$('._030301-5').each(function(){
+						$(this).removeClass('d-none');
+					});
+					$("#_030310").prop("required", false);
+				} else if ($(this).val() == 6) {
+					question = [0, 1, 3, 4, 5, 61, 62, 63, 64, 65, 7, 81, 9, 14, 15];
+					
+					$('._030301-6').each(function(){
+						$(this).removeClass('d-none');
+					});
+					$("#_030310").prop("required", false);
+				}	
+			} else if ($('#_030101').val() === '6') {
+				if($(this).val() == 1) {
+					question = [0, 1, 3, 4, 5, 61, 62, 63, 64, 65, 7, 81, 82, 9, 11, 12, 14, 15];
+		
+					$('._030301-1').each(function(){
+						$('._030101-1').removeClass('d-none');
+					});
+				} else if ($(this).val() == 2) {
+					question = [0, 1, 3, 4, 5, 61, 62, 63, 64, 65, 7, 81, 82, 9, 12, 14, 15];
+		
+					$('._030301-2').each(function(){
+						$(this).removeClass('d-none');
+					});
+					$("#_030310").prop("required", false);
+				} else if ($(this).val() == 3) {
+					question = [0, 1, 3, 4, 5, 61, 62, 63, 64, 65, 7, 81, 82, 9, 10, 11, 14, 15];
+		
+					$('._030301-3').each(function(){
+						$(this).removeClass('d-none');
+					});
+					$("#_030310").prop("required", false);
+				} else if ($(this).val() == 4) {
+					question = [0, 1, 3, 4, 5, 61, 62, 63, 64, 65, 7, 81, 82, 9, 13, 14, 15];
+					
+					$('._030301-4').each(function(){
+						$(this).removeClass('d-none');
+					});
+					$("#_030310").prop("required", false);
+				} else if ($(this).val() == 5) {
+					question = [0, 1, 3, 4, 5, 61, 62, 63, 64, 65, 7, 81, 82, 9, 14, 15];
+
+					$('._030301-5').each(function(){
+						$(this).removeClass('d-none');
+					});
+					$("#_030310").prop("required", false);
+				} else if ($(this).val() == 6) {
+					question = [0, 1, 3, 4, 5, 61, 62, 63, 64, 65, 7, 81, 9, 14, 15];
+					
+					$('._030301-6').each(function(){
+						$(this).removeClass('d-none');
+					});
+					$("#_030310").prop("required", false);
+				}	
+			}
+		} else if($('#_340000:checked').val() == 2 || $('#_340000:checked').val() == 3) {
+			// 單位級別 2 or 3
+			if($('#_030101').val() === '1') {
+				if($(this).val() == 1) {
+					question = [0, 1, 3, 4, 11, 12, 14, 15];
+		
+					$('._030301-1').each(function(){
+						$('._030301-1').removeClass('d-none');
+					});
+				} else if ($(this).val() == 2) {
+					question = [0, 1, 3, 4, 11, 12, 14, 15];
+		
+					$('._030301-2').each(function(){
+						$(this).removeClass('d-none');
+					});
+		
+					$("#_030310").prop("required", false);
+				} else if ($(this).val() == 3) {
+					question = [0, 1, 3, 4, 10, 11, 12, 14, 15];
+		
+					$('._030301-3').each(function(){
+						$(this).removeClass('d-none');
+					});
+					$("#_030310").prop("required", false);
+				} else if ($(this).val() == 4) {
+					question = [0, 1, 3, 4, 11, 12, 13, 14, 15];
+					
+					$('._030301-4').each(function(){
+						$(this).removeClass('d-none');
+					});
+					$("#_030310").prop("required", false);
+				} else if ($(this).val() == 5) {
+					question = [0, 1, 3, 4, 11, 12, 14, 15];
+					$('._030301-5').each(function(){
+						$(this).removeClass('d-none');
+					});
+					$("#_030310").prop("required", false);
+				} else if ($(this).val() == 6) {
+					question = [0, 1, 3, 4, 11, 12, 14, 15];
+					
+					$('._030301-6').each(function(){
+						$(this).removeClass('d-none');
+					});
+					$("#_030310").prop("required", false);
+				}
+			} else if ($('#_030101').val() === '2'){
+				if($(this).val() == 1) {
+					question = [0, 1, 3, 4, 11, 12, 14, 15];
+		
+					$('._030301-1').each(function(){
+						$('._030301-1').removeClass('d-none');
+					});
+				} else if ($(this).val() == 2) {
+					question = [0, 1, 3, 4, 12, 14, 15];
+		
+					$('._030301-2').each(function(){
+						$(this).removeClass('d-none');
+					});
+		
+					$("#_030310").prop("required", false);
+				} else if ($(this).val() == 3) {
+					question = [0, 1, 3, 4, 10, 11, 12, 14, 15];
+		
+					$('._030301-3').each(function(){
+						$(this).removeClass('d-none');
+					});
+					$("#_030310").prop("required", false);
+				} else if ($(this).val() == 4) {
+					question = [0, 1, 3, 4, 12, 13, 14, 15];
+					
+					$('._030301-4').each(function(){
+						$(this).removeClass('d-none');
+					});
+					$("#_030310").prop("required", false);
+				} else if ($(this).val() == 5) {
+					question = [0, 1, 3, 4, 12, 14, 15];
+					$('._030301-5').each(function(){
+						$(this).removeClass('d-none');
+					});
+					$("#_030310").prop("required", false);
+				} else if ($(this).val() == 6) {
+					question = [0, 1, 3, 4, 12, 14, 15];
+					
+					$('._030301-6').each(function(){
+						$(this).removeClass('d-none');
+					});
+					$("#_030310").prop("required", false);
+				}
+			} else if ($('#_030101').val() === '3'){
+				if($(this).val() == 1) {
+					question = [0, 1, 3, 4, 10, 11, 12, 14, 15];
+		
+					$('._030301-1').each(function(){
+						$('._030301-1').removeClass('d-none');
+					});
+				} else if ($(this).val() == 2) {
+					question = [0, 1, 3, 4, 10, 11, 12, 14, 15];
+		
+					$('._030301-2').each(function(){
+						$(this).removeClass('d-none');
+					});
+		
+					$("#_030310").prop("required", false);
+				} else if ($(this).val() == 3) {
+					question = [0, 1, 3, 4, 10, 11, 14, 15];
+		
+					$('._030301-3').each(function(){
+						$(this).removeClass('d-none');
+					});
+					$("#_030310").prop("required", false);
+				} else if ($(this).val() == 4) {
+					question = [0, 1, 3, 4, 10, 11, 13, 14, 15];
+					
+					$('._030301-4').each(function(){
+						$(this).removeClass('d-none');
+					});
+					$("#_030310").prop("required", false);
+				} else if ($(this).val() == 5) {
+					question = [0, 1, 3, 4, 10, 11, 14, 15];
+					$('._030301-5').each(function(){
+						$(this).removeClass('d-none');
+					});
+					$("#_030310").prop("required", false);
+				} else if ($(this).val() == 6) {
+					question = [0, 1, 3, 4, 10, 11, 14, 15];
+					
+					$('._030301-6').each(function(){
+						$(this).removeClass('d-none');
+					});
+					$("#_030310").prop("required", false);
+				}
+			} else if ($('#_030101').val() === '4'){
+				if($(this).val() == 1) {
+					question = [0, 1, 3, 4, 11, 12, 13, 14, 15];
+		
+					$('._030301-1').each(function(){
+						$('._030301-1').removeClass('d-none');
+					});
+				} else if ($(this).val() == 2) {
+					question = [0, 1, 3, 4, 12, 13, 14, 15];
+		
+					$('._030301-2').each(function(){
+						$(this).removeClass('d-none');
+					});
+		
+					$("#_030310").prop("required", false);
+				} else if ($(this).val() == 3) {
+					question = [0, 1, 3, 4, 10, 11, 13, 14, 15];
+		
+					$('._030301-3').each(function(){
+						$(this).removeClass('d-none');
+					});
+					$("#_030310").prop("required", false);
+				} else if ($(this).val() == 4) {
+					question = [0, 1, 3, 4, 13, 14, 15];
+					
+					$('._030301-4').each(function(){
+						$(this).removeClass('d-none');
+					});
+					$("#_030310").prop("required", false);
+				} else if ($(this).val() == 5) {
+					question = [0, 1, 3, 4, 13, 14, 15];
+					$('._030301-5').each(function(){
+						$(this).removeClass('d-none');
+					});
+					$("#_030310").prop("required", false);
+				} else if ($(this).val() == 6) {
+					question = [0, 1, 3, 4, 13, 14, 15];
+					
+					$('._030301-6').each(function(){
+						$(this).removeClass('d-none');
+					});
+					$("#_030310").prop("required", false);
+				}
+			} else if ($('#_030101').val() === '5'){
+				if($(this).val() == 1) {
+					question = [0, 1, 3, 4, 11, 12, 14, 15];
+		
+					$('._030301-1').each(function(){
+						$('._030301-1').removeClass('d-none');
+					});
+				} else if ($(this).val() == 2) {
+					question = [0, 1, 3, 4, 12, 14, 15];
+		
+					$('._030301-2').each(function(){
+						$(this).removeClass('d-none');
+					});
+		
+					$("#_030310").prop("required", false);
+				} else if ($(this).val() == 3) {
+					question = [0, 1, 3, 4, 10, 11, 14, 15];
+		
+					$('._030301-3').each(function(){
+						$(this).removeClass('d-none');
+					});
+					$("#_030310").prop("required", false);
+				} else if ($(this).val() == 4) {
+					question = [0, 1, 3, 4, 13, 14, 15];
+					
+					$('._030301-4').each(function(){
+						$(this).removeClass('d-none');
+					});
+					$("#_030310").prop("required", false);
+				} else if ($(this).val() == 5) {
+					question = [0, 1, 3, 4, 14, 15];
+					$('._030301-5').each(function(){
+						$(this).removeClass('d-none');
+					});
+					$("#_030310").prop("required", false);
+				} else if ($(this).val() == 6) {
+					question = [0, 1, 3, 4, 14, 15];
+					
+					$('._030301-6').each(function(){
+						$(this).removeClass('d-none');
+					});
+					$("#_030310").prop("required", false);
+				}
+			} else if ($('#_030101').val() === '6'){
+				if($(this).val() == 1) {
+					question = [0, 1, 3, 4, 11, 12, 14, 15];
+		
+					$('._030301-1').each(function(){
+						$('._030301-1').removeClass('d-none');
+					});
+				} else if ($(this).val() == 2) {
+					question = [0, 1, 3, 4, 12, 14, 15];
+		
+					$('._030301-2').each(function(){
+						$(this).removeClass('d-none');
+					});
+		
+					$("#_030310").prop("required", false);
+				} else if ($(this).val() == 3) {
+					question = [0, 1, 3, 4, 10, 11, 14, 15];
+		
+					$('._030301-3').each(function(){
+						$(this).removeClass('d-none');
+					});
+					$("#_030310").prop("required", false);
+				} else if ($(this).val() == 4) {
+					question = [0, 1, 3, 4, 13, 14, 15];
+					
+					$('._030301-4').each(function(){
+						$(this).removeClass('d-none');
+					});
+					$("#_030310").prop("required", false);
+				} else if ($(this).val() == 5) {
+					question = [0, 1, 3, 4, 14, 15];
+					$('._030301-5').each(function(){
+						$(this).removeClass('d-none');
+					});
+					$("#_030310").prop("required", false);
+				} else if ($(this).val() == 6) {
+					question = [0, 1, 3, 4, 14, 15];
+					
+					$('._030301-6').each(function(){
+						$(this).removeClass('d-none');
+					});
+					$("#_030310").prop("required", false);
+				}
+			}
+		} else {
+			question = [0, 1, 3, 4, 5, 61, 62, 63, 64, 65, 7, 81, 82, 9, 10, 11, 12, 13, 14, 15]
 		}
+		
+		localStorage.clear();
+		localStorage.setItem('question', JSON.stringify(question));
+		displayQuestion();	
 	})
 
 	//次要 1. 製造業 最主要經營方式
@@ -331,9 +895,9 @@ $(function() {
 
 	//次要 4.運輸業 運輸業主要營運方式
 	$("select[id='_030341']").change(function() {
-		if($(this).val() == 3) {
-			$('._030242').removeClass('d-none')
-			$('._030243').addClass('d-none')
+		if($(this).val() == 4) {
+			$('._030342').removeClass('d-none')
+			$('._030343').addClass('d-none')
 		} else {
 			$('._030342').addClass('d-none')
 			$('._030343').removeClass('d-none')	
@@ -344,11 +908,81 @@ $(function() {
 	$("select[id='_030351']").change(function() {
 		if($(this).val() == 1 || $(this).val() == 4 || $(this).val() == 5) {
 			$('._030353').addClass('d-none')
+			$('#_030353').prop('required', false)
 			$("select[id='_030353']").val('');
 		} else if ( $(this).val() == 2 || $(this).val() == 3) {
-			$('._030353').removeClass('d-none')	
-			
+			$('._030353').removeClass('d-none');	
+			$('#_030353').prop('required', true);
 		}	
+	})
+	//5.租賃業 是否附駕駛
+	$("select[id='_030353']").change(function() {
+		let question;
+		if($('#_340000:checked').val() == 1 || $('#_340000:checked').val() == 8) {
+			if($(this).val() === '1') {
+				if($('#_030301').val() == 1) {
+					question = [0, 1, 3, 4, 5, 61, 62, 63, 64, 65, 7, 81, 82, 9, 11, 12, 13, 14, 15];
+				} else if ($('#_030301').val() == 2) {
+					question = [0, 1, 3, 4, 5, 61, 62, 63, 64, 65, 7, 81, 82, 9, 12, 13, 14, 15];
+				} else if ($('#_030301').val() == 3) {
+					question = [0, 1, 3, 4, 5, 61, 62, 63, 64, 65, 7, 81, 82, 9, 10, 11, 13, 14, 15];
+				} else if ($('#_030301').val() == 4) {
+					question = [0, 1, 3, 4, 5, 61, 62, 63, 64, 65, 7, 81, 82, 9, 13, 14, 15];
+				} else if ($('#_030301').val() == 5) {
+					question = [0, 1, 3, 4, 5, 61, 62, 63, 64, 65, 7, 81, 82, 9, 13, 14, 15];
+				} else if ($('#_030301').val() == 6) {
+					question = [0, 1, 3, 4, 5, 61, 62, 63, 64, 65, 7, 81, 9, 13, 14, 15];
+				}
+			} else {
+				if($('#_030301').val() == 1) {
+					question = [0, 1, 3, 4, 5, 61, 62, 63, 64, 65, 7, 81, 82, 9, 11, 12, 14, 15];
+				} else if ($('#_030301').val() == 2) {
+					question = [0, 1, 3, 4, 5, 61, 62, 63, 64, 65, 7, 81, 82, 9, 12, 14, 15];
+				} else if ($('#_030301').val() == 3) {
+					question = [0, 1, 3, 4, 5, 61, 62, 63, 64, 65, 7, 81, 82, 9, 10, 11, 14, 15];
+				} else if ($('#_030301').val() == 4) {
+					question = [0, 1, 3, 4, 5, 61, 62, 63, 64, 65, 7, 81, 82, 9, 13, 14, 15];
+				} else if ($('#_030301').val() == 5) {
+					question = [0, 1, 3, 4, 5, 61, 62, 63, 64, 65, 7, 81, 82, 9, 14, 15];
+				} else if ($('#_030301').val() == 6) {
+					question = [0, 1, 3, 4, 5, 61, 62, 63, 64, 65, 7, 81, 9, 14, 15];
+				}
+			}			
+		} else if ($('#_340000:checked').val() == 2 || $('#_340000:checked').val() == 3) {
+			if($(this).val() == 1) {
+				if($('#_030301').val() == 1) {
+					question = [0, 1, 3, 4, 11, 12, 13, 14, 15];
+				} else if ($('#_030301').val() == 2) {
+					question = [0, 1, 3, 4, 12, 13, 14, 15];
+				} else if ($('#_030301').val() == 3) {
+					question = [0, 1, 3, 4, 10, 11, 13, 14, 15];
+				} else if ($('#_030301').val() == 4) {
+					question = [0, 1, 3, 4, 13, 14, 15];
+				} else if ($('#_030301').val() == 5) {
+					question = [0, 1, 3, 4, 13, 14, 15];
+				} else if ($('#_030301').val() == 6) {
+					question = [0, 1, 3, 4, 13, 14, 15];
+				}	
+			} else {
+				if($('#_030301').val() == 1) {
+					question = [0, 1, 3, 4, 11, 12, 14, 15];
+				} else if ($('#_030301').val() == 2) {
+					question = [0, 1, 3, 4, 12, 14, 15];
+				} else if ($('#_030301').val() == 3) {
+					question = [0, 1, 3, 4, 10, 11, 14, 15];
+				} else if ($('#_030301').val() == 4) {
+					question = [0, 1, 3, 4, 13, 14, 15];
+				} else if ($('#_030301').val() == 5) {
+					question = [0, 1, 3, 4, 14, 15];
+				} else if ($('#_030301').val() == 6) {
+					question = [0, 1, 3, 4, 14, 15];
+				}
+			}
+		} else {
+			question = [0, 1, 3, 4, 5, 61, 62, 63, 64, 65, 7, 81, 82, 9, 10, 11, 12, 13, 14, 15]
+		}
+		localStorage.setItem('question', JSON.stringify(question));
+		displayQuestion()
 	})
 	// 項目三 end
 
@@ -364,6 +998,7 @@ $(function() {
 			$("input[id='_0401045']").prop('required', false);
 		}
 	})
+
 	//step5
 	//全年有無使用派遣人力？
 	$("input[id='_050100'").change(function() {
@@ -384,6 +1019,7 @@ $(function() {
 			$("input[id='_050102").prop('required', false);
 		}
 	})
+
 	//全年有無經營勞動派遣業務？
 	$("input[id='_050200'").change(function() {
 		if($(this).val() == 1) {
@@ -404,6 +1040,16 @@ $(function() {
 		}
 	})
 	//step 6
+	$("input[id='_060100']").change(function() {
+		let question;
+		if($(this).val() === '2') {
+			question = [0, 1 , 3, 4, 5, 61, 7, 81, 82, 9 , 10, 11, 12, 14, 15]
+		} else {
+			question = [0, 1 , 3, 4, 5, 61, 62, 63, 64, 65, 7, 81, 82, 9 , 10, 11, 12, 14, 15]	
+		}
+		localStorage.setItem('question', JSON.stringify(question));
+		displayQuestion()
+	})
 	//step 6-2
 	//有無透過網路進行產品或服務之銷售或接單？
 	$("input[id='_060300'").change(function() {
@@ -444,6 +1090,9 @@ $(function() {
 			$("input[id='_060611").first().prop('required', true);	
 			$("input[id='_060612").prop('disabled', false);
 			$("input[id='_060612").first().prop('required', true);	
+			question = [0, 1, 3, 4, 5, 61, 62, 63, 64, 65, 7, 81, 82, 9, 10, 11, 12, 14, 15]
+			localStorage.setItem('question', JSON.stringify(question));
+			displayQuestion()
 		} else {
 			$("input[id='_060611").prop('checked', false);
 			$("input[id='_060611").first().prop('required', false);	
@@ -451,6 +1100,9 @@ $(function() {
 			$("input[id='_060612").prop('checked', false);
 			$("input[id='_060612").first().prop('required', false);	
 			$("input[id='_060612").prop('disabled', true);
+			question = [0, 1, 3, 4, 5, 61, 62, 63, 64, 7, 81, 82, 9, 10, 11, 12, 14, 15]
+			localStorage.setItem('question', JSON.stringify(question));
+			displayQuestion()
 		}
 	})	
 	//step 6-5
@@ -617,6 +1269,9 @@ $(function() {
 					$("input[id='_080401']").prop('required', false);	
 				}
 			})	
+			question = [0, 1, 3, 4, 5, 61, 62, 63, 64, 7, 81, 82, 9, 10, 11, 12, 14, 15]
+			localStorage.setItem('question', JSON.stringify(question));
+			displayQuestion()
 			
 		} else {
 			$("input[id='_080100']").prop('disabled', true);
@@ -649,6 +1304,9 @@ $(function() {
 			$("input[id='_080401']").val('');		
 			$("input[id='_080401']").prop('readonly', true);
 			$("input[id='_080401']").prop('required', false);		
+			question = [0, 1, 3, 4, 5, 61, 62, 63, 64, 7, 81, 9, 10, 11, 12, 14, 15]
+			localStorage.setItem('question', JSON.stringify(question));
+			displayQuestion()
 		}
 	})	
 
@@ -849,28 +1507,8 @@ $(function() {
 	// 上一步
 	$('.pre-btn').click(function() {
 		let step = $(this).parents('.step-box').data('step');
-		let pre = parseInt(step) - 1
-
-		if(pre < 0) {
-			pre = 0;
-		} else if (pre === 2) {
-			pre = 1;
-		} else if (pre === 60) {
-			pre = 5;
-		} else if (pre === 6) {
-			pre = 65
-		} else if (pre === 80) {
-			pre = 7
-		}else if (pre === 8) {
-			pre = 82
-		}
-		
-		if(pre === 5) {
-			$(`.w-menu[data-step="6"`).removeClass('on-step');
-		} else {
-			$(`.w-menu[data-step="${step}"`).removeClass('on-step');
-		}
-		
+		let question = JSON.parse(localStorage.getItem("question"))	
+		let pre = question[question.indexOf(step) - 1]
 		$(`.step-box[data-step="${step}"]`).addClass('d-none');
 		$(`.step-box[data-step="${pre}"`).removeClass('d-none');
 
@@ -885,26 +1523,10 @@ $(function() {
 
 	// 下一步確認必填欄位
 	$('.next-btn').click(function() {
-		let step = $(this).parents('.step-box').data('step'); 
-		let next = parseInt(step) + 1;
-		if(next === 2) {
-			next = 3;
-		} else if(next === 6) {
-			next = 61
-		} else if(next === 62) {
-			if($("input[id='_060100']:checked").val() === '2') {
-				next = 7
-			} else {
-				next = 62
-			}
-		} else if(next === 66) {
-			next = 7
-		} else if(next === 8) {
-			next = 81
-		}else if(next === 83) {
-			next = 9
-		}
-		
+		let step = $(this).parents('.step-box').data('step');
+		let question = JSON.parse(localStorage.getItem("question"))	
+		let next = question[question.indexOf(step)+1]
+
 		// 確認必填功能
 		let notFill = checkFillInput(step);
 		
@@ -924,16 +1546,16 @@ $(function() {
 				$('#next').find('.modal-body').empty().html(element);
 			});
 		} else {
-			
+
 			$(`.step-box[data-step="${step}"`).addClass('d-none');
 			$(`.step-box[data-step="${next}"`).removeClass('d-none');
-			if(next == 61) {
-				$(`.w-menu[data-step="6"]`).addClass('on-step');
-			} else if(next == 81) {
-				$(`.w-menu[data-step="8"]`).addClass('on-step');
-			} else {
+			// if(next == 61) {
+			// 	$(`.w-menu[data-step="6"]`).addClass('on-step');
+			// } else if(next == 81) {
+			// 	$(`.w-menu[data-step="8"]`).addClass('on-step');
+			// } else {
 				$(`.w-menu[data-step="${next}"]`).addClass('on-step');
-			}
+			// }
 			if($(window).width() <= 1024) {
 				$('.bg-title-mobile').addClass('d-none')	
 				$(`.bg-title-${next}`).removeClass('d-none')
@@ -1082,20 +1704,17 @@ $(function() {
 	function displayQuestion() {
 		
 		let question = JSON.parse(localStorage.getItem("question"))	
-		if(question) {	
-			if($("select[id='_030251']").val() == 2 || $("select[id='_030251']").val() == 3) {
-				$('.w-menu').removeClass('pass-step')
-
-			}
-			question.forEach(e => {
-				$(".w-menu[data-step^='"+e+"']").addClass('pass-step')	;
-				$(".m-menu[data-step^='"+e+"']").addClass('pass-step')	;
-			});
-		} else {
-			if($("input[id='_340000']").val() == "1" || $("input[id='_340000']").val() == "8") {
-				$('.w-menu').removeClass('pass-step')
-				$('.m-menu').removeClass('pass-step')
-			}
-		}		
+		
+		if(!question) {
+			question = [0, 1, 3, 4, 5, 61, 7, 81, 9, 10, 11, 12, 14, 15]
+			localStorage.setItem('question', JSON.stringify(question));
+		}
+		console.log(question);
+		$('.w-menu').addClass('pass-step')
+		$('.m-menu').addClass('pass-step')
+		question.forEach(e => {
+			$(".w-menu[data-step='"+e+"']").removeClass('pass-step')	;
+			$(".m-menu[data-step='"+e+"']").removeClass('pass-step')	;	
+		});
 	}
 });
