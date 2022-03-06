@@ -1085,14 +1085,24 @@ $(function() {
 	//step 6-4
 	//同時使用於基礎及生產服務等進階作業
 	$("input[id='_060600'").change(function() {
+		let question;
 		if($(this).val() == 2) {
 			$("input[id='_060611").prop('disabled', false);
 			$("input[id='_060611").first().prop('required', true);	
 			$("input[id='_060612").prop('disabled', false);
 			$("input[id='_060612").first().prop('required', true);	
-			question = [0, 1, 3, 4, 5, 61, 62, 63, 64, 65, 7, 81, 82, 9, 10, 11, 12, 14, 15]
-			localStorage.setItem('question', JSON.stringify(question));
-			displayQuestion()
+
+			$("input[id='_060612']").change(function() {
+				if($(this).val() == 2) {
+					question = [0, 1, 3, 4, 5, 61, 62, 63, 64, 7, 81, 82, 9, 10, 11, 12, 14, 15]
+				} else {
+					question = [0, 1, 3, 4, 5, 61, 62, 63, 64, 65, 7, 81, 82, 9, 10, 11, 12, 14, 15]
+				}
+				localStorage.setItem('question', JSON.stringify(question));
+				displayQuestion()
+			})
+			
+			
 		} else {
 			$("input[id='_060611").prop('checked', false);
 			$("input[id='_060611").first().prop('required', false);	
@@ -1549,13 +1559,92 @@ $(function() {
 
 			$(`.step-box[data-step="${step}"`).addClass('d-none');
 			$(`.step-box[data-step="${next}"`).removeClass('d-none');
-			// if(next == 61) {
-			// 	$(`.w-menu[data-step="6"]`).addClass('on-step');
-			// } else if(next == 81) {
-			// 	$(`.w-menu[data-step="8"]`).addClass('on-step');
-			// } else {
-				$(`.w-menu[data-step="${next}"]`).addClass('on-step');
-			// }
+			$(`.w-menu[data-step="${next}"]`).addClass('on-step');
+
+			if(step == 0) {
+				$('.progress-bar').css('width', '5%');
+				$('.progress-bar').attr('aria-valuenow', '5');
+				$('.progress-bar').text('5%');
+			}
+
+			if(step == 1) {
+				$('.progress-bar').css('width', '15%');
+				$('.progress-bar').attr('aria-valuenow', '15');
+				$('.progress-bar').text('15%');
+			}
+
+			if(step == 3) {
+				$('.progress-bar').css('width', '20%');
+				$('.progress-bar').attr('aria-valuenow', '20');
+				$('.progress-bar').text('20%');
+			}
+
+			if(step == 4) {
+				$('.progress-bar').css('width', '25%');
+				$('.progress-bar').attr('aria-valuenow', '25');
+				$('.progress-bar').text('25%');
+			}
+
+			if(step == 5) {
+				$('.progress-bar').css('width', '30%');
+				$('.progress-bar').attr('aria-valuenow', '30');
+				$('.progress-bar').text('30%');
+			}
+
+			if(step == 61) {
+				$('.progress-bar').css('width', '35%');
+				$('.progress-bar').attr('aria-valuenow', '35');
+				$('.progress-bar').text('35%');
+			}
+
+			if(step == 7) {
+				$('.progress-bar').css('width', '60%');
+				$('.progress-bar').attr('aria-valuenow', '60');
+				$('.progress-bar').text('60%');
+			}
+
+			if(step == 8) {
+				$('.progress-bar').css('width', '65%');
+				$('.progress-bar').attr('aria-valuenow', '65');
+				$('.progress-bar').text('65%');
+			}
+
+			if(step == 9) {
+				$('.progress-bar').css('width', '75%');
+				$('.progress-bar').attr('aria-valuenow', '75');
+				$('.progress-bar').text('75%');
+			}
+
+			if(step == 10) {
+				$('.progress-bar').css('width', '80%');
+				$('.progress-bar').attr('aria-valuenow', '80');
+				$('.progress-bar').text('80%');
+			}
+
+			if(step == 11) {
+				$('.progress-bar').css('width', '85%');
+				$('.progress-bar').attr('aria-valuenow', '85');
+				$('.progress-bar').text('85%');
+			}
+
+			if(step == 12) {
+				$('.progress-bar').css('width', '90%');
+				$('.progress-bar').attr('aria-valuenow', '90');
+				$('.progress-bar').text('90%');
+			}
+
+			if(step == 13) {
+				$('.progress-bar').css('width', '95%');
+				$('.progress-bar').attr('aria-valuenow', '95');
+				$('.progress-bar').text('95%');
+			}
+
+			if(step == 14) {
+				$('.progress-bar').css('width', '100%');
+				$('.progress-bar').attr('aria-valuenow', '100');
+				$('.progress-bar').text('100%');
+			}
+
 			if($(window).width() <= 1024) {
 				$('.bg-title-mobile').addClass('d-none')	
 				$(`.bg-title-${next}`).removeClass('d-none')
@@ -1616,7 +1705,7 @@ $(function() {
 				notFill.unshift("_040101");	
 			}
 
-			if(_040101 !== '' && _040102 !== '' && _040103 == '') {
+			if((_040101 !== '' || _040102 !== '') && _040103 == '') {
 				notFill.unshift("_040103");		
 			}
 		}
@@ -1653,11 +1742,27 @@ $(function() {
 			let _060640 = $("input[id='_060640']:checked").val()
 			let _060650 = $("input[id='_060650']:checked").val()
 			let _060660 = $("input[id='_060660']:checked").val()
+			let _060621 = $("select[id='_060621']").val()
+			let _060622 = $("select[id='_060622']").val()
+			let _060631 = $("select[id='_060631']").val()
+			let _060632 = $("select[id='_060632']").val()
+			let _060641 = $("select[id='_060641']").val()
+			let _060642 = $("select[id='_060642']").val()
+			let _060651 = $("select[id='_060651']").val()
+			let _060652 = $("select[id='_060652']").val()
+			let _060661 = $("select[id='_060661']").val()
+			let _060662 = $("select[id='_060662']").val()
 			if(_060612 === '1') {
 				if(_060620 === undefined && _060630 === undefined && _060640 === undefined && _060650 === undefined && _060620 === undefined && _060660 === undefined) {
-					notFill.push("_060613");		
+					notFill.push("_060613")
 				}
 			}
+
+			if(_060621 == _060622 || _060631 == _060632 || _060641 == _060642 || _060651 == _060652 || _060661 == _060662) {
+				notFill.push("_060670")
+			}
+
+
 			
 		}
 
@@ -1683,7 +1788,7 @@ $(function() {
 			}
 			
 		}
-
+	
 		if(step == 14) {
 			let _130400 = $("input[id='_130400']:checked").val()  
 			let _130410 = $("input[id='_130410']:checked").val() 
@@ -1691,12 +1796,27 @@ $(function() {
 			let _130421 = $("input[id='_130421']:checked").val() 
 			let _130424 = $("input[id='_130421']:checked").val() 
 			let _130430 = $("input[id='_130430']:checked").val() 
+
+			let _340000 = $("input[id='_340000']:checked").val()
+			let year = $("#_010100").val();
+
 			if(_130400 === '1') {
 				if(_130410 === undefined && _130412 === undefined && _130421 === undefined && _130424 === undefined && _130430 === undefined) {
 					notFill.push("_130400");		
 				}
 			}
+
+			if(_340000 === undefined) {
+				notFill.push("_340000");	
+			}
+
+			if(year < 0 || year > 110 && year) {
+				notFill.push("_010100-1");
+			}
+
+
 		}
+
 		return notFill;
 	}
 
