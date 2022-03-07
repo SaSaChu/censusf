@@ -255,6 +255,37 @@ $(function() {
 				$("#_030210").prop("required", false);
 			}
 		} else {
+			if($(this).val() == 1) {
+				$('._030101-1').each(function(){
+					$('._030101-1').removeClass('d-none');
+				});
+				$("#_030210").prop("required", true);
+			} else if ($(this).val() == 2) {
+				$('._030101-2').each(function(){
+					$(this).removeClass('d-none');
+				});
+				$("#_030210").prop("required", false);
+			} else if ($(this).val() == 3) {
+				$('._030101-3').each(function(){
+					$(this).removeClass('d-none');
+				});
+				$("#_030210").prop("required", false);
+			} else if ($(this).val() == 4) {
+				$('._030101-4').each(function(){
+					$(this).removeClass('d-none');
+				});
+				$("#_030210").prop("required", false);
+			} else if ($(this).val() == 5) {
+				$('._030101-5').each(function(){
+					$(this).removeClass('d-none');
+				});
+				$("#_030210").prop("required", false);
+			} else if ($(this).val() == 6) {
+				$('._030101-6').each(function(){
+					$(this).removeClass('d-none');
+				});
+				$("#_030210").prop("required", false);
+			}
 			question = [0, 1, 3, 4, 5, 61, 62, 63, 64, 65, 7, 81, 82, 9, 10, 11, 12, 13, 14, 15]
 		}
 		
@@ -866,6 +897,37 @@ $(function() {
 				}
 			}
 		} else {
+			if($(this).val() == 1) {
+				$('._030301-1').each(function(){
+					$('._030301-1').removeClass('d-none');
+				});
+				$("#_030310").prop("required", true);
+			} else if ($(this).val() == 2) {
+				$('._030301-2').each(function(){
+					$(this).removeClass('d-none');
+				});
+				$("#_030310").prop("required", false);
+			} else if ($(this).val() == 3) {
+				$('._030301-3').each(function(){
+					$(this).removeClass('d-none');
+				});
+				$("#_030310").prop("required", false);
+			} else if ($(this).val() == 4) {
+				$('._030301-4').each(function(){
+					$(this).removeClass('d-none');
+				});
+				$("#_030310").prop("required", false);
+			} else if ($(this).val() == 5) {
+				$('._030301-5').each(function(){
+					$(this).removeClass('d-none');
+				});
+				$("#_030310").prop("required", false);
+			} else if ($(this).val() == 6) {
+				$('._030301-6').each(function(){
+					$(this).removeClass('d-none');
+				});
+				$("#_030310").prop("required", false);
+			}
 			question = [0, 1, 3, 4, 5, 61, 62, 63, 64, 65, 7, 81, 82, 9, 10, 11, 12, 13, 14, 15]
 		}
 		
