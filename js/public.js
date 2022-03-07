@@ -1528,21 +1528,11 @@ $(function() {
 			$("input[id='_130430']").click(function() {
 				if($(this).is(':checked')) {
 					$("input[id='_130499']").prop('readonly', false)
+					$("input[id='_130499']").prop('required', true)
 				} else {
 					$("input[id='_130499']").val('')
 					$("input[id='_130499']").prop('readonly', true)	
-				}
-			})
-
-			// 2. 其他特殊情形，請以文字說明
-			$("input[id='_130500']").click(function() {
-				if($(this).is(':checked')) {
-					$("input[id='_130599']").prop('readonly', false)
-					$("input[id='_130599']").prop('required', true)
-				} else {
-					$("input[id='_130599']").val('')
-					$("input[id='_130599']").prop('readonly', true)	
-					$("input[id='_130599']").prop('required', false)
+					$("input[id='_130499']").prop('required', false)
 				}
 			})
 		} else {
@@ -1551,6 +1541,8 @@ $(function() {
 
 			$("input[id='_130411']").val('')
 			$("input[id='_130411']").prop('readonly', true)
+			$("input[id='_130411']").prop('required', false)
+
 
 			$("input[id='_130412']").prop('checked', false)
 			$("input[id='_130412']").prop('disabled', true)
@@ -1559,20 +1551,37 @@ $(function() {
 			$("input[id='_130421']").prop('disabled', true)
 			$("input[id='_130422']").val('')
 			$("input[id='_130422']").prop('readonly', true)	
+			$("input[id='_130422']").prop('required', false)		
 			$("input[id='_130423']").val('')
 			$("input[id='_130423']").prop('readonly', true)
+			$("input[id='_130423']").prop('required', false)		
 
 			$("input[id='_130424']").prop('checked', false)
 			$("input[id='_130424']").prop('disabled', true)
 			$("input[id='_130425']").val('')
 			$("input[id='_130425']").prop('readonly', true)
+			$("input[id='_130425']").prop('required', false)		
 			$("input[id='_130426']").val('')
 			$("input[id='_130426']").prop('readonly', true)
+			$("input[id='_130426']").prop('required', false)		
 
 			$("input[id='_130430']").prop('checked', false)	
 			$("input[id='_130430']").prop('disabled', true)
 			$("input[id='_130499']").val('')
 			$("input[id='_130499']").prop('readonly', true)
+			$("input[id='_130499']").prop('required', false)	
+		}
+	})
+
+	// 2. 其他特殊情形，請以文字說明
+	$("input[id='_130500']").click(function() {
+		if($(this).is(':checked')) {
+			$("input[id='_130599']").prop('readonly', false)
+			$("input[id='_130599']").prop('required', true)
+		} else {
+			$("input[id='_130599']").val('')
+			$("input[id='_130599']").prop('readonly', true)	
+			$("input[id='_130599']").prop('required', false)
 		}
 	})
 	
