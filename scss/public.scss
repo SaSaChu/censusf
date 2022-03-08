@@ -61,6 +61,10 @@ ul {
 }
 
 .t-mt220 {
+  @include range-width(450px, 825px) {
+    margin-top: 42%;
+  }
+
   @include range-width(0, 450px) {
     margin-top: 150px;
   }
@@ -125,7 +129,7 @@ ul {
   background-size: cover;
   background-repeat: no-repeat;
 
-  @include range-width(0, 450px) {
+  @include range-width(0, 825px) {
     background: rgba(26, 90, 157, 1.00) url(../img/m_bg.jpg) center top  no-repeat;
     -moz-background-size: cover;
     background-size: cover;
@@ -137,6 +141,15 @@ ul {
 .f-25 {
   display: inline-block;
   width: 25% !important;
+}
+
+// 9
+.pl-35 {
+  padding-left: 35px;
+
+  @include range-width(0, 450px) {
+    padding-left: 28px;
+  }
 }
 
 .pl-34 {
@@ -151,7 +164,7 @@ ul {
   padding-left: 45px;
 
   @include range-width(0, 450px) {
-    padding-left: 56px;
+    padding-left: 53px;
   }
 }
 
@@ -619,6 +632,23 @@ ul {
     content: attr(title);
     margin-right: 5px;
     position: absolute;
+    left: 10px;
+  }
+}
+
+.check_list-bb {
+  display: inline-block;
+  position: relative;
+  padding-left: 30px;
+  font-weight: bold;
+  color: #0a63fd;
+
+  &:before {
+    display: inline-block;
+    content: attr(title);
+    margin-right: 5px;
+    position: absolute;
+    font-weight: bold;
     left: 10px;
   }
 }

@@ -3020,6 +3020,7 @@ ul li:before { content: "(" counter(my-counter) ")"; line-height: 40px; padding-
 
 .btn:focus { box-shadow: none !important; }
 
+@media screen and (max-width: 824px) and (min-width: 450px) { .t-mt220 { margin-top: 42%; } }
 @media screen and (max-width: 449px) and (min-width: 0) { .t-mt220 { margin-top: 150px; } }
 
 .pwUse { border: 0; padding: 0.75rem 0; }
@@ -3040,15 +3041,18 @@ ul li:before { content: "(" counter(my-counter) ")"; line-height: 40px; padding-
 .inbg { background: #243e90; background: -moz-linear-gradient(top, #243e90 14%, #6fbfed 100%); /* FF3.6-15 */ background: -webkit-linear-gradient(top, #243e90 14%, #6fbfed 100%); /* Chrome10-25,Safari5.1-6 */ background: linear-gradient(to top, #243e90 14%, #6fbfed 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */ }
 
 .in-cent-bg { width: 100%; height: 100%; overflow: hidden; margin: 0; padding: 0; background: #1a5a9d url(../img/bg.jpg) center top no-repeat; -moz-background-size: cover; background-size: cover; background-repeat: no-repeat; }
-@media screen and (max-width: 449px) and (min-width: 0) { .in-cent-bg { background: #1a5a9d url(../img/m_bg.jpg) center top no-repeat; -moz-background-size: cover; background-size: cover; background-repeat: no-repeat; } }
+@media screen and (max-width: 824px) and (min-width: 0) { .in-cent-bg { background: #1a5a9d url(../img/m_bg.jpg) center top no-repeat; -moz-background-size: cover; background-size: cover; background-repeat: no-repeat; } }
 
 .f-25 { display: inline-block; width: 25% !important; }
+
+.pl-35 { padding-left: 35px; }
+@media screen and (max-width: 449px) and (min-width: 0) { .pl-35 { padding-left: 28px; } }
 
 .pl-34 { padding-left: 34px; }
 @media screen and (max-width: 449px) and (min-width: 0) { .pl-34 { padding-left: 0; } }
 
 .pl-45 { padding-left: 45px; }
-@media screen and (max-width: 449px) and (min-width: 0) { .pl-45 { padding-left: 56px; } }
+@media screen and (max-width: 449px) and (min-width: 0) { .pl-45 { padding-left: 53px; } }
 
 @media screen and (max-width: 449px) and (min-width: 0) { .m-100 { width: 100% !important; margin-top: 10px; } }
 
@@ -3162,6 +3166,9 @@ ul li:before { content: "(" counter(my-counter) ")"; line-height: 40px; padding-
 
 .check_list { display: inline-block; position: relative; padding-left: 30px; }
 .check_list:before { display: inline-block; content: attr(title); margin-right: 5px; position: absolute; left: 10px; }
+
+.check_list-bb { display: inline-block; position: relative; padding-left: 30px; font-weight: bold; color: #0a63fd; }
+.check_list-bb:before { display: inline-block; content: attr(title); margin-right: 5px; position: absolute; font-weight: bold; left: 10px; }
 
 footer { display: inline-block; width: 100%; background-color: white; padding: 10px 0; }
 @media screen and (max-width: 449px) and (min-width: 0) { footer { position: inherit; } }
