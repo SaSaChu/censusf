@@ -134,12 +134,13 @@ $(function() {
 			$("#_350000").prop('readonly', false).prop('required', true);	
 		}
 	})
-
+	// TODO 主要、次要經營項目判斷
 	// 單位級別
 	$("input[id='_340000']").change(function(){
 		let _340000 = "" + $(this).val();
 		let question;
 		if (_340000 == "1" || _340000 == "8") {
+			
 			question = [0, 1, 3, 4, 5, 61, 7, 81, 9, 10, 11, 12, 14, 15];
 			$("#_360000").val('').prop("readonly", true).prop('required', false);
 		} else if (_340000 == "2") {
@@ -1609,7 +1610,8 @@ $(function() {
 		let next = question[question.indexOf(step)+1]
 
 		// 確認必填功能
-		let notFill = checkFillInput(step);
+		// let notFill = checkFillInput(step);
+		let notFill = 0;
 		
 		if(notFill.length) {
 			$('#next').modal('show');
@@ -1926,7 +1928,7 @@ $(function() {
 		let question = JSON.parse(localStorage.getItem("question"))	
 		
 		if(!question) {
-			question = [0, 1, 3, 4, 5, 61, 7, 81, 9, 10, 11, 12, 14, 15]
+			question = [0, 1, 3, 4, 5, 61 ,62, 63, 64, 65, 7, 81, 82, 9, 10, 11, 12, 13, 14, 15]
 			localStorage.setItem('question', JSON.stringify(question));
 		}
 		console.log(question);
