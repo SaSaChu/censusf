@@ -1151,8 +1151,8 @@
 
 									<div class="col-xl-6 py-3 col-12 pb-4">
 										<label for="_350000" class="form-label">營利事業暨扣繳單位統一編號</label>
-										<input type="text" class="form-control" id="_350000" name="_350000"
-											value="" maxlength="8" placeholder="" pattern="\d{8}" required>
+										<input type="tel" class="form-control" id="_350000" name="_350000"
+											value="" maxlength="8" placeholder="" required onkeyup="return this.value=this.value.replace(/\D/g, '');">
 									</div>
 									<div class="col-xl-6 py-3 col-12">
 										<div class="form-check pt-xl-5 pt-0 mt-xl-4 mt-0">
