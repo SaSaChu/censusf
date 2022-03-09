@@ -1610,24 +1610,12 @@ $(function() {
 	// 2. 其他特殊情形，請以文字說明
 	$("input[id='_130500']").click(function() {
 		if($(this).is(':checked')) {
-			$("input[id='_130599']").prop('readonly', false)
-			$("input[id='_130599']").prop('required', true)
+			$("textarea[id='_130599']").prop('readonly', false)
+			$("textarea[id='_130599']").prop('required', true)
 		} else {
-			$("input[id='_130599']").val('')
-			$("input[id='_130599']").prop('readonly', true)	
-			$("input[id='_130599']").prop('required', false)
-		}
-	})
-
-	// 4. 統填註記 因提供文件無統填註記暫時定義為 _130700, _130799
-	$("input[id='_130700']").click(function() {
-		if($(this).is(':checked')) {
-			$("input[id='_130799']").prop('readonly', false)
-			$("input[id='_130799']").prop('required', true)
-		} else {
-			$("input[id='_130799']").val('')
-			$("input[id='_130799']").prop('readonly', true)	
-			$("input[id='_130799']").prop('required', false)
+			$("textarea[id='_130599']").val('')
+			$("textarea[id='_130599']").prop('readonly', true)	
+			$("textarea[id='_130599']").prop('required', false)
 		}
 	})
 	
@@ -1655,8 +1643,8 @@ $(function() {
 		let next = question[question.indexOf(step)+1]
 
 		// 確認必填功能
-		let notFill = checkFillInput(step);
-		// let notFill = 0;
+		// let notFill = checkFillInput(step);
+		let notFill = 0;
 		
 		if(notFill.length) {
 			$('#next').modal('show');
@@ -1678,6 +1666,7 @@ $(function() {
 			$(`.step-box[data-step="${step}"`).addClass('d-none');
 			$(`.step-box[data-step="${next}"`).removeClass('d-none');
 			$(`.w-menu[data-step="${next}"]`).addClass('on-step');
+			$(window).scrollTop(0);
 
 			if(step == 0) {
 				$('.progress-bar').css('width', '5%');

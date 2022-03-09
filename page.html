@@ -1314,8 +1314,8 @@
 												</label>
 											</div>
 											<!-- ★★★ 0221 有新增m-100 ★★★ -->
-											<input type="text" class="form-control m-100" id="_360000" name="_360000"
-												maxlength="8" placeholder="請填總管理單位之統一編號" readonly>
+											<input type="tel" class="form-control m-100" id="_360000" name="_360000"
+												maxlength="8" onkeyup="return this.value=this.value.replace(/\D/g, '');" placeholder="請填總管理單位之統一編號" readonly>
 										</div>
 									</div>
 									<div class="col-xl-6 col-12">
@@ -4311,7 +4311,7 @@
 									<div class="form-check pt-3">
 									<input class="form-check-input" id="_130500" name="_130500" type="checkbox" value="1">
 									<label class="form-check-label check_list pb-4" for="_130599" title="2.">其他特殊情形，請以文字說明<i class="text-danger markUse">(如無收入、巨額虧損或獲利等)</i></label>
-									<input type="text" id="_130599" name="_130599" class="form-control" maxlength="60" placeholder="請輸入" readonly>
+									<textarea type="text" id="_130599" name="_130599" class="form-control" maxlength="60" placeholder="請輸入" readonly></textarea>
 									</div>
 								</div>
 								</div>
@@ -4340,11 +4340,9 @@
 								<div class="row py-5">
 								<div class="col-12">
 									<div class="form-check pt-3">
-									<!-- 提供文件上無統填註記故暫時定義為 _130700-->
-									<input class="form-check-input" id="_130700" name="_130700" type="checkbox" value="1">
-									<label class="form-check-label check_list pb-4" for=" " title="4.">統填註記</label>
-									<!-- 提供文件上無統填註記故暫時定義為 _130799-->
-									<input type="text" id="_130799" name="_130799" class="form-control pt-4" maxlength="60" placeholder="請輸入" readonly>
+										<!-- 提供文件上無統填註記故暫時定義為 _130700-->
+										<input class="form-check-input" id="_130700" name="_130700" type="checkbox" value="1">
+										<label class="form-check-label check_list pb-4" for=" " title="4.">統填註記</label>
 									</div>
 								</div>
 								</div>
