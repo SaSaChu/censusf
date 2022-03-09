@@ -1104,11 +1104,16 @@ $(function() {
 	})
 	//step 6
 	$("input[id='_060100']").change(function() {
-		let question;
-		if($(this).val() === '2') {
-			question = [0, 1 , 3, 4, 5, 61, 7, 81, 82, 9 , 10, 11, 12, 14, 15]
+		let question = JSON.parse(localStorage.getItem("question"))	
+		let _61 = question.indexOf(61) 
+		let _62 = question.indexOf(62) 
+		let _65= question.indexOf(65)
+		if($(this).val() === '2') {	
+			question.splice(_62, (_65-_62)+1);
 		} else {
-			question = [0, 1 , 3, 4, 5, 61, 62, 63, 64, 65, 7, 81, 82, 9 , 10, 11, 12, 14, 15]	
+			if(question.indexOf(62) === -1) {
+				question.splice(_61+1, 0, 62, 63, 64, 65);
+			}
 		}
 		localStorage.setItem('question', JSON.stringify(question));
 		displayQuestion()
@@ -1148,35 +1153,51 @@ $(function() {
 	//step 6-4
 	//同時使用於基礎及生產服務等進階作業
 	$("input[id='_060600'").change(function() {
-		let question;
 		if($(this).val() == 2) {
 			$("input[id='_060611").prop('disabled', false);
 			$("input[id='_060611").first().prop('required', true);	
 			$("input[id='_060612").prop('disabled', false);
 			$("input[id='_060612").first().prop('required', true);	
 
-			$("input[id='_060612']").change(function() {
-				if($(this).val() == 2) {
-					question = [0, 1, 3, 4, 5, 61, 62, 63, 64, 7, 81, 82, 9, 10, 11, 12, 14, 15]
-				} else {
-					question = [0, 1, 3, 4, 5, 61, 62, 63, 64, 65, 7, 81, 82, 9, 10, 11, 12, 14, 15]
+			$("input[id='_060612']").click(function() {
+				let question = JSON.parse(localStorage.getItem("question"))	
+				let _64 = question.indexOf(64) 
+				let _65= question.indexOf(65)
+				if($(this).val() === '1'){
+					console.log(1, _65)
+					if(_65 === -1) {
+						question.splice(_64+1, 0, 65);
+					}
+				} else if($(this).val() === '2') {	
+					console.log(1, _65)
+					if(_65 !== -1) {
+						question.splice(_65, 1);
+					}
+					
 				}
 				localStorage.setItem('question', JSON.stringify(question));
 				displayQuestion()
 			})
-			
-			
+	
 		} else {
+			
 			$("input[id='_060611").prop('checked', false);
 			$("input[id='_060611").first().prop('required', false);	
 			$("input[id='_060611").prop('disabled', true);
 			$("input[id='_060612").prop('checked', false);
 			$("input[id='_060612").first().prop('required', false);	
 			$("input[id='_060612").prop('disabled', true);
-			question = [0, 1, 3, 4, 5, 61, 62, 63, 64, 7, 81, 82, 9, 10, 11, 12, 14, 15]
+			let question = JSON.parse(localStorage.getItem("question"))	
+			let _65= question.indexOf(65)
+			
+			if(question.indexOf(65) !== -1) {
+				question.splice(_65, 1);	
+			}
 			localStorage.setItem('question', JSON.stringify(question));
 			displayQuestion()
 		}
+		// console.log(question);
+		
 	})	
 	//step 6-5
 	//有無運用下列技術？點選有時請勾選下列技術中有運用者(可複選)，並選擇至少一項之主要運用作業
@@ -1185,11 +1206,13 @@ $(function() {
 			$("._060621").removeClass('d-none');
 			$("._060622").removeClass('d-none');
 			$("select[id='_060621']").prop('required', true)
-			$("select[id='_060621'], select[id='_060622']").change(function() {
+			$("select[id='_060621'], select[id='_060622'], select[id='_060631'], select[id='_060632'], select[id='_060641'], select[id='_060642'],select[id='_060651'],select[id='_060652'], select[id='_060661'],select[id='_060662'] ").change(function() {
 				if($(this).val() === '7') {
 					$("textarea[id='_069999']").prop('required', true)
+					$("textarea[id='_069999']").prop('disabled', false)	
 				} else {
 					$("textarea[id='_069999']").prop('required', false)	
+					$("textarea[id='_069999']").prop('disabled', true)	
 				}
 			})
 		} else {
@@ -1288,6 +1311,20 @@ $(function() {
 	//step 8
 	//全年有無跨國(境)服務交易、投資布局或外資持股？
 	$("input[id='_080000']").change(function() {
+		let question = JSON.parse(localStorage.getItem("question"))	
+		let _81 = question.indexOf(81) 
+		let _82 = question.indexOf(82) 
+		if($(this).val() === '2') {	
+			question.splice(_82, 1);
+		} else {
+			if(question.indexOf(82) === -1) {
+				question.splice(_81+1, 0, 82);
+			}
+		}
+		console.log(question)
+		localStorage.setItem('question', JSON.stringify(question));
+		displayQuestion() 
+
 		if($(this).val() == 1) {
 			$("input[id='_080100']").prop('disabled', false);
 			$("input[id='_080100']").first().prop('required', true);
@@ -1342,10 +1379,6 @@ $(function() {
 					$("input[id='_080401']").prop('required', false);	
 				}
 			})	
-			question = [0, 1, 3, 4, 5, 61, 62, 63, 64, 7, 81, 82, 9, 10, 11, 12, 14, 15]
-			localStorage.setItem('question', JSON.stringify(question));
-			displayQuestion()
-			
 		} else {
 			$("input[id='_080100']").prop('disabled', true);
 			$("input[id='_080100']").prop('checked', false);
@@ -1377,9 +1410,6 @@ $(function() {
 			$("input[id='_080401']").val('');		
 			$("input[id='_080401']").prop('readonly', true);
 			$("input[id='_080401']").prop('required', false);		
-			question = [0, 1, 3, 4, 5, 61, 62, 63, 64, 7, 81, 9, 10, 11, 12, 14, 15]
-			localStorage.setItem('question', JSON.stringify(question));
-			displayQuestion()
 		}
 	})	
 
@@ -1428,20 +1458,20 @@ $(function() {
 			$("input[id='_100600']").prop('disabled', true)
 			$("input[id='_100700']").prop('disabled', true)
 			$("input[id='_100800']").prop('disabled', true)
-			$("input[id='_100899']").val('')
-			$("input[id='_100899']").prop('readonly', true)
-			$("input[id='_100899']").prop('required', false)
+			$("textarea[id='_100899']").val('')
+			$("textarea[id='_100899']").prop('readonly', true)
+			$("textarea[id='_100899']").prop('required', false)
 		}
 
 	})
 	$("input[id='_100800']").click(function() {
 		if ($("input[id='_100800']").is(":checked")){
-			$("input[id='_100899']").prop('readonly', false)
-			$("input[id='_100899']").prop('required', true)
+			$("textarea[id='_100899']").prop('readonly', false)
+			$("textarea[id='_100899']").prop('required', true)
 		} else {
-			$("input[id='_100899']").val('')
-			$("input[id='_100899']").prop('readonly', true)
-			$("input[id='_100899']").prop('required', false)
+			$("textarea[id='_100899']").val('')
+			$("textarea[id='_100899']").prop('readonly', true)
+			$("textarea[id='_100899']").prop('required', false)
 		}
 	})
 
@@ -1466,7 +1496,7 @@ $(function() {
 	$("input[id='_130400']").click(function() {
 		if ($("input[id='_130400']").is(":checked")){
 			$("input[id='_130410']").prop('disabled', false)
-			$("input[id='_130411']").prop('readonly', false)
+			
 			$("input[id='_130412']").prop('disabled', false)
 			$("input[id='_130421']").prop('disabled', false)
 			$("input[id='_130424']").prop('disabled', false)
@@ -1474,8 +1504,11 @@ $(function() {
 			
 			$("input[id='_130410']").click(function() {
 				if($("input[id='_130410']").is(':checked')) {
+					$("input[id='_130411']").prop('readonly', false)
 					$("input[id='_130411']").prop('required', true)
 				} else {
+					$("input[id='_130411']").val('');
+					$("input[id='_130411']").prop('readonly', true)
 					$("input[id='_130411']").prop('required', false)	
 				}
 			})
@@ -1528,12 +1561,12 @@ $(function() {
 			// 其他受影響項目
 			$("input[id='_130430']").click(function() {
 				if($(this).is(':checked')) {
-					$("input[id='_130499']").prop('readonly', false)
-					$("input[id='_130499']").prop('required', true)
+					$("textarea[id='_130499']").prop('readonly', false)
+					$("textarea[id='_130499']").prop('required', true)
 				} else {
-					$("input[id='_130499']").val('')
-					$("input[id='_130499']").prop('readonly', true)	
-					$("input[id='_130499']").prop('required', false)
+					$("textarea[id='_130499']").val('')
+					$("textarea[id='_130499']").prop('readonly', true)	
+					$("textarea[id='_130499']").prop('required', false)
 				}
 			})
 		} else {
@@ -1568,9 +1601,9 @@ $(function() {
 
 			$("input[id='_130430']").prop('checked', false)	
 			$("input[id='_130430']").prop('disabled', true)
-			$("input[id='_130499']").val('')
-			$("input[id='_130499']").prop('readonly', true)
-			$("input[id='_130499']").prop('required', false)	
+			$("textarea[id='_130499']").val('')
+			$("textarea[id='_130499']").prop('readonly', true)
+			$("textarea[id='_130499']").prop('required', false)	
 		}
 	})
 
@@ -1583,6 +1616,18 @@ $(function() {
 			$("input[id='_130599']").val('')
 			$("input[id='_130599']").prop('readonly', true)	
 			$("input[id='_130599']").prop('required', false)
+		}
+	})
+
+	// 4. 統填註記 因提供文件無統填註記暫時定義為 _130700, _130799
+	$("input[id='_130700']").click(function() {
+		if($(this).is(':checked')) {
+			$("input[id='_130799']").prop('readonly', false)
+			$("input[id='_130799']").prop('required', true)
+		} else {
+			$("input[id='_130799']").val('')
+			$("input[id='_130799']").prop('readonly', true)	
+			$("input[id='_130799']").prop('required', false)
 		}
 	})
 	
@@ -1610,8 +1655,8 @@ $(function() {
 		let next = question[question.indexOf(step)+1]
 
 		// 確認必填功能
-		// let notFill = checkFillInput(step);
-		let notFill = 0;
+		let notFill = checkFillInput(step);
+		// let notFill = 0;
 		
 		if(notFill.length) {
 			$('#next').modal('show');
@@ -1725,6 +1770,26 @@ $(function() {
 		}
 	})
 
+	$('.final-check').click(function() {
+		let notFill = checkFillInput(15);	
+		if(notFill.length) {
+			$('#next').modal('show');
+			var nextModal = document.getElementById('next')
+			nextModal.addEventListener('shown.bs.modal', function () {
+				let element = ''
+				notFill.forEach((e,i) => {	
+					if((i) % 2 == 0 ) {
+						element += `<p class="popup-list-r" title="${i+=1}">${ERRORCODE[e]}</p>`  ;	
+					} else {
+						element += `<p class="popup-list-r text-danger" title="${i+=1}">${ERRORCODE[e]}</p>`  ;
+					}
+				})
+				
+				$('#next').find('.modal-body').empty().html(element);
+			});
+		}
+	})
+
 	displayQuestion()
 	
 	// 確認必填欄位
@@ -1831,7 +1896,7 @@ $(function() {
 					notFill.push("_060613")
 				}
 			}
-			console.log(_060621, _060622, _060631, _060632, _060641, _060642, _060651, _060652, _060661, _060662)
+
 			if(_060621 !== '' && _060622 !== '') {
 				if(_060621 == _060622 ) {
 					notFill.push("_060700")
@@ -1861,10 +1926,6 @@ $(function() {
 					notFill.push("_060700")	
 				}
 			}
-
-			
-
-
 			
 		}
 
@@ -1908,6 +1969,12 @@ $(function() {
 				}
 			}
 
+		}
+
+		if(step == 15) {
+			let _340000 = $("input[id='_340000']:checked").val()
+			let year = $("#_010100").val();
+
 			if(_340000 === undefined) {
 				notFill.push("_340000");	
 			}
@@ -1915,8 +1982,6 @@ $(function() {
 			if(year < 0 || year > 110 && year) {
 				notFill.push("_010100-1");
 			}
-
-
 		}
 
 		return notFill;
@@ -1931,7 +1996,7 @@ $(function() {
 			question = [0, 1, 3, 4, 5, 61 ,62, 63, 64, 65, 7, 81, 82, 9, 10, 11, 12, 13, 14, 15]
 			localStorage.setItem('question', JSON.stringify(question));
 		}
-		console.log(question);
+		// console.log(question);
 		$('.w-menu').addClass('pass-step')
 		$('.m-menu').addClass('pass-step')
 		question.forEach(e => {
