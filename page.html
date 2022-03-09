@@ -1059,12 +1059,20 @@
 							<!-- 表單欄位03 -->
 							<div class="container-fluid px-4 px-xl-5">
 								<div class="row py-4">
-									<div class="col-12 pb-3">
+									<div class="col-xl-6 col-12 pb-3">
 										<label for="B061" class="form-label">聯絡人姓名<i class="text-danger markUse">*</i>
 											<!-- <button type="button" title="罕見字輸入"
 												class="btn-hard">難</button> -->
 										</label>
 										<input type="text" class="form-control" id="B061" name="B061" maxlength="30"
+											placeholder="請輸入" required>
+									</div>
+
+									<!-- 新增手機 -->
+									<div class="col-xl-6 col-12 pb-3">
+										<label for="" class="form-label">聯絡人手機<i class="text-danger markUse">*</i>
+										</label>
+										<input type="text" class="form-control" id="" name="" maxlength="30"
 											placeholder="請輸入" required>
 									</div>
 
@@ -1099,12 +1107,20 @@
 										</div>
 									</div>
 
-									<div class="col-xl-6 py-3 col-12 pb-4">
+									<div class="col-12 py-3 pb-4">
 										<label for="B063" class="form-label">填表人姓名<i class="text-danger markUse">*</i>
 											<!-- <button type="button" title="罕見字輸入"
 												class="btn-hard">難</button> -->
 										</label>
 										<input type="text" class="form-control" id="B063" name="B063" maxlength="30"
+											placeholder="請輸入" required>
+									</div>
+
+									<!-- 新增手機 -->
+									<div class="col-xl-6 py-3 col-12">
+										<label for="" class="form-label">填表人手機<i class="text-danger markUse">*</i>
+										</label>
+										<input type="text" class="form-control" id="" name="" maxlength="30"
 											placeholder="請輸入" required>
 									</div>
 
@@ -2141,7 +2157,7 @@
 									<div class="row gy-5 pt-4">
 										<div class="col-xl-6 col-12 ">
 											<label for="_030351" class="form-label">1.租賃項目：</label>
-											<select id="_030351" name="_030351" class="w-50 form-select"
+											<select id="_030351" name="_030351" class="form-select"
 												aria-label="Default select example">
 												<option selected>請選擇</option>
 												<!-- ★★★ 選(1)不動產租賃 / (4)產業(辦公)用機械設備出租 / (5)其他用品出租，會"隱藏"第446行 ★★★ -->
@@ -2304,13 +2320,13 @@
 														<div class="col-auto pt-3 pe-3">1.年底之男性</div>
 														<div class="col-md-1 col-2">
 															<label for="_040101" class="visually-hidden"></label>
-															<input type="number" id="_040101" name="_040101" min="0" class="form-control" max="99999" onkeyup="return this.value=this.value.replace(/\D/g, '');">
+															<input type="number" id="_040101" name="_040101" min="0" class="form-control px-3" max="99999" onkeyup="return this.value=this.value.replace(/\D/g, '');">
 														</div>
 														<div class="col-auto pt-3 px-3">人</div>
 														<div class="col-auto pt-3 pe-3">、女性</div>
 														<div class="col-md-1 col-2">
 															<label for="_040102" class="visually-hidden"></label>
-															<input type="number" id="_040102" name="_040102" min="0" class="form-control" max="99999" onkeyup="return this.value=this.value.replace(/\D/g, '');">
+															<input type="number" id="_040102" name="_040102" min="0" class="form-control px-3" max="99999" onkeyup="return this.value=this.value.replace(/\D/g, '');">
 														</div>
 														<div class="col-auto pt-3 px-3">人</div>
 													</form>
@@ -2318,16 +2334,14 @@
 											</div>
 
 											<div class="col-12 ps-5">
-												<div class="input-group">
 													<form class="row g-3">
 														<div class="col-auto pt-3 pe-3">全年薪資總額</div>
-														<div class="col-3">
+														<div class="col-4">
 															<label for="_040103" class="visually-hidden"></label>
 															<input type="number" id="_040103" name="_040103" min="0" max="9999999999" class="form-control" onkeyup="return this.value=this.value.replace(/\D/g, '');">
 														</div>
-														<div class="col-auto pt-3 px-3">萬元</div>
+														<div class="col-auto pt-3 pe-3">萬元</div>
 													</form>
-												</div>
 											</div>
 										</div>
 									</div>
@@ -2338,24 +2352,22 @@
 
 										<div class="row gy-3">
 											<div class="col-12">
-												<div class="input-group">
-													<div class="row g-3">
-														<!-- ★★★ 點選1的radio，後方的input才可以輸入 ★★★ -->
-														<div class="col-auto">
-															<div class="form-check pt-3 pe-3">
-																<input class="form-check-input" type="radio"
-																	id="_040104" name="_040104" value="1" required>
-																<label class="form-check-label"
-																	for="_040104">(1)有</label>
-															</div>
+												<div class="row g-3">
+													<!-- ★★★ 點選1的radio，後方的input才可以輸入 ★★★ -->
+													<div class="col-auto">
+														<div class="form-check pt-3 pe-3">
+															<input class="form-check-input" type="radio"
+																id="_040104" name="_040104" value="1" required>
+															<label class="form-check-label"
+																for="_040104">(1)有</label>
 														</div>
-														<div class="col-3">
-															<label for="_040105" class="visually-hidden"></label>
-															<input type="number" id="_0401045" name="_0401045"
-																class="form-control" readonly min="0" max="99999" onkeyup="return this.value=this.value.replace(/\D/g, '');">
-														</div>
-														<div class="col-auto pt-3 px-3">人</div>
 													</div>
+													<div class="col-3 col-xl-2">
+														<label for="_040105" class="visually-hidden"></label>
+														<input type="number" id="_0401045" name="_0401045"
+															class="form-control" readonly min="0" max="99999" onkeyup="return this.value=this.value.replace(/\D/g, '');">
+													</div>
+													<div class="col-auto pt-3 px-3">人</div>
 												</div>
 											</div>
 
@@ -2381,23 +2393,21 @@
 									<div class="row gy-3 pt-3">
 										<div class="col-12 pb-3">(二) 實際參與營運但未固定支薪之雇主、自營作業者及無酬家屬工作者</div>
 
-										<div class="col-12 ps-xl-5 ps-0">
-											<div class="input-group ps-4">
-												<form class="row g-3">
-													<div class="col-auto pt-3 pe-3">年底之男性</div>
-													<div class="col-md-1 col-2">
-														<label for="_040201" class="visually-hidden"></label>
-														<input type="number" id="_040201" name="_040201" class="form-control" min="0" max="99999" onkeyup="return this.value=this.value.replace(/\D/g, '');">
-													</div>
-													<div class="col-auto pt-3 px-3">人</div>
-													<div class="col-auto pt-3 pe-3">、女性</div>
-													<div class="col-md-1 col-2">
-														<label for="_040202" class="visually-hidden"></label>
-														<input type="number" id="_040202" name="_040202" class="form-control" min="0" max="99999" onkeyup="return this.value=this.value.replace(/\D/g, '');">
-													</div>
-													<div class="col-auto pt-3 px-3">人</div>
-												</form>
-											</div>
+										<div class="col-12 ps-xl-5 ps-4">
+											<form class="row g-3">
+												<div class="col-auto pt-3 pe-0">年底之男性</div>
+												<div class="col-md-1 col-3">
+													<label for="_040201" class="visually-hidden"></label>
+													<input type="number" id="_040201" name="_040201" class="form-control px-3" min="0" max="99999" onkeyup="return this.value=this.value.replace(/\D/g, '');">
+												</div>
+												<div class="col-auto pt-3 px-0">人</div>
+												<div class="col-auto pt-3 pe-0">、女性</div>
+												<div class="col-md-1 col-3">
+													<label for="_040202" class="visually-hidden"></label>
+													<input type="number" id="_040202" name="_040202" class="form-control px-3" min="0" max="99999" onkeyup="return this.value=this.value.replace(/\D/g, '');">
+												</div>
+												<div class="col-auto pt-3 px-0">人</div>
+											</form>
 										</div>
 									</div>
 								</div>
@@ -2464,15 +2474,15 @@
 													<div class="col-auto pt-3 px-0">個月，有使用月份中，</div>
 													<div class="col-auto pt-3 px-lg-0 ps-3 pe-0">通常使用<i
 															class="text-danger markUse">(多數月份)</i></div>
-													<div class="col-md-1 col-3">
+													<div class="col-md-1 col-3 ps-0 pe-2">
 														<label for="_050102" class="visually-hidden"></label>
 														<input type="number" id="_050102" name="_050102" class="form-control" readonly min="0" max="99999" onkeyup="return this.value=this.value.replace(/\D/g, '');">
 													</div>
 													<div class="col-auto pt-3 px-0">人，</div>
 													<div class="col-auto pt-3 px-0">最多使用</div>
-													<div class="col-md-1 col-3">
+													<div class="col-md-1 col-3 ps-3 pe-2">
 														<label for="_050103" class="visually-hidden"></label>
-														<input type="number" id="_050103" name="_050103" class="form-control" readonly min="0" max="99999" onkeyup="return this.value=this.value.replace(/\D/g, '');">
+														<input type="number" id="_050103" name="_050103" class="form-control px-2" readonly min="0" max="99999" onkeyup="return this.value=this.value.replace(/\D/g, '');">
 													</div>
 													<div class="col-auto pt-3 px-0">人</div>
 												</div>
@@ -2519,15 +2529,15 @@
 														<div class="col-auto pt-3 px-0">個月，有派遣月份中，</div>
 														<div class="col-auto pt-3 px-lg-0 ps-3 pe-0">通常派遣<i
 																class="text-danger markUse">(多數月份)</i></div>
-														<div class="col-md-1 col-3">
+														<div class="col-md-1 col-3 ps-0 pe-2">
 															<label for="_050202" class="visually-hidden"></label>
 															<input type="number" class="form-control" id="_050202" name="_050202" readonly min="0" max="99999" onkeyup="return this.value=this.value.replace(/\D/g, '');">
 														</div>
 														<div class="col-auto pt-3 px-0">人，</div>
 														<div class="col-auto pt-3 px-0">最多派遣</div>
-														<div class="col-md-1 col-3">
+														<div class="col-md-1 col-3 ps-3 pe-2">
 															<label for="_050202" class="visually-hidden"></label>
-															<input type="number" class="form-control" id="_050203" name="_050203" readonly min="0" max="99999" onkeyup="return this.value=this.value.replace(/\D/g, '');">
+															<input type="number" class="form-control px-2" id="_050203" name="_050203" readonly min="0" max="99999" onkeyup="return this.value=this.value.replace(/\D/g, '');">
 														</div>
 														<div class="col-auto pt-3 px-0">人</div>
 													</div>
@@ -3504,7 +3514,7 @@
 											<label class="form-check-label" for="_080300">(1)有，計</label>
 										  </div>
 										</div>
-										<div class="col-3">
+										<div class="col-3 px-0">
 										  <label for="_080301" class="visually-hidden"></label>
 										  <input type="number" class="form-control" id="_080301" name="_080301" min="0" max="999" readonly onkeyup="return this.value=this.value.replace(/\D/g, '');">
 										</div>
@@ -3543,7 +3553,7 @@
 											<label class="form-check-label" for="_080400">(1)有，計</label>
 										  </div>
 										</div>
-										<div class="col-3">
+										<div class="col-3 px-0">
 										  <label for="_080401" class="visually-hidden"></label>
 										  <input type="number" class="form-control" id="_080401" name="_080401" min="0" max="999" readonly onkeyup="return this.value=this.value.replace(/\D/g, '');">
 										</div>
@@ -4101,10 +4111,9 @@
 						<div class="container-fluid px-3 px-xl-5">
 							<div class="row py-5">
 								<div class="col-12 ps-5">
-									<div class="input-group">
 									<form class="row g-3">
 										<div class="col-auto pt-3 pe-3">110 年底靠行司機人數</div>
-										<div class="col-2">
+										<div class="col-xl-1 col-3">
 										<label for="_130000" class="visually-hidden"></label>
 										<input type="number" class="form-control" id="_130000" name="_130000" min="0" max="999" required onkeyup="return this.value=this.value.replace(/\D/g, '');">
 										</div>
@@ -4112,7 +4121,6 @@
 										<p>人</p>
 										</div>
 									</form>
-									</div>
 								</div>
 							</div>
 						</div>
