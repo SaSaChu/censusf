@@ -1071,7 +1071,7 @@
 									<div class="col-xl-6 py-3 col-12 pb-4">
 										<label for="B062" class="form-label">聯絡人電話<i
 												class="text-danger markUse">*</i></label>
-										<input type="text" class="form-control" id="B062" name="B062" maxlength="20"
+										<input type="tel" class="form-control" id="B062" name="B062" maxlength="20"
 											placeholder="請輸入" required>
 									</div>
 
@@ -1111,7 +1111,7 @@
 									<div class="col-xl-6 py-3 col-12">
 										<label for="B064" class="form-label">填表人電話<i
 												class="text-danger markUse">*</i></label>
-										<input type="text" class="form-control" id="B064" name="B064" maxlength="20"
+										<input type="tel" class="form-control" id="B064" name="B064" maxlength="10"
 											placeholder="請輸入" required>
 									</div>
 								</div>
@@ -1152,7 +1152,7 @@
 									<div class="col-xl-6 py-3 col-12 pb-4">
 										<label for="_350000" class="form-label">營利事業暨扣繳單位統一編號</label>
 										<input type="text" class="form-control" id="_350000" name="_350000"
-											value="" maxlength="8" placeholder="" required>
+											value="" maxlength="8" placeholder="" pattern="\d{8}" required>
 									</div>
 									<div class="col-xl-6 py-3 col-12">
 										<div class="form-check pt-xl-5 pt-0 mt-xl-4 mt-0">
@@ -2108,7 +2108,7 @@
 									<div class="row gy-5 pt-4">
 										<div class="col-xl-6 col-12 ">
 											<label for="_030341" class="form-label">1.運輸業營運方式：</label>
-											<select id="_030341" name="_030341" class="w-50 form-select"
+											<select id="_030341" name="_030341" class="form-select"
 												aria-label="Default select example">
 												<option value selected>請選擇</option>
 												<!-- ★★★ 選(1)客運 / (2)貨運，會顯示第415行 -->
