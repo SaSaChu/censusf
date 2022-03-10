@@ -3045,7 +3045,7 @@ ul li:before { content: "(" counter(my-counter) ")"; line-height: 40px; padding-
 
 .f-25 { display: inline-block; width: 25% !important; }
 
-.pl-35 { padding-left: 35px; }
+.pl-35 { padding-left: 17px; }
 @media screen and (max-width: 449px) and (min-width: 0) { .pl-35 { padding-left: 28px; } }
 
 .pl-34 { padding-left: 34px; }
