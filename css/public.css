@@ -3186,3 +3186,5 @@ footer { display: inline-block; width: 100%; background-color: white; padding: 1
 @media screen and (max-width: 449px) and (min-width: 0) { .in-code { flex-direction: column !important; } }
 
 @media screen and (max-width: 449px) and (min-width: 0) { .p75 { padding-left: 75px !important; } }
+
+.text-blue { color: #0a63fd !important; }
