@@ -355,7 +355,9 @@ $(function() {
 					question = [0, 1, 3, 4, 5, 61, 62, 63, 64, 65, 7, 81, 82, 9, 14, 15];
 				}	
 				
-			}	
+			} else {
+				question = [0, 1, 3, 4, 5, 61, 62, 63, 64, 65, 7, 81, 82, 9, 11, 12, 14, 15];
+			}
 		} else {
 			// 單位級別 2 or 3
 			if($(this).val() == 1) {
@@ -489,7 +491,9 @@ $(function() {
 					question = [0, 1, 3, 4, 14, 15];
 				}
 				
-			}	
+			} else {
+				question = [0, 1, 3, 4, 11, 12, 14, 15];
+			}
 		}
 		localStorage.setItem('question', JSON.stringify(question));
 		displayQuestion()
