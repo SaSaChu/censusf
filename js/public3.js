@@ -1947,7 +1947,7 @@ $(function() {
 					if((i) % 2 == 0 ) {
 						element += `<p class="popup-list-r" title="${i+=1}">${ERRORCODE[e]}</p>`  ;	
 					} else {
-						element += `<p class="popup-list-r text-danger" title="${i+=1}">${ERRORCODE[e]}</p>`  ;
+						element += `<p class="popup-list-r text-primary" title="${i+=1}">${ERRORCODE[e]}</p>`  ;
 					}
 				})
 				
@@ -2062,7 +2062,7 @@ $(function() {
 					if((i) % 2 == 0 ) {
 						element += `<p class="popup-list-r" title="${i+=1}">${ERRORCODE[e]}</p>`  ;	
 					} else {
-						element += `<p class="popup-list-r text-danger" title="${i+=1}">${ERRORCODE[e]}</p>`  ;
+						element += `<p class="popup-list-r text-primary" title="${i+=1}">${ERRORCODE[e]}</p>`  ;
 					}
 				})
 				
