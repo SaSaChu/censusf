@@ -89,7 +89,7 @@ $(function() {
 		} else {
 			$('#B063').val('').prop('readonly', false);
 			$('#B064').val('').prop('readonly', false);	
-			$('#B062_2').val('').prop('readonly', false);	
+			$('#B064_2').val('').prop('readonly', false);	
 		}      
     })
 
@@ -153,7 +153,7 @@ $(function() {
 		if (_340000 == "1" || _340000 == "8") {
 			$("#_360000").val('').prop("readonly", true).prop('required', false);
 
-			question = [0, 1, 3, 4, 5, 61, 62, 63, 64, 65, 7, 81, 82, 9, 14, 15]
+			question = [0, 1, 3, 4, 5, 61, 62, 63, 64, 65, 7, 81, 82, 9, 10, 11, 12, 13, 14, 15]
 			// 主要
 			if(_030101 == 1) {
 				question = [0, 1, 3, 4, 5, 61, 62, 63, 64, 65, 7, 81, 82, 9, 11, 12, 14, 15];
