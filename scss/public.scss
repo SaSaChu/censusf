@@ -41,17 +41,29 @@ ul {
     // text-indent: -1em;
 
     &:before {
-      content: "("counter(my-counter) ")";
+      display: inline-block;
+      content: attr(title);
       line-height: 40px;
       padding-right: 10px;
+      margin-top: -2px;
     }
   }
 
   @include range-width(0, 450px) {
-    padding-left: 0;
+    padding-left: 2rem;
   }
 }
 
+.f-num {
+  position: relative;
+  padding-left: 32px;
+  &:before {
+    display: inline-block;
+    content: attr(title);
+    position: absolute;
+    left: 0;
+  }
+}
 
 
 .btn {
@@ -152,6 +164,14 @@ ul {
   }
 }
 
+.pl-35-2 {
+  padding-left: 25px;
+
+  @include range-width(0, 450px) {
+    padding-left: 35px;
+  }
+}
+
 .pl-34 {
   padding-left: 34px;
 
@@ -160,11 +180,23 @@ ul {
   }
 }
 
+.pl-18 {
+  padding-left: 18px;
+}
+
 .pl-45 {
   padding-left: 45px;
 
   @include range-width(0, 450px) {
     padding-left: 53px;
+  }
+}
+
+.pl-45-2 {
+  padding-left: 45px;
+
+  @include range-width(0, 450px) {
+    padding-left: 40px;
   }
 }
 
@@ -564,6 +596,7 @@ ul {
     color: rgba(26, 26, 26, 1.00);
     padding-left: 30px;
     padding-top: 10px;
+    text-align: justify;
 
     &:before {
       display: inline-block;
@@ -625,21 +658,28 @@ ul {
 .check_list {
   display: inline-block;
   position: relative;
-  padding-left: 30px;
+  padding-left: 25px;
+
+  &.cl-18 {
+    padding-left: 18px;
+  }
 
   &:before {
     display: inline-block;
     content: attr(title);
     margin-right: 5px;
     position: absolute;
-    left: 10px;
+    left: 0;
+    margin-top: -1px;
   }
 }
+
+
 
 .check_list-bb {
   display: inline-block;
   position: relative;
-  padding-left: 30px;
+  padding-left: 18px;
   font-weight: bold;
   color: #0a63fd;
 
@@ -649,7 +689,7 @@ ul {
     margin-right: 5px;
     position: absolute;
     font-weight: bold;
-    left: 10px;
+    left: 0;
   }
 }
 
@@ -714,6 +754,10 @@ footer {
   }
 }
 
+
+.pl-28 {
+  padding-left: 28px;
+}
 
 
 

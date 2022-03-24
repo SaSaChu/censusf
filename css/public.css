@@ -3015,8 +3015,11 @@ body { position: relative; display: inline-block; width: 100%; margin: 0; paddin
 ul { list-style: none; padding-left: 2.3rem; padding-top: 10px; margin-bottom: 0; }
 ul li { display: flex; /*  使用自訂標號  */ counter-increment: my-counter; /* 段落首行縮排 */ }
 ul li.li-nos:before { display: none; }
-ul li:before { content: "(" counter(my-counter) ")"; line-height: 40px; padding-right: 10px; }
-@media screen and (max-width: 449px) and (min-width: 0) { ul { padding-left: 0; } }
+ul li:before { display: inline-block; content: attr(title); line-height: 40px; padding-right: 10px; margin-top: -2px; }
+@media screen and (max-width: 449px) and (min-width: 0) { ul { padding-left: 2rem; } }
+
+.f-num { position: relative; padding-left: 32px; }
+.f-num:before { display: inline-block; content: attr(title); position: absolute; left: 0; }
 
 .btn:focus { box-shadow: none !important; }
 
@@ -3048,11 +3051,19 @@ ul li:before { content: "(" counter(my-counter) ")"; line-height: 40px; padding-
 .pl-35 { padding-left: 17px; }
 @media screen and (max-width: 449px) and (min-width: 0) { .pl-35 { padding-left: 28px; } }
 
+.pl-35-2 { padding-left: 25px; }
+@media screen and (max-width: 449px) and (min-width: 0) { .pl-35-2 { padding-left: 35px; } }
+
 .pl-34 { padding-left: 34px; }
 @media screen and (max-width: 449px) and (min-width: 0) { .pl-34 { padding-left: 0; } }
 
+.pl-18 { padding-left: 18px; }
+
 .pl-45 { padding-left: 45px; }
 @media screen and (max-width: 449px) and (min-width: 0) { .pl-45 { padding-left: 53px; } }
+
+.pl-45-2 { padding-left: 45px; }
+@media screen and (max-width: 449px) and (min-width: 0) { .pl-45-2 { padding-left: 40px; } }
 
 @media screen and (max-width: 449px) and (min-width: 0) { .m-100 { width: 100% !important; margin-top: 10px; } }
 
@@ -3151,7 +3162,7 @@ ul li:before { content: "(" counter(my-counter) ")"; line-height: 40px; padding-
 
 .popup-y { background-color: #ffefbf; border: 5px solid #af7b02; }
 .popup-y .modal-header { border-bottom: 3px solid #ffe5a2; color: #513b05; padding-left: 1.2rem; padding-right: 1.5rem; }
-.popup-y .popup-list { display: inline-block; width: 100%; position: relative; font-size: 1.05rem; color: #1a1a1a; padding-left: 30px; padding-top: 10px; }
+.popup-y .popup-list { display: inline-block; width: 100%; position: relative; font-size: 1.05rem; color: #1a1a1a; padding-left: 30px; padding-top: 10px; text-align: justify; }
 .popup-y .popup-list:before { display: inline-block; content: attr(title); position: absolute; left: 10px; }
 .popup-y .popup-list.s3-use-no { padding-left: 10px; }
 .popup-y .popup-list.s3-use-list { padding-left: 40px; }
@@ -3164,11 +3175,12 @@ ul li:before { content: "(" counter(my-counter) ")"; line-height: 40px; padding-
 
 .markUse { font-style: normal; margin: 0 5px; }
 
-.check_list { display: inline-block; position: relative; padding-left: 30px; }
-.check_list:before { display: inline-block; content: attr(title); margin-right: 5px; position: absolute; left: 10px; }
+.check_list { display: inline-block; position: relative; padding-left: 25px; }
+.check_list.cl-18 { padding-left: 18px; }
+.check_list:before { display: inline-block; content: attr(title); margin-right: 5px; position: absolute; left: 0; margin-top: -1px; }
 
-.check_list-bb { display: inline-block; position: relative; padding-left: 30px; font-weight: bold; color: #0a63fd; }
-.check_list-bb:before { display: inline-block; content: attr(title); margin-right: 5px; position: absolute; font-weight: bold; left: 10px; }
+.check_list-bb { display: inline-block; position: relative; padding-left: 18px; font-weight: bold; color: #0a63fd; }
+.check_list-bb:before { display: inline-block; content: attr(title); margin-right: 5px; position: absolute; font-weight: bold; left: 0; }
 
 footer { display: inline-block; width: 100%; background-color: white; padding: 10px 0; }
 @media screen and (max-width: 449px) and (min-width: 0) { footer { position: inherit; } }
@@ -3186,3 +3198,5 @@ footer { display: inline-block; width: 100%; background-color: white; padding: 1
 @media screen and (max-width: 449px) and (min-width: 0) { .in-code { flex-direction: column !important; } }
 
 @media screen and (max-width: 449px) and (min-width: 0) { .p75 { padding-left: 75px !important; } }
+
+.pl-28 { padding-left: 28px; }

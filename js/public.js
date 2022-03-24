@@ -2197,8 +2197,8 @@ $(function() {
 		let next = question[question.indexOf(step)+1]
 
 		// 確認必填功能
-		let notFill = checkFillInput(step);
-		// let notFill = 0;
+		// let notFill = checkFillInput(step);
+		let notFill = 0;
 		
 		if(notFill.length) {
 			$('#next').modal('show');
