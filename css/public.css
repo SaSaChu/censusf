@@ -3057,12 +3057,17 @@ ul li:before { display: inline-block; content: attr(title); line-height: 40px; p
 .pl-34 { padding-left: 34px; }
 @media screen and (max-width: 449px) and (min-width: 0) { .pl-34 { padding-left: 0; } }
 
-.pl-18 { padding-left: 18px; }
+@media screen and (max-width: 449px) and (min-width: 0) { .pl-18 { padding-left: 18px; } }
+
+@media screen and (max-width: 449px) and (min-width: 0) { .pl-23 { padding-left: 23px; } }
+
+.pl-33 { padding-left: 22px; }
+@media screen and (max-width: 449px) and (min-width: 0) { .pl-33 { padding-left: 33px; } }
 
 .pl-45 { padding-left: 45px; }
 @media screen and (max-width: 449px) and (min-width: 0) { .pl-45 { padding-left: 53px; } }
 
-.pl-45-2 { padding-left: 45px; }
+.pl-45-2 { padding-left: 35px; }
 @media screen and (max-width: 449px) and (min-width: 0) { .pl-45-2 { padding-left: 40px; } }
 
 @media screen and (max-width: 449px) and (min-width: 0) { .m-100 { width: 100% !important; margin-top: 10px; } }

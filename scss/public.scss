@@ -181,7 +181,23 @@ ul {
 }
 
 .pl-18 {
-  padding-left: 18px;
+  @include range-width(0, 450px) {
+    padding-left: 18px;
+  }
+}
+
+.pl-23 {
+  @include range-width(0, 450px) {
+    padding-left: 23px;
+  }
+}
+
+.pl-33 {
+  padding-left: 22px;
+  
+  @include range-width(0, 450px) {
+    padding-left: 33px;
+  }
 }
 
 .pl-45 {
@@ -193,7 +209,7 @@ ul {
 }
 
 .pl-45-2 {
-  padding-left: 45px;
+  padding-left: 35px;
 
   @include range-width(0, 450px) {
     padding-left: 40px;
